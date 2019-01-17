@@ -1,0 +1,3 @@
+atc_app:
+    resource: "@ATCAppBundle/Resources/config/routing.yml"
+    prefix:   /

@@ -1,0 +1,4 @@
+services:
+#    atc_app.example:
+#        class: ATC\AppBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

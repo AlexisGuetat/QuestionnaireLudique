@@ -1,0 +1,31 @@
+#ROUTE ACCEUIL
+homepage:
+    path:     /
+    defaults: { _controller: ATCAppBundle:Default:index }
+
+#ROUTE POUR LE QUESTIONNAIRE 
+questionnaire:
+    path: /questionnaire
+    defaults: { _controller: ATCAppBundle:Questionnaire:index }
+
+questionnaire_facile:
+    path: /questionnaire/facile
+    defaults: { _controller: ATCAppBundle:Questionnaire:facile }
+
+questionnaire_moyen:
+    path: /questionnaire/moyen
+    defaults: { _controller: ATCAppBundle:Questionnaire:moyen }
+
+questionnaire_difficile:
+    path: /questionnaire/difficile
+    defaults: { _controller: ATCAppBundle:Questionnaire:difficile }
+
+#ROUTE ADMINISTRATEUR
+administrateur:
+    path: /administrateur
+    defaults: {_controller: ATCAppBundle:Administrateur:index}
+
+#ROUTE CLASSEMENT
+classement:
+    path: /classement   
+    defaults: {_controller: ATCAppBundle:Classement:index}
