@@ -31,4 +31,11 @@ class QuestionnaireController extends Controller
         return $this->render('ATCAppBundle:Questionnaire:Difficulte/difficile.html.twig',array('pseudo'=>$pseudo));
     }
 
+    public function mathAction(Request $request)
+    {
+        $pseudo = $request->query->get('pseudo'); 
+        return $this->render('ATCAppBundle:Questionnaire:Theme/math.html.twig',array('pseudo'=>$pseudo));
+    }
+
+
 }

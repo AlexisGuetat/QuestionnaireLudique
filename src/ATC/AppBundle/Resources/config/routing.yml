@@ -20,6 +20,11 @@ questionnaire_difficile:
     path: /questionnaire/difficile
     defaults: { _controller: ATCAppBundle:Questionnaire:difficile }
 
+questionnaire_facile_math:
+    path: /questionnaire/facile/math
+    defaults: {_controller: ATCAppBundle:Questionnaire:math }
+
+
 #ROUTE ADMINISTRATEUR
 administrateur:
     path: /administrateur

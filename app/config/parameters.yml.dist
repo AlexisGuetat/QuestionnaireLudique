@@ -5,7 +5,7 @@ parameters:
     database_host: mysql-projet-questionnaire.alwaysdata.net
     database_port: ~
     database_name: projet-questionnaire_bdd
-    database_user: 175584@2a00:b6e0:1:210:1::1
+    database_user: 175584
     database_password: P@ssw0rd
     # You should uncomment this if you want to use pdo_sqlite
     #database_path: '%kernel.project_dir%/var/data/data.sqlite'
