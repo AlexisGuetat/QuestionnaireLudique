@@ -1,0 +1,48 @@
+{% block header %}
+{{ include("ATCAppBundle:Default:header.html.twig") }}
+{% endblock %}
+
+<div class="container border border-primary rem-5">
+
+<!-- Default form contact -->
+<form class="text-center border border-light p-5">
+
+    <p class="h4 mb-4">Entrez les informations du formulaire</p>
+
+    <!-- Nom -->
+    <input type="text" id="nom" class="form-control mb-4" placeholder="Titre du formulaire">
+
+    <!-- Themes -->
+    <label>Thémes du formulaire</label>
+    <select id="theme" class="browser-default custom-select mb-4">
+        <option value="" disabled>Sélectionner une option</option>
+        <option value="1" selected>Mathématique</option>
+        <option value="2">Français</option>
+        <option value="3">Histoire</option>
+        <option value="4">Géographie</option>
+        <option value="4">Autres</option>
+    </select>
+
+     <!-- Autres -->
+    <input type="text" id="nom" class="form-control mb-4" placeholder="Themes du formulaire">
+
+    <!-- Difficulté -->
+    <label>Diificulté du formulaire</label>
+    <select id="difficulte" class="browser-default custom-select mb-4">
+        <option value="" disabled>Sélectionner une option</option>
+        <option value="1" selected>Facile</option>
+        <option value="2">Moyen</option>
+        <option value="3">Difficile</option>
+    </select>
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block" type="submit">Valider</button>
+
+</form>
+<!-- Default form contact -->
+
+  <!-- Content here -->
+</div>
+{% block footer %}
+  {{ include("ATCAppBundle:Default:footer.html.twig") }}
+{% endblock  %}

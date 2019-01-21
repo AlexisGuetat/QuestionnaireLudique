@@ -1,7 +1,6 @@
 <?php
 
 namespace ATC\AppBundle\Controller;
-
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AdministrateurController extends Controller
