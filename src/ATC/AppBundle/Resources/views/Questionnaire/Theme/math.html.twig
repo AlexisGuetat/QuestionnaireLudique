@@ -1,8 +1,7 @@
 
-{% block header %}
-{{ include("ATCAppBundle:Default:header.html.twig") }}
-{% endblock %}
+{% extends "ATCAppBundle::index.html.twig" %}
 
+{% block body %}
 <div class="view">
     <img src="{{  asset('img/fond2.gif') }}" class="fond">
     
@@ -37,7 +36,4 @@
       </div>
     </div>
 </div>
-
-{% block footer %}
-  {{ include("ATCAppBundle:Default:footer.html.twig") }}
-{% endblock  %}
+{% endblock %}

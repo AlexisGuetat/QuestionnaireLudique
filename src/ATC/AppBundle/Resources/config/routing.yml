@@ -30,6 +30,10 @@ administrateur:
     path: /administrateur
     defaults: {_controller: ATCAppBundle:Administrateur:index}
 
+administrateur_ajout_formulaire:
+   path: /administrateur/ajout_formulaire
+   defaults: {_controller: ATCAppBundle:Formulaire:add}
+
 #ROUTE CLASSEMENT
 classement:
     path: /classement   
