@@ -4,18 +4,18 @@
 <div class="container border border-primary rem-5">
 
 <!-- Default form contact -->
-<form class="text-center border border-light p-5">
+<form  method="post" class="text-center border border-light p-5" action="{{ path('administrateur_ajout_formulaire') }}">
 
     <p class="h4 mb-4">Entrez les informations du formulaire</p>
 
     <!-- Nom -->
-    <input type="text" id="nom" class="form-control mb-4" placeholder="Titre du formulaire" required="">
+    <input type="text" id="nom" class="form-control mb-4" placeholder="Titre du formulaire" >
 
     <!-- Themes -->
     <label>Thémes du formulaire</label>
-    <select id="theme" class="browser-default custom-select mb-4" required="">
+    <select id="theme" class="browser-default custom-select mb-4" >
         <option value="" selected>Sélectionner une option</option>
-        <option value="1" >Mathématique</option>
+        <option value="1">Mathématique</option>
         <option value="2">Français</option>
         <option value="3">Histoire</option>
         <option value="4">Géographie</option>
@@ -27,7 +27,7 @@
 
     <!-- Difficulté -->
     <label>Difficulté du formulaire</label>
-    <select id="difficulte" class="browser-default custom-select mb-4" required="">
+    <select id="difficulte" class="browser-default custom-select mb-4" >
         <option value="" seected>Sélectionner une option</option>
         <option value="1" >Facile</option>
         <option value="2">Moyen</option>
