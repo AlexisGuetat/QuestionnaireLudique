@@ -42,12 +42,13 @@ class Formulaire
      */
     private $difficulte;
 
+    
     /**
      * @var int
      *
      * @ORM\Column(name="id_questionnaire", type="integer", unique=true)
      */
-    private $idQuestionnaire;
+    //private $idQuestionnaire;
 
 
     /**
@@ -139,21 +140,22 @@ class Formulaire
      *
      * @return Formulaire
      */
-    public function setIdQuestionnaire($idQuestionnaire)
+   /* public function setIdQuestionnaire($idQuestionnaire)
     {
         $this->idQuestionnaire = $idQuestionnaire;
 
         return $this;
     }
-
+*/
     /**
      * Get idQuestionnaire
      *
      * @return int
      */
-    public function getIdQuestionnaire()
+   /* public function getIdQuestionnaire()
     {
         return $this->idQuestionnaire;
     }
+    */
 }
 
