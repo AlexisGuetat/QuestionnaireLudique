@@ -4,22 +4,22 @@
 <div class="container border border-primary rem-5">
 
 <!-- Default form contact -->
-<form  method="post" class="text-center border border-light p-5" action="{{ path('administrateur_ajout_formulaire') }}">
+<form class="text-center border border-light p-5" action="{{ path('administrateur_ajout_formulaire') }}">
 
     <p class="h4 mb-4">Entrez les informations du formulaire</p>
 
     <!-- Nom -->
-    <input type="text" id="nom" class="form-control mb-4" placeholder="Titre du formulaire" required="">
+    <input type="text" name="titre" class="form-control mb-4" placeholder="Titre du formulaire" required="">
 
     <!-- Themes -->
     <label>Thémes du formulaire</label>
-    <select id="theme" class="browser-default custom-select mb-4" required="">
+    <select name="theme" class="browser-default custom-select mb-4" required="">
         <option value="" selected>Sélectionner une option</option>
-        <option value="1">Mathématique</option>
-        <option value="2">Français</option>
-        <option value="3">Histoire</option>
-        <option value="4">Géographie</option>
-        <option value="4">Autres</option>
+        <option value="MATH">Mathématique</option>
+        <option value="FRANCAIS">Français</option>
+        <option value="HISTOIRE">Histoire</option>
+        <option value="GEO">Géographie</option>
+        <option value="AUTRES">Autres</option>
     </select>
 
      <!-- Autres -->
@@ -27,11 +27,11 @@
 
     <!-- Difficulté -->
     <label>Difficulté du formulaire</label>
-    <select id="difficulte" class="browser-default custom-select mb-4" required="">
+    <select name="difficulte" class="browser-default custom-select mb-4" required="">
         <option value="" seected>Sélectionner une option</option>
-        <option value="1">Facile</option>
-        <option value="2">Moyen</option>
-        <option value="3">Difficile</option>
+        <option value="FACILE">Facile</option>
+        <option value="MOYEN">Moyen</option>
+        <option value="DIFFICILE">Difficile</option>
     </select>
 
     <!-- Send button -->

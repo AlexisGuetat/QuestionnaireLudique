@@ -22,35 +22,35 @@ class __TwigTemplate_7fbc718f16f54f9a8d868dc1391077cc74222c64db1a66eaf4a73fb8413
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_395c4f3b58e81902d35e10a8e8e67989e355937abe47d7cc55746160139d91d5 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_395c4f3b58e81902d35e10a8e8e67989e355937abe47d7cc55746160139d91d5->enter($__internal_395c4f3b58e81902d35e10a8e8e67989e355937abe47d7cc55746160139d91d5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ATCAppBundle:Administrateur:index.html.twig"));
+        $__internal_a3b967dad1bb808d39959355e46a225fa43a4d4b3c0d3e58dbd01a9ff90a21d9 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_a3b967dad1bb808d39959355e46a225fa43a4d4b3c0d3e58dbd01a9ff90a21d9->enter($__internal_a3b967dad1bb808d39959355e46a225fa43a4d4b3c0d3e58dbd01a9ff90a21d9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ATCAppBundle:Administrateur:index.html.twig"));
 
-        $__internal_856276c4439371daf477a9980cdd34f742aed2a7c401b686b337660e0a9b6f4f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_856276c4439371daf477a9980cdd34f742aed2a7c401b686b337660e0a9b6f4f->enter($__internal_856276c4439371daf477a9980cdd34f742aed2a7c401b686b337660e0a9b6f4f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ATCAppBundle:Administrateur:index.html.twig"));
+        $__internal_ed6519d27102b0a41d1d40d3747df479dd0b20f7f4aa9f89ade9c9ea5d99c274 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_ed6519d27102b0a41d1d40d3747df479dd0b20f7f4aa9f89ade9c9ea5d99c274->enter($__internal_ed6519d27102b0a41d1d40d3747df479dd0b20f7f4aa9f89ade9c9ea5d99c274_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ATCAppBundle:Administrateur:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_395c4f3b58e81902d35e10a8e8e67989e355937abe47d7cc55746160139d91d5->leave($__internal_395c4f3b58e81902d35e10a8e8e67989e355937abe47d7cc55746160139d91d5_prof);
+        $__internal_a3b967dad1bb808d39959355e46a225fa43a4d4b3c0d3e58dbd01a9ff90a21d9->leave($__internal_a3b967dad1bb808d39959355e46a225fa43a4d4b3c0d3e58dbd01a9ff90a21d9_prof);
 
         
-        $__internal_856276c4439371daf477a9980cdd34f742aed2a7c401b686b337660e0a9b6f4f->leave($__internal_856276c4439371daf477a9980cdd34f742aed2a7c401b686b337660e0a9b6f4f_prof);
+        $__internal_ed6519d27102b0a41d1d40d3747df479dd0b20f7f4aa9f89ade9c9ea5d99c274->leave($__internal_ed6519d27102b0a41d1d40d3747df479dd0b20f7f4aa9f89ade9c9ea5d99c274_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_ed26989cfea3e0d345217f9c4669a320021fd3d329ee86af3f92ad3a3b5da72b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_ed26989cfea3e0d345217f9c4669a320021fd3d329ee86af3f92ad3a3b5da72b->enter($__internal_ed26989cfea3e0d345217f9c4669a320021fd3d329ee86af3f92ad3a3b5da72b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_6041b82912b88ee076bbbda7c9ce7903dac89a356ad170832480fc8019ccbe97 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_6041b82912b88ee076bbbda7c9ce7903dac89a356ad170832480fc8019ccbe97->enter($__internal_6041b82912b88ee076bbbda7c9ce7903dac89a356ad170832480fc8019ccbe97_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_89cbd672d143adefedbb4dca104e41fdef258a6dfed0b2a95ab9870fc8526bf5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_89cbd672d143adefedbb4dca104e41fdef258a6dfed0b2a95ab9870fc8526bf5->enter($__internal_89cbd672d143adefedbb4dca104e41fdef258a6dfed0b2a95ab9870fc8526bf5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_82dcc2e47fac17bb2007c7a84f2149be8806c2d942dea5786461d48e158604ca = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_82dcc2e47fac17bb2007c7a84f2149be8806c2d942dea5786461d48e158604ca->enter($__internal_82dcc2e47fac17bb2007c7a84f2149be8806c2d942dea5786461d48e158604ca_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "<div class=\"container border border-primary rem-5\">
 
 <!-- Default form contact -->
-<form  method=\"post\" class=\"text-center border border-light p-5\" action=\"";
+<form class=\"text-center border border-light p-5\" action=\"";
         // line 7
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("administrateur_ajout_formulaire");
         echo "\">
@@ -58,17 +58,17 @@ class __TwigTemplate_7fbc718f16f54f9a8d868dc1391077cc74222c64db1a66eaf4a73fb8413
     <p class=\"h4 mb-4\">Entrez les informations du formulaire</p>
 
     <!-- Nom -->
-    <input type=\"text\" id=\"nom\" class=\"form-control mb-4\" placeholder=\"Titre du formulaire\" required=\"\">
+    <input type=\"text\" name=\"titre\" class=\"form-control mb-4\" placeholder=\"Titre du formulaire\" required=\"\">
 
     <!-- Themes -->
     <label>Thémes du formulaire</label>
-    <select id=\"theme\" class=\"browser-default custom-select mb-4\" required=\"\">
+    <select name=\"theme\" class=\"browser-default custom-select mb-4\" required=\"\">
         <option value=\"\" selected>Sélectionner une option</option>
-        <option value=\"1\">Mathématique</option>
-        <option value=\"2\">Français</option>
-        <option value=\"3\">Histoire</option>
-        <option value=\"4\">Géographie</option>
-        <option value=\"4\">Autres</option>
+        <option value=\"MATH\">Mathématique</option>
+        <option value=\"FRANCAIS\">Français</option>
+        <option value=\"HISTOIRE\">Histoire</option>
+        <option value=\"GEO\">Géographie</option>
+        <option value=\"AUTRES\">Autres</option>
     </select>
 
      <!-- Autres -->
@@ -76,11 +76,11 @@ class __TwigTemplate_7fbc718f16f54f9a8d868dc1391077cc74222c64db1a66eaf4a73fb8413
 
     <!-- Difficulté -->
     <label>Difficulté du formulaire</label>
-    <select id=\"difficulte\" class=\"browser-default custom-select mb-4\" required=\"\">
+    <select name=\"difficulte\" class=\"browser-default custom-select mb-4\" required=\"\">
         <option value=\"\" seected>Sélectionner une option</option>
-        <option value=\"1\">Facile</option>
-        <option value=\"2\">Moyen</option>
-        <option value=\"3\">Difficile</option>
+        <option value=\"FACILE\">Facile</option>
+        <option value=\"MOYEN\">Moyen</option>
+        <option value=\"DIFFICILE\">Difficile</option>
     </select>
 
     <!-- Send button -->
@@ -93,21 +93,21 @@ class __TwigTemplate_7fbc718f16f54f9a8d868dc1391077cc74222c64db1a66eaf4a73fb8413
 </div>
 ";
         
-        $__internal_89cbd672d143adefedbb4dca104e41fdef258a6dfed0b2a95ab9870fc8526bf5->leave($__internal_89cbd672d143adefedbb4dca104e41fdef258a6dfed0b2a95ab9870fc8526bf5_prof);
+        $__internal_82dcc2e47fac17bb2007c7a84f2149be8806c2d942dea5786461d48e158604ca->leave($__internal_82dcc2e47fac17bb2007c7a84f2149be8806c2d942dea5786461d48e158604ca_prof);
 
         
-        $__internal_ed26989cfea3e0d345217f9c4669a320021fd3d329ee86af3f92ad3a3b5da72b->leave($__internal_ed26989cfea3e0d345217f9c4669a320021fd3d329ee86af3f92ad3a3b5da72b_prof);
+        $__internal_6041b82912b88ee076bbbda7c9ce7903dac89a356ad170832480fc8019ccbe97->leave($__internal_6041b82912b88ee076bbbda7c9ce7903dac89a356ad170832480fc8019ccbe97_prof);
 
     }
 
     // line 47
     public function block_footer($context, array $blocks = array())
     {
-        $__internal_dda4753571fc3fc4d97730ed8dfc5759d5f44ec91cf048b7898f2bd69cd744dd = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_dda4753571fc3fc4d97730ed8dfc5759d5f44ec91cf048b7898f2bd69cd744dd->enter($__internal_dda4753571fc3fc4d97730ed8dfc5759d5f44ec91cf048b7898f2bd69cd744dd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
+        $__internal_b3becc81ebdbecd8135ee421ab082b212c6b53b836659e3b9cccd1d119850b19 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_b3becc81ebdbecd8135ee421ab082b212c6b53b836659e3b9cccd1d119850b19->enter($__internal_b3becc81ebdbecd8135ee421ab082b212c6b53b836659e3b9cccd1d119850b19_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
 
-        $__internal_6780361aed344f8d131cf70b9ab6bacbf232981d022935ddde9cdcf74910502a = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_6780361aed344f8d131cf70b9ab6bacbf232981d022935ddde9cdcf74910502a->enter($__internal_6780361aed344f8d131cf70b9ab6bacbf232981d022935ddde9cdcf74910502a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
+        $__internal_34a4f646032aa97c3653da37953cad6a9df816fa6b2f7e555f8ec488740286ea = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_34a4f646032aa97c3653da37953cad6a9df816fa6b2f7e555f8ec488740286ea->enter($__internal_34a4f646032aa97c3653da37953cad6a9df816fa6b2f7e555f8ec488740286ea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
 
         // line 48
         $this->displayParentBlock("footer", $context, $blocks);
@@ -118,10 +118,10 @@ class __TwigTemplate_7fbc718f16f54f9a8d868dc1391077cc74222c64db1a66eaf4a73fb8413
         echo "\"></script>
  ";
         
-        $__internal_6780361aed344f8d131cf70b9ab6bacbf232981d022935ddde9cdcf74910502a->leave($__internal_6780361aed344f8d131cf70b9ab6bacbf232981d022935ddde9cdcf74910502a_prof);
+        $__internal_34a4f646032aa97c3653da37953cad6a9df816fa6b2f7e555f8ec488740286ea->leave($__internal_34a4f646032aa97c3653da37953cad6a9df816fa6b2f7e555f8ec488740286ea_prof);
 
         
-        $__internal_dda4753571fc3fc4d97730ed8dfc5759d5f44ec91cf048b7898f2bd69cd744dd->leave($__internal_dda4753571fc3fc4d97730ed8dfc5759d5f44ec91cf048b7898f2bd69cd744dd_prof);
+        $__internal_b3becc81ebdbecd8135ee421ab082b212c6b53b836659e3b9cccd1d119850b19->leave($__internal_b3becc81ebdbecd8135ee421ab082b212c6b53b836659e3b9cccd1d119850b19_prof);
 
     }
 
@@ -156,22 +156,22 @@ class __TwigTemplate_7fbc718f16f54f9a8d868dc1391077cc74222c64db1a66eaf4a73fb8413
 <div class=\"container border border-primary rem-5\">
 
 <!-- Default form contact -->
-<form  method=\"post\" class=\"text-center border border-light p-5\" action=\"{{ path('administrateur_ajout_formulaire') }}\">
+<form class=\"text-center border border-light p-5\" action=\"{{ path('administrateur_ajout_formulaire') }}\">
 
     <p class=\"h4 mb-4\">Entrez les informations du formulaire</p>
 
     <!-- Nom -->
-    <input type=\"text\" id=\"nom\" class=\"form-control mb-4\" placeholder=\"Titre du formulaire\" required=\"\">
+    <input type=\"text\" name=\"titre\" class=\"form-control mb-4\" placeholder=\"Titre du formulaire\" required=\"\">
 
     <!-- Themes -->
     <label>Thémes du formulaire</label>
-    <select id=\"theme\" class=\"browser-default custom-select mb-4\" required=\"\">
+    <select name=\"theme\" class=\"browser-default custom-select mb-4\" required=\"\">
         <option value=\"\" selected>Sélectionner une option</option>
-        <option value=\"1\">Mathématique</option>
-        <option value=\"2\">Français</option>
-        <option value=\"3\">Histoire</option>
-        <option value=\"4\">Géographie</option>
-        <option value=\"4\">Autres</option>
+        <option value=\"MATH\">Mathématique</option>
+        <option value=\"FRANCAIS\">Français</option>
+        <option value=\"HISTOIRE\">Histoire</option>
+        <option value=\"GEO\">Géographie</option>
+        <option value=\"AUTRES\">Autres</option>
     </select>
 
      <!-- Autres -->
@@ -179,11 +179,11 @@ class __TwigTemplate_7fbc718f16f54f9a8d868dc1391077cc74222c64db1a66eaf4a73fb8413
 
     <!-- Difficulté -->
     <label>Difficulté du formulaire</label>
-    <select id=\"difficulte\" class=\"browser-default custom-select mb-4\" required=\"\">
+    <select name=\"difficulte\" class=\"browser-default custom-select mb-4\" required=\"\">
         <option value=\"\" seected>Sélectionner une option</option>
-        <option value=\"1\">Facile</option>
-        <option value=\"2\">Moyen</option>
-        <option value=\"3\">Difficile</option>
+        <option value=\"FACILE\">Facile</option>
+        <option value=\"MOYEN\">Moyen</option>
+        <option value=\"DIFFICILE\">Difficile</option>
     </select>
 
     <!-- Send button -->
