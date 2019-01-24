@@ -24,23 +24,44 @@ class Questionnaire
     /**
      * @var string
      *
-     * @ORM\Column(name="titre", type="string", length=255, unique=true)
+     * @ORM\Column(name="question", type="string", length=255)
      */
-    private $titre;
+    private $question;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="theme", type="string", length=255)
+     * @ORM\Column(name="reponse1", type="string", length=255)
      */
-    private $theme;
+    private $reponse1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="difficulte", type="string", length=255)
+     * @ORM\Column(name="reponse2", type="string", length=255)
      */
-    private $difficulte;
+    private $reponse2;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reponse3", type="string", length=255)
+     */
+    private $reponse3;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reponse4", type="string", length=255)
+     */
+    private $reponse4;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="reponse_juste", type="integer")
+     */
+    private $reponseJuste;
 
 
     /**
@@ -54,75 +75,147 @@ class Questionnaire
     }
 
     /**
-     * Set titre
+     * Set question
      *
-     * @param string $titre
+     * @param string $question
      *
      * @return Questionnaire
      */
-    public function setTitre($titre)
+    public function setQuestion($question)
     {
-        $this->titre = $titre;
+        $this->question = $question;
 
         return $this;
     }
 
     /**
-     * Get titre
+     * Get question
      *
      * @return string
      */
-    public function getTitre()
+    public function getQuestion()
     {
-        return $this->titre;
+        return $this->question;
     }
 
     /**
-     * Set theme
+     * Set reponse1
      *
-     * @param string $theme
+     * @param string $reponse1
      *
      * @return Questionnaire
      */
-    public function setTheme($theme)
+    public function setReponse1($reponse1)
     {
-        $this->theme = $theme;
+        $this->reponse1 = $reponse1;
 
         return $this;
     }
 
     /**
-     * Get theme
+     * Get reponse1
      *
      * @return string
      */
-    public function getTheme()
+    public function getReponse1()
     {
-        return $this->theme;
+        return $this->reponse1;
     }
 
     /**
-     * Set difficulte
+     * Set reponse2
      *
-     * @param string $difficulte
+     * @param string $reponse2
      *
      * @return Questionnaire
      */
-    public function setDifficulte($difficulte)
+    public function setReponse2($reponse2)
     {
-        $this->difficulte = $difficulte;
+        $this->reponse2 = $reponse2;
 
         return $this;
     }
 
     /**
-     * Get difficulte
+     * Get reponse2
      *
      * @return string
      */
-    public function getDifficulte()
+    public function getReponse2()
     {
-        return $this->difficulte;
+        return $this->reponse2;
+    }
+
+    /**
+     * Set reponse3
+     *
+     * @param string $reponse3
+     *
+     * @return Questionnaire
+     */
+    public function setReponse3($reponse3)
+    {
+        $this->reponse3 = $reponse3;
+
+        return $this;
+    }
+
+    /**
+     * Get reponse3
+     *
+     * @return string
+     */
+    public function getReponse3()
+    {
+        return $this->reponse3;
+    }
+
+    /**
+     * Set reponse4
+     *
+     * @param string $reponse4
+     *
+     * @return Questionnaire
+     */
+    public function setReponse4($reponse4)
+    {
+        $this->reponse4 = $reponse4;
+
+        return $this;
+    }
+
+    /**
+     * Get reponse4
+     *
+     * @return string
+     */
+    public function getReponse4()
+    {
+        return $this->reponse4;
+    }
+
+    /**
+     * Set reponseJuste
+     *
+     * @param integer $reponseJuste
+     *
+     * @return Questionnaire
+     */
+    public function setReponseJuste($reponseJuste)
+    {
+        $this->reponseJuste = $reponseJuste;
+
+        return $this;
+    }
+
+    /**
+     * Get reponseJuste
+     *
+     * @return int
+     */
+    public function getReponseJuste()
+    {
+        return $this->reponseJuste;
     }
 }
 
