@@ -43,4 +43,10 @@ class FormulaireController extends Controller
         return $this->render('ATCAppBundle:Administrateur:index.html.twig');
         
     }
+    
+    public function add2Action(Request $request)
+    {   
+            return $this->render('ATCAppBundle:Administrateur:add2.html.twig');
+    }
 }
+
