@@ -24,44 +24,23 @@ class Questionnaire
     /**
      * @var string
      *
-     * @ORM\Column(name="question", type="string", length=255)
+     * @ORM\Column(name="titre", type="string", length=255, unique=true)
      */
-    private $question;
+    private $titre;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="reponse1", type="string", length=255)
+     * @ORM\Column(name="theme", type="string", length=255)
      */
-    private $reponse1;
+    private $theme;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="reponse2", type="string", length=255)
+     * @ORM\Column(name="difficulte", type="string", length=255)
      */
-    private $reponse2;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="reponse3", type="string", length=255)
-     */
-    private $reponse3;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="reponse4", type="string", length=255)
-     */
-    private $reponse4;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="reponse_juste", type="integer")
-     */
-    private $reponseJuste;
+    private $difficulte;
 
 
     /**
@@ -75,147 +54,75 @@ class Questionnaire
     }
 
     /**
-     * Set question
+     * Set titre
      *
-     * @param string $question
+     * @param string $titre
      *
      * @return Questionnaire
      */
-    public function setQuestion($question)
+    public function setTitre($titre)
     {
-        $this->question = $question;
+        $this->titre = $titre;
 
         return $this;
     }
 
     /**
-     * Get question
+     * Get titre
      *
      * @return string
      */
-    public function getQuestion()
+    public function getTitre()
     {
-        return $this->question;
+        return $this->titre;
     }
 
     /**
-     * Set reponse1
+     * Set theme
      *
-     * @param string $reponse1
+     * @param string $theme
      *
      * @return Questionnaire
      */
-    public function setReponse1($reponse1)
+    public function setTheme($theme)
     {
-        $this->reponse1 = $reponse1;
+        $this->theme = $theme;
 
         return $this;
     }
 
     /**
-     * Get reponse1
+     * Get theme
      *
      * @return string
      */
-    public function getReponse1()
+    public function getTheme()
     {
-        return $this->reponse1;
+        return $this->theme;
     }
 
     /**
-     * Set reponse2
+     * Set difficulte
      *
-     * @param string $reponse2
+     * @param string $difficulte
      *
      * @return Questionnaire
      */
-    public function setReponse2($reponse2)
+    public function setDifficulte($difficulte)
     {
-        $this->reponse2 = $reponse2;
+        $this->difficulte = $difficulte;
 
         return $this;
     }
 
     /**
-     * Get reponse2
+     * Get difficulte
      *
      * @return string
      */
-    public function getReponse2()
+    public function getDifficulte()
     {
-        return $this->reponse2;
-    }
-
-    /**
-     * Set reponse3
-     *
-     * @param string $reponse3
-     *
-     * @return Questionnaire
-     */
-    public function setReponse3($reponse3)
-    {
-        $this->reponse3 = $reponse3;
-
-        return $this;
-    }
-
-    /**
-     * Get reponse3
-     *
-     * @return string
-     */
-    public function getReponse3()
-    {
-        return $this->reponse3;
-    }
-
-    /**
-     * Set reponse4
-     *
-     * @param string $reponse4
-     *
-     * @return Questionnaire
-     */
-    public function setReponse4($reponse4)
-    {
-        $this->reponse4 = $reponse4;
-
-        return $this;
-    }
-
-    /**
-     * Get reponse4
-     *
-     * @return string
-     */
-    public function getReponse4()
-    {
-        return $this->reponse4;
-    }
-
-    /**
-     * Set reponseJuste
-     *
-     * @param integer $reponseJuste
-     *
-     * @return Questionnaire
-     */
-    public function setReponseJuste($reponseJuste)
-    {
-        $this->reponseJuste = $reponseJuste;
-
-        return $this;
-    }
-
-    /**
-     * Get reponseJuste
-     *
-     * @return int
-     */
-    public function getReponseJuste()
-    {
-        return $this->reponseJuste;
+        return $this->difficulte;
     }
 }
 
