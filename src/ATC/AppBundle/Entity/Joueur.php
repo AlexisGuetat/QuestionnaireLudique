@@ -38,30 +38,30 @@ class Joueur
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_participation", type="date")
+     * @ORM\Column(name="date", type="date")
      */
-    private $dateParticipation;
+    private $date;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="temps_reponse", type="integer")
+     * @ORM\Column(name="temps_rep", type="integer")
      */
-    private $tempsReponse;
+    private $tempsRep;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="difficulte", type="string", length=255)
+     * @ORM\Column(name="theme_form", type="string", length=255)
      */
-    private $difficulte;
+    private $themeForm;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="theme", type="string", length=255)
+     * @ORM\Column(name="difficult_theme", type="string", length=255)
      */
-    private $theme;
+    private $difficultTheme;
 
 
     /**
@@ -123,99 +123,99 @@ class Joueur
     }
 
     /**
-     * Set dateParticipation
+     * Set date
      *
-     * @param \DateTime $dateParticipation
+     * @param \DateTime $date
      *
      * @return Joueur
      */
-    public function setDateParticipation($dateParticipation)
+    public function setDate($date)
     {
-        $this->dateParticipation = $dateParticipation;
+        $this->date = $date;
 
         return $this;
     }
 
     /**
-     * Get dateParticipation
+     * Get date
      *
      * @return \DateTime
      */
-    public function getDateParticipation()
+    public function getDate()
     {
-        return $this->dateParticipation;
+        return $this->date;
     }
 
     /**
-     * Set tempsReponse
+     * Set tempsRep
      *
-     * @param integer $tempsReponse
+     * @param integer $tempsRep
      *
      * @return Joueur
      */
-    public function setTempsReponse($tempsReponse)
+    public function setTempsRep($tempsRep)
     {
-        $this->tempsReponse = $tempsReponse;
+        $this->tempsRep = $tempsRep;
 
         return $this;
     }
 
     /**
-     * Get tempsReponse
+     * Get tempsRep
      *
      * @return int
      */
-    public function getTempsReponse()
+    public function getTempsRep()
     {
-        return $this->tempsReponse;
+        return $this->tempsRep;
     }
 
     /**
-     * Set difficulte
+     * Set themeForm
      *
-     * @param string $difficulte
+     * @param string $themeForm
      *
      * @return Joueur
      */
-    public function setDifficulte($difficulte)
+    public function setThemeForm($themeForm)
     {
-        $this->difficulte = $difficulte;
+        $this->themeForm = $themeForm;
 
         return $this;
     }
 
     /**
-     * Get difficulte
+     * Get themeForm
      *
      * @return string
      */
-    public function getDifficulte()
+    public function getThemeForm()
     {
-        return $this->difficulte;
+        return $this->themeForm;
     }
 
     /**
-     * Set theme
+     * Set difficultTheme
      *
-     * @param string $theme
+     * @param string $difficultTheme
      *
      * @return Joueur
      */
-    public function setTheme($theme)
+    public function setDifficultTheme($difficultTheme)
     {
-        $this->theme = $theme;
+        $this->difficultTheme = $difficultTheme;
 
         return $this;
     }
 
     /**
-     * Get theme
+     * Get difficultTheme
      *
      * @return string
      */
-    public function getTheme()
+    public function getDifficultTheme()
     {
-        return $this->theme;
+        return $this->difficultTheme;
     }
 }
 
