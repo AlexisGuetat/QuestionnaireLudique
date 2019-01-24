@@ -153,15 +153,20 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
-        elseif (0 === strpos($pathinfo, '/administrateur')) {
-            // administrateur
-            if ('/administrateur' === $pathinfo) {
-                return array (  '_controller' => 'ATC\\AppBundle\\Controller\\AdministrateurController::indexAction',  '_route' => 'administrateur',);
-            }
+        // administrateur
+        if ('/administrateur' === $pathinfo) {
+            return array (  '_controller' => 'ATC\\AppBundle\\Controller\\AdministrateurController::indexAction',  '_route' => 'administrateur',);
+        }
 
+        if (0 === strpos($pathinfo, '/administrateur/ajout_formulaire')) {
             // administrateur_ajout_formulaire
             if ('/administrateur/ajout_formulaire' === $pathinfo) {
                 return array (  '_controller' => 'ATC\\AppBundle\\Controller\\FormulaireController::addAction',  '_route' => 'administrateur_ajout_formulaire',);
+            }
+
+            // administrateur_ajout_formulaire2
+            if ('/administrateur/ajout_formulaire2' === $pathinfo) {
+                return array (  '_controller' => 'ATC\\AppBundle\\Controller\\FormulaireController::add2Action',  '_route' => 'administrateur_ajout_formulaire2',);
             }
 
         }

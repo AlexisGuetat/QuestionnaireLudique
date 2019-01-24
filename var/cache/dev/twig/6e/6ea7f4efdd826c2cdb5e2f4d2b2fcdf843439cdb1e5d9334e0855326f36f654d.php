@@ -21,29 +21,29 @@ class __TwigTemplate_0137b39e9b362d0dcc64b62e63991c04422fadd4c5a5b3afe2fef5c4206
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c5f6d7a12415c2266a5aba81d9558b988a6fd24f13b9abecc3b194c1b28e1e6a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_c5f6d7a12415c2266a5aba81d9558b988a6fd24f13b9abecc3b194c1b28e1e6a->enter($__internal_c5f6d7a12415c2266a5aba81d9558b988a6fd24f13b9abecc3b194c1b28e1e6a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ATCAppBundle:Classement:index.html.twig"));
+        $__internal_304c1e59c02bbefbdab8f0c0db0d1434bec7e1206d4179c4524234558d5c036b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_304c1e59c02bbefbdab8f0c0db0d1434bec7e1206d4179c4524234558d5c036b->enter($__internal_304c1e59c02bbefbdab8f0c0db0d1434bec7e1206d4179c4524234558d5c036b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ATCAppBundle:Classement:index.html.twig"));
 
-        $__internal_b30691309d664c6e94c328aaef8d7bda263af287d047b8acc74c1db2ccfdc9e6 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_b30691309d664c6e94c328aaef8d7bda263af287d047b8acc74c1db2ccfdc9e6->enter($__internal_b30691309d664c6e94c328aaef8d7bda263af287d047b8acc74c1db2ccfdc9e6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ATCAppBundle:Classement:index.html.twig"));
+        $__internal_75401b4d65cf74418fe2b7093e57f43d43ad3829d242595dfddc2d07e20583c5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_75401b4d65cf74418fe2b7093e57f43d43ad3829d242595dfddc2d07e20583c5->enter($__internal_75401b4d65cf74418fe2b7093e57f43d43ad3829d242595dfddc2d07e20583c5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ATCAppBundle:Classement:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_c5f6d7a12415c2266a5aba81d9558b988a6fd24f13b9abecc3b194c1b28e1e6a->leave($__internal_c5f6d7a12415c2266a5aba81d9558b988a6fd24f13b9abecc3b194c1b28e1e6a_prof);
+        $__internal_304c1e59c02bbefbdab8f0c0db0d1434bec7e1206d4179c4524234558d5c036b->leave($__internal_304c1e59c02bbefbdab8f0c0db0d1434bec7e1206d4179c4524234558d5c036b_prof);
 
         
-        $__internal_b30691309d664c6e94c328aaef8d7bda263af287d047b8acc74c1db2ccfdc9e6->leave($__internal_b30691309d664c6e94c328aaef8d7bda263af287d047b8acc74c1db2ccfdc9e6_prof);
+        $__internal_75401b4d65cf74418fe2b7093e57f43d43ad3829d242595dfddc2d07e20583c5->leave($__internal_75401b4d65cf74418fe2b7093e57f43d43ad3829d242595dfddc2d07e20583c5_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_60800d4cca7ec8c08bb61422e9aac933e42d94ef27021d501ecca6b2c41d0653 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_60800d4cca7ec8c08bb61422e9aac933e42d94ef27021d501ecca6b2c41d0653->enter($__internal_60800d4cca7ec8c08bb61422e9aac933e42d94ef27021d501ecca6b2c41d0653_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_e5e5dc58ab81a82133d80d3ae5d335138f89a830ce5f5e1012888d188612911e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_e5e5dc58ab81a82133d80d3ae5d335138f89a830ce5f5e1012888d188612911e->enter($__internal_e5e5dc58ab81a82133d80d3ae5d335138f89a830ce5f5e1012888d188612911e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_4834af2a28b13885ba05b6b38fafcecbcc668d5f2f2cfffaa96217a33fcc30db = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_4834af2a28b13885ba05b6b38fafcecbcc668d5f2f2cfffaa96217a33fcc30db->enter($__internal_4834af2a28b13885ba05b6b38fafcecbcc668d5f2f2cfffaa96217a33fcc30db_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_5e0a7c91e49364dd0c843dbf5d257863206257f99a44e2e36eeda5afd21cb776 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5e0a7c91e49364dd0c843dbf5d257863206257f99a44e2e36eeda5afd21cb776->enter($__internal_5e0a7c91e49364dd0c843dbf5d257863206257f99a44e2e36eeda5afd21cb776_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "<!-- Table with panel -->
@@ -61,7 +61,7 @@ class __TwigTemplate_0137b39e9b362d0dcc64b62e63991c04422fadd4c5a5b3afe2fef5c4206
       </button>
     </div>
 
-    <a href=\"\" class=\"white-text mx-3\">Théme du classement</a>
+    <a href=\"\" class=\"white-text mx-3\">Thème du classement</a>
 
     <div>
       <button type=\"button\" class=\"btn btn-outline-white btn-rounded btn-sm px-2\">
@@ -199,10 +199,10 @@ class __TwigTemplate_0137b39e9b362d0dcc64b62e63991c04422fadd4c5a5b3afe2fef5c4206
 <!-- Table with panel -->
 ";
         
-        $__internal_4834af2a28b13885ba05b6b38fafcecbcc668d5f2f2cfffaa96217a33fcc30db->leave($__internal_4834af2a28b13885ba05b6b38fafcecbcc668d5f2f2cfffaa96217a33fcc30db_prof);
+        $__internal_5e0a7c91e49364dd0c843dbf5d257863206257f99a44e2e36eeda5afd21cb776->leave($__internal_5e0a7c91e49364dd0c843dbf5d257863206257f99a44e2e36eeda5afd21cb776_prof);
 
         
-        $__internal_60800d4cca7ec8c08bb61422e9aac933e42d94ef27021d501ecca6b2c41d0653->leave($__internal_60800d4cca7ec8c08bb61422e9aac933e42d94ef27021d501ecca6b2c41d0653_prof);
+        $__internal_e5e5dc58ab81a82133d80d3ae5d335138f89a830ce5f5e1012888d188612911e->leave($__internal_e5e5dc58ab81a82133d80d3ae5d335138f89a830ce5f5e1012888d188612911e_prof);
 
     }
 
@@ -249,7 +249,7 @@ class __TwigTemplate_0137b39e9b362d0dcc64b62e63991c04422fadd4c5a5b3afe2fef5c4206
       </button>
     </div>
 
-    <a href=\"\" class=\"white-text mx-3\">Théme du classement</a>
+    <a href=\"\" class=\"white-text mx-3\">Thème du classement</a>
 
     <div>
       <button type=\"button\" class=\"btn btn-outline-white btn-rounded btn-sm px-2\">
