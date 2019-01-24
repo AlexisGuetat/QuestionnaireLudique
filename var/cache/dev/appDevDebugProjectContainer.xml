@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
+<<<<<<< HEAD
     <parameter key="kernel.root_dir">/var/www/QuestionnaireLudique/app</parameter>
     <parameter key="kernel.project_dir">/var/www/QuestionnaireLudique</parameter>
     <parameter key="kernel.environment">dev</parameter>
@@ -8,6 +9,15 @@
     <parameter key="kernel.name">app</parameter>
     <parameter key="kernel.cache_dir">/var/www/QuestionnaireLudique/var/cache/dev</parameter>
     <parameter key="kernel.logs_dir">/var/www/QuestionnaireLudique/var/logs</parameter>
+=======
+    <parameter key="kernel.root_dir">D:\wamp64\www\questionnaireLudique\app</parameter>
+    <parameter key="kernel.project_dir">D:\wamp64\www\questionnaireLudique</parameter>
+    <parameter key="kernel.environment">dev</parameter>
+    <parameter key="kernel.debug">true</parameter>
+    <parameter key="kernel.name">app</parameter>
+    <parameter key="kernel.cache_dir">D:\wamp64\www\questionnaireLudique\var\cache\dev</parameter>
+    <parameter key="kernel.logs_dir">D:\wamp64\www\questionnaireLudique\var\logs</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
@@ -26,67 +36,119 @@
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
         <parameter key="parent">null</parameter>
+<<<<<<< HEAD
         <parameter key="path">/var/www/QuestionnaireLudique/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle</parameter>
+=======
+        <parameter key="path">D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
       <parameter key="SecurityBundle" type="collection">
         <parameter key="parent">null</parameter>
+<<<<<<< HEAD
         <parameter key="path">/var/www/QuestionnaireLudique/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle</parameter>
+=======
+        <parameter key="path">D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <parameter key="namespace">Symfony\Bundle\SecurityBundle</parameter>
       </parameter>
       <parameter key="TwigBundle" type="collection">
         <parameter key="parent">null</parameter>
+<<<<<<< HEAD
         <parameter key="path">/var/www/QuestionnaireLudique/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle</parameter>
+=======
+        <parameter key="path">D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <parameter key="namespace">Symfony\Bundle\TwigBundle</parameter>
       </parameter>
       <parameter key="MonologBundle" type="collection">
         <parameter key="parent">null</parameter>
+<<<<<<< HEAD
         <parameter key="path">/var/www/QuestionnaireLudique/vendor/symfony/monolog-bundle</parameter>
+=======
+        <parameter key="path">D:\wamp64\www\questionnaireLudique\vendor\symfony\monolog-bundle</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <parameter key="namespace">Symfony\Bundle\MonologBundle</parameter>
       </parameter>
       <parameter key="SwiftmailerBundle" type="collection">
         <parameter key="parent">null</parameter>
+<<<<<<< HEAD
         <parameter key="path">/var/www/QuestionnaireLudique/vendor/symfony/swiftmailer-bundle</parameter>
+=======
+        <parameter key="path">D:\wamp64\www\questionnaireLudique\vendor\symfony\swiftmailer-bundle</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <parameter key="namespace">Symfony\Bundle\SwiftmailerBundle</parameter>
       </parameter>
       <parameter key="DoctrineBundle" type="collection">
         <parameter key="parent">null</parameter>
+<<<<<<< HEAD
         <parameter key="path">/var/www/QuestionnaireLudique/vendor/doctrine/doctrine-bundle</parameter>
+=======
+        <parameter key="path">D:\wamp64\www\questionnaireLudique\vendor\doctrine\doctrine-bundle</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
       </parameter>
       <parameter key="SensioFrameworkExtraBundle" type="collection">
         <parameter key="parent">null</parameter>
+<<<<<<< HEAD
         <parameter key="path">/var/www/QuestionnaireLudique/vendor/sensio/framework-extra-bundle</parameter>
+=======
+        <parameter key="path">D:\wamp64\www\questionnaireLudique\vendor\sensio\framework-extra-bundle</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <parameter key="namespace">Sensio\Bundle\FrameworkExtraBundle</parameter>
       </parameter>
       <parameter key="ATCAppBundle" type="collection">
         <parameter key="parent">null</parameter>
+<<<<<<< HEAD
         <parameter key="path">/var/www/QuestionnaireLudique/src/ATC/AppBundle</parameter>
+=======
+        <parameter key="path">D:\wamp64\www\questionnaireLudique\src\ATC\AppBundle</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <parameter key="namespace">ATC\AppBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
+<<<<<<< HEAD
         <parameter key="path">/var/www/QuestionnaireLudique/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle</parameter>
+=======
+        <parameter key="path">D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <parameter key="namespace">Symfony\Bundle\DebugBundle</parameter>
       </parameter>
       <parameter key="WebProfilerBundle" type="collection">
         <parameter key="parent">null</parameter>
+<<<<<<< HEAD
         <parameter key="path">/var/www/QuestionnaireLudique/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle</parameter>
+=======
+        <parameter key="path">D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <parameter key="namespace">Symfony\Bundle\WebProfilerBundle</parameter>
       </parameter>
       <parameter key="SensioDistributionBundle" type="collection">
         <parameter key="parent">null</parameter>
+<<<<<<< HEAD
         <parameter key="path">/var/www/QuestionnaireLudique/vendor/sensio/distribution-bundle</parameter>
+=======
+        <parameter key="path">D:\wamp64\www\questionnaireLudique\vendor\sensio\distribution-bundle</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <parameter key="namespace">Sensio\Bundle\DistributionBundle</parameter>
       </parameter>
       <parameter key="SensioGeneratorBundle" type="collection">
         <parameter key="parent">null</parameter>
+<<<<<<< HEAD
         <parameter key="path">/var/www/QuestionnaireLudique/vendor/sensio/generator-bundle</parameter>
+=======
+        <parameter key="path">D:\wamp64\www\questionnaireLudique\vendor\sensio\generator-bundle</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <parameter key="namespace">Sensio\Bundle\GeneratorBundle</parameter>
       </parameter>
       <parameter key="WebServerBundle" type="collection">
         <parameter key="parent">null</parameter>
+<<<<<<< HEAD
         <parameter key="path">/var/www/QuestionnaireLudique/vendor/symfony/symfony/src/Symfony/Bundle/WebServerBundle</parameter>
+=======
+        <parameter key="path">D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\WebServerBundle</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <parameter key="namespace">Symfony\Bundle\WebServerBundle</parameter>
       </parameter>
     </parameter>
@@ -101,11 +163,19 @@
     <parameter key="mailer_host">127.0.0.1</parameter>
     <parameter key="mailer_user">null</parameter>
     <parameter key="mailer_password">null</parameter>
+<<<<<<< HEAD
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
     <parameter key="locale">en</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">ThisTokenIsNotSoSecretChangeIt</parameter>
+=======
+    <parameter key="secret">083ad00e7e7b57869d4db93971a97e998aec6b4c</parameter>
+    <parameter key="locale">en</parameter>
+    <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
+    <parameter key="fragment.path">/_fragment</parameter>
+    <parameter key="kernel.secret">083ad00e7e7b57869d4db93971a97e998aec6b4c</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     <parameter key="kernel.http_method_override">true</parameter>
     <parameter key="kernel.trusted_hosts" type="collection"/>
     <parameter key="kernel.default_locale">en</parameter>
@@ -116,7 +186,11 @@
       <parameter key="cookie_httponly">true</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
+<<<<<<< HEAD
     <parameter key="session.save_path">/var/www/QuestionnaireLudique/var/sessions/dev</parameter>
+=======
+    <parameter key="session.save_path">D:\wamp64\www\questionnaireLudique/var/sessions/dev</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
@@ -125,6 +199,7 @@
       <parameter>twig</parameter>
     </parameter>
     <parameter key="validator.mapping.cache.prefix"></parameter>
+<<<<<<< HEAD
     <parameter key="validator.mapping.cache.file">/var/www/QuestionnaireLudique/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
@@ -132,6 +207,15 @@
     <parameter key="profiler.storage.dsn">file:/var/www/QuestionnaireLudique/var/cache/dev/profiler</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
     <parameter key="debug.container.dump">/var/www/QuestionnaireLudique/var/cache/dev/appDevDebugProjectContainer.xml</parameter>
+=======
+    <parameter key="validator.mapping.cache.file">D:\wamp64\www\questionnaireLudique\var\cache\dev/validation.php</parameter>
+    <parameter key="validator.translation_domain">validators</parameter>
+    <parameter key="profiler_listener.only_exceptions">false</parameter>
+    <parameter key="profiler_listener.only_master_requests">false</parameter>
+    <parameter key="profiler.storage.dsn">file:D:\wamp64\www\questionnaireLudique\var\cache\dev/profiler</parameter>
+    <parameter key="debug.error_handler.throw_at">-1</parameter>
+    <parameter key="debug.container.dump">D:\wamp64\www\questionnaireLudique\var\cache\dev/appDevDebugProjectContainer.xml</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     <parameter key="router.options.generator_class">Symfony\Component\Routing\Generator\UrlGenerator</parameter>
     <parameter key="router.options.generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</parameter>
     <parameter key="router.options.generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\PhpGeneratorDumper</parameter>
@@ -143,7 +227,11 @@
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
+<<<<<<< HEAD
     <parameter key="router.resource">/var/www/QuestionnaireLudique/app/config/routing_dev.yml</parameter>
+=======
+    <parameter key="router.resource">D:\wamp64\www\questionnaireLudique/app/config/routing_dev.yml</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     <parameter key="router.cache_class_prefix">appDevDebugProjectContainer</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
@@ -202,7 +290,11 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.local_domain">null</parameter>
+<<<<<<< HEAD
     <parameter key="swiftmailer.spool.default.memory.path">/var/www/QuestionnaireLudique/var/cache/dev/swiftmailer/spool/default</parameter>
+=======
+    <parameter key="swiftmailer.spool.default.memory.path">D:\wamp64\www\questionnaireLudique\var\cache\dev/swiftmailer/spool/default</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
@@ -321,7 +413,11 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
+<<<<<<< HEAD
     <parameter key="doctrine.orm.proxy_dir">/var/www/QuestionnaireLudique/var/cache/dev/doctrine/orm/Proxies</parameter>
+=======
+    <parameter key="doctrine.orm.proxy_dir">D:\wamp64\www\questionnaireLudique\var\cache\dev/doctrine/orm/Proxies</parameter>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</parameter>
     <parameter key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</parameter>
@@ -457,10 +553,17 @@
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="controller_name_converter"/>
     </service>
+<<<<<<< HEAD
     <service id="2_6ac807cce3d7eaa4b54911b1514f3bf070eb80898d476e809a5bf1fd9836e549" class="Symfony\Component\Config\Resource\SelfCheckingResourceChecker" public="false">
       <tag name="config_cache.resource_checker" priority="-990"/>
     </service>
     <service id="1_6ac807cce3d7eaa4b54911b1514f3bf070eb80898d476e809a5bf1fd9836e549" class="Symfony\Component\DependencyInjection\Config\ContainerParametersResourceChecker" public="false">
+=======
+    <service id="2_bb3ac336365bf8fd6a00dc9dd10c311919ffdaa0fb689903a63a1714dcbbaf71" class="Symfony\Component\Config\Resource\SelfCheckingResourceChecker" public="false">
+      <tag name="config_cache.resource_checker" priority="-990"/>
+    </service>
+    <service id="1_bb3ac336365bf8fd6a00dc9dd10c311919ffdaa0fb689903a63a1714dcbbaf71" class="Symfony\Component\DependencyInjection\Config\ContainerParametersResourceChecker" public="false">
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <tag name="config_cache.resource_checker" priority="-980"/>
       <argument type="service" id="service_container"/>
     </service>
@@ -502,6 +605,7 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator">
       <argument type="service" id="kernel"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/app/Resources</argument>
       <argument type="collection">
         <argument>/var/www/QuestionnaireLudique/app</argument>
@@ -514,6 +618,20 @@
       <argument type="iterator">
         <argument type="service" id="1_6ac807cce3d7eaa4b54911b1514f3bf070eb80898d476e809a5bf1fd9836e549"/>
         <argument type="service" id="2_6ac807cce3d7eaa4b54911b1514f3bf070eb80898d476e809a5bf1fd9836e549"/>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique\app/Resources</argument>
+      <argument type="collection">
+        <argument>D:\wamp64\www\questionnaireLudique\app</argument>
+      </argument>
+    </service>
+    <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner">
+      <argument>083ad00e7e7b57869d4db93971a97e998aec6b4c</argument>
+    </service>
+    <service id="config_cache_factory" class="Symfony\Component\Config\ResourceCheckerConfigCacheFactory">
+      <argument type="iterator">
+        <argument type="service" id="1_bb3ac336365bf8fd6a00dc9dd10c311919ffdaa0fb689903a63a1714dcbbaf71"/>
+        <argument type="service" id="2_bb3ac336365bf8fd6a00dc9dd10c311919ffdaa0fb689903a63a1714dcbbaf71"/>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       </argument>
     </service>
     <service id="fragment.handler" class="Symfony\Component\HttpKernel\DependencyInjection\LazyLoadingFragmentHandler">
@@ -597,8 +715,13 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
+<<<<<<< HEAD
       <argument>TLFUD6XfM4JdMFBrfjNgEf</argument>
       <argument>/var/www/QuestionnaireLudique/var/cache/dev/pools</argument>
+=======
+      <argument>lLmjxA-ruSGgbO0AEqiNtS</argument>
+      <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev/pools</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -607,7 +730,11 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
+<<<<<<< HEAD
       <argument>TLFUD6XfM4JdMFBrfjNgEf</argument>
+=======
+      <argument>lLmjxA-ruSGgbO0AEqiNtS</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -627,7 +754,11 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/var/cache/dev/pools</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev/pools</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -666,7 +797,11 @@
       <argument type="service" id="translator.selector"/>
     </service>
     <service id="translator.selector" class="Symfony\Component\Translation\MessageSelector" public="false"/>
+<<<<<<< HEAD
     <service id="1_acea537c3bbb1b31eef013a6f3cf95795d399fd6033f778eac355a9c1d13dd01" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+=======
+    <service id="1_7f5f07a12d0c9a6ee7ae4ddf8d90ef2b98ad23bf3a73249ce8f4bf64bb6edb31" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="session" type="service" id="session" on-invalid="ignore"/>
@@ -696,23 +831,39 @@
     <service id="session.flash_bag" class="Symfony\Component\HttpFoundation\Session\Flash\FlashBag" public="false"/>
     <service id="session.attribute_bag" class="Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag" public="false"/>
     <service id="session.storage.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage" public="false">
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/var/cache/dev/sessions</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev/sessions</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/var/sessions/dev</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique/var/sessions/dev</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     </service>
     <service id="session.handler.write_check" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\WriteCheckSessionHandler" public="false"/>
     <service id="session_listener" class="Symfony\Component\HttpKernel\EventListener\SessionListener">
       <tag name="kernel.event_subscriber"/>
+<<<<<<< HEAD
       <argument type="service" id="1_acea537c3bbb1b31eef013a6f3cf95795d399fd6033f778eac355a9c1d13dd01"/>
+=======
+      <argument type="service" id="1_7f5f07a12d0c9a6ee7ae4ddf8d90ef2b98ad23bf3a73249ce8f4bf64bb6edb31"/>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     </service>
     <service id="session.save_listener" class="Symfony\Component\HttpKernel\EventListener\SaveSessionListener">
       <tag name="kernel.event_subscriber"/>
     </service>
     <service id="form.resolved_type_factory" class="Symfony\Component\Form\Extension\DataCollector\Proxy\ResolvedTypeFactoryDataCollectorProxy">
+<<<<<<< HEAD
       <argument type="service" id="1_9106dd905b0386008387605fba5ff10e3a8838b07cd255a6320b55c2f8eadfb8"/>
+=======
+      <argument type="service" id="1_b5aba27eef5c33aca0838b6f406fa1f8e8ef6c5effd141b5d933e2cebe246953"/>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument type="service" id="data_collector.form"/>
     </service>
     <service id="form.registry" class="Symfony\Component\Form\FormRegistry">
@@ -959,12 +1110,20 @@
     <service id="templating.filename_parser" class="Symfony\Bundle\FrameworkBundle\Templating\TemplateFilenameParser"/>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/var/cache/dev</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     </service>
     <service id="templating.finder" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
       <argument type="service" id="kernel"/>
       <argument type="service" id="templating.filename_parser"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/app/Resources</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique\app/Resources</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     </service>
     <service id="templating.cache_warmer.template_paths" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplatePathsCacheWarmer" public="false">
       <tag name="kernel.cache_warmer" priority="20"/>
@@ -988,13 +1147,22 @@
         <argument type="service" id="monolog.logger.templating" on-invalid="ignore"/>
       </call>
     </service>
+<<<<<<< HEAD
     <service id="2_8173b514e321c205aeab6e2fe6f04d29380bc68e192748de949a4c2fadb95137" class="Doctrine\Common\Cache\ApcCache" public="false">
+=======
+    <service id="2_d638fdc3208c2e9f595162b19c6174f29af39aa3c48e0d471d06d7bdc45b4931" class="Doctrine\Common\Cache\ApcCache" public="false">
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <call method="setNamespace">
         <argument></argument>
       </call>
     </service>
+<<<<<<< HEAD
     <service id="1_8173b514e321c205aeab6e2fe6f04d29380bc68e192748de949a4c2fadb95137" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
       <argument>/var/www/QuestionnaireLudique/var/cache/dev/validation.php</argument>
+=======
+    <service id="1_d638fdc3208c2e9f595162b19c6174f29af39aa3c48e0d471d06d7bdc45b4931" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
+      <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev/validation.php</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument type="service" id="cache.validator"/>
       <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
     </service>
@@ -1013,7 +1181,11 @@
       </call>
       <call method="addXmlMappings">
         <argument type="collection">
+<<<<<<< HEAD
           <argument>/var/www/QuestionnaireLudique/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</argument>
+=======
+          <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/config/validation.xml</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         </argument>
       </call>
       <call method="enableAnnotationMapping">
@@ -1032,6 +1204,7 @@
     <service id="validator.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\ValidatorCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="validator.builder"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/var/cache/dev/validation.php</argument>
       <argument type="service" id="cache.validator"/>
     </service>
@@ -1040,6 +1213,16 @@
     </service>
     <service id="validator.mapping.cache.doctrine.apc" class="Symfony\Component\Validator\Mapping\Cache\DoctrineCache" public="false">
       <argument type="service" id="2_8173b514e321c205aeab6e2fe6f04d29380bc68e192748de949a4c2fadb95137"/>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev/validation.php</argument>
+      <argument type="service" id="cache.validator"/>
+    </service>
+    <service id="validator.mapping.cache.symfony" class="Symfony\Component\Validator\Mapping\Cache\Psr6Cache" public="false">
+      <argument type="service" id="1_d638fdc3208c2e9f595162b19c6174f29af39aa3c48e0d471d06d7bdc45b4931"/>
+    </service>
+    <service id="validator.mapping.cache.doctrine.apc" class="Symfony\Component\Validator\Mapping\Cache\DoctrineCache" public="false">
+      <argument type="service" id="2_d638fdc3208c2e9f595162b19c6174f29af39aa3c48e0d471d06d7bdc45b4931"/>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     </service>
     <service id="validator.validator_factory" class="Symfony\Component\Validator\ContainerConstraintValidatorFactory" public="false">
       <argument type="service" id="service_locator.39e66930232432ca5ba91e98fdd8a17b"/>
@@ -1110,7 +1293,11 @@
       </call>
     </service>
     <service id="profiler.storage" class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
+<<<<<<< HEAD
       <argument>file:/var/www/QuestionnaireLudique/var/cache/dev/profiler</argument>
+=======
+      <argument>file:D:\wamp64\www\questionnaireLudique\var\cache\dev/profiler</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     </service>
     <service id="profiler_listener" class="Symfony\Component\HttpKernel\EventListener\ProfilerListener">
       <tag name="kernel.event_subscriber"/>
@@ -1144,7 +1331,11 @@
       <tag name="data_collector" template="@WebProfiler/Collector/logger.html.twig" id="logger" priority="300"/>
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service" id="monolog.logger.profiler" on-invalid="ignore"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/var/cache/dev/appDevDebugProjectContainer</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev/appDevDebugProjectContainer</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     </service>
     <service id="data_collector.time" class="Symfony\Component\HttpKernel\DataCollector\TimeDataCollector" public="false">
       <tag name="data_collector" template="@WebProfiler/Collector/time.html.twig" id="time" priority="330"/>
@@ -1181,7 +1372,11 @@
         <argument type="service" id="cache.annotations"/>
       </call>
     </service>
+<<<<<<< HEAD
     <service id="1_9106dd905b0386008387605fba5ff10e3a8838b07cd255a6320b55c2f8eadfb8" class="Symfony\Component\Form\ResolvedFormTypeFactory" public="false"/>
+=======
+    <service id="1_b5aba27eef5c33aca0838b6f406fa1f8e8ef6c5effd141b5d933e2cebe246953" class="Symfony\Component\Form\ResolvedFormTypeFactory" public="false"/>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     <service id="form.type_extension.form.data_collector" class="Symfony\Component\Form\Extension\DataCollector\Type\DataCollectorTypeExtension" public="false">
       <tag name="form.type_extension" extended_type="Symfony\Component\Form\Extension\Core\Type\FormType" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
       <argument type="service" id="data_collector.form"/>
@@ -1218,7 +1413,11 @@
     <service id="debug.file_link_formatter" class="Symfony\Component\HttpKernel\Debug\FileLinkFormatter" public="false">
       <argument>null</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument>/_profiler/open?file=%%f&amp;line=%%l#line%%l</argument>
     </service>
     <service id="debug.event_dispatcher" class="Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher">
@@ -1610,9 +1809,15 @@
     <service id="router.default" class="Symfony\Bundle\FrameworkBundle\Routing\Router" public="false">
       <tag name="monolog.logger" channel="router"/>
       <argument type="service" id="service_container"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/app/config/routing_dev.yml</argument>
       <argument type="collection">
         <argument key="cache_dir">/var/www/QuestionnaireLudique/var/cache/dev</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique/app/config/routing_dev.yml</argument>
+      <argument type="collection">
+        <argument key="cache_dir">D:\wamp64\www\questionnaireLudique\var\cache\dev</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -1650,6 +1855,7 @@
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.request" on-invalid="ignore"/>
     </service>
+<<<<<<< HEAD
     <service id="3_b892e9ab32c838984ec61692da4e23c249fad9478f311023f4161c2633e6a7a1" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
       <argument>/var/www/QuestionnaireLudique/var/cache/dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
@@ -1657,6 +1863,15 @@
     </service>
     <service id="2_b892e9ab32c838984ec61692da4e23c249fad9478f311023f4161c2633e6a7a1" class="Doctrine\Common\Cache\ArrayCache" public="false"/>
     <service id="1_b892e9ab32c838984ec61692da4e23c249fad9478f311023f4161c2633e6a7a1" class="Doctrine\Common\Annotations\AnnotationRegistry" public="false">
+=======
+    <service id="3_9960bba2cf98c79926e3b36f42a59590ee0ba9bc2a51a6a25bb90a9d705f22af" class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" public="false">
+      <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev/annotations.php</argument>
+      <argument type="service" id="cache.annotations"/>
+      <factory class="Symfony\Component\Cache\Adapter\PhpArrayAdapter" method="create"/>
+    </service>
+    <service id="2_9960bba2cf98c79926e3b36f42a59590ee0ba9bc2a51a6a25bb90a9d705f22af" class="Doctrine\Common\Cache\ArrayCache" public="false"/>
+    <service id="1_9960bba2cf98c79926e3b36f42a59590ee0ba9bc2a51a6a25bb90a9d705f22af" class="Doctrine\Common\Annotations\AnnotationRegistry" public="false">
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <call method="registerLoader">
         <argument>class_exists</argument>
       </call>
@@ -1664,7 +1879,11 @@
     <service id="annotations.reader" class="Doctrine\Common\Annotations\AnnotationReader" public="false">
       <call method="addGlobalIgnoredName">
         <argument>required</argument>
+<<<<<<< HEAD
         <argument type="service" id="1_b892e9ab32c838984ec61692da4e23c249fad9478f311023f4161c2633e6a7a1"/>
+=======
+        <argument type="service" id="1_9960bba2cf98c79926e3b36f42a59590ee0ba9bc2a51a6a25bb90a9d705f22af"/>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       </call>
     </service>
     <service id="annotations.filesystem_cache" class="Doctrine\Common\Cache\FilesystemCache" public="false">
@@ -1673,11 +1892,19 @@
     <service id="annotations.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\AnnotationsCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
       <argument type="service" id="annotations.reader"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/var/cache/dev/annotations.php</argument>
       <argument type="service" id="cache.annotations"/>
     </service>
     <service id="annotations.cache" class="Symfony\Component\Cache\DoctrineProvider" public="false">
       <argument type="service" id="3_b892e9ab32c838984ec61692da4e23c249fad9478f311023f4161c2633e6a7a1"/>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev/annotations.php</argument>
+      <argument type="service" id="cache.annotations"/>
+    </service>
+    <service id="annotations.cache" class="Symfony\Component\Cache\DoctrineProvider" public="false">
+      <argument type="service" id="3_9960bba2cf98c79926e3b36f42a59590ee0ba9bc2a51a6a25bb90a9d705f22af"/>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     </service>
     <service id="security.authorization_checker" class="Symfony\Component\Security\Core\Authorization\AuthorizationChecker">
       <argument type="service" id="security.token_storage"/>
@@ -2149,12 +2376,20 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
+<<<<<<< HEAD
       <argument>5c499227023f24.07038951</argument>
+=======
+      <argument>5c49d7d2a26b02.43957184</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
+<<<<<<< HEAD
       <argument>5c499227023f24.07038951</argument>
+=======
+      <argument>5c49d7d2a26b02.43957184</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -2199,7 +2434,11 @@
           <argument>form_div_layout.html.twig</argument>
         </argument>
         <argument key="autoescape">name</argument>
+<<<<<<< HEAD
         <argument key="cache">/var/www/QuestionnaireLudique/var/cache/dev/twig</argument>
+=======
+        <argument key="cache">D:\wamp64\www\questionnaireLudique\var\cache\dev/twig</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
         <argument key="date" type="collection">
@@ -2300,7 +2539,11 @@
     </service>
     <service id="twig.template_iterator" class="Symfony\Bundle\TwigBundle\TemplateIterator" public="false">
       <argument type="service" id="kernel"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/app</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique\app</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument type="collection"/>
     </service>
     <service id="twig.template_cache_warmer" class="Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer" public="false">
@@ -2310,6 +2553,7 @@
     </service>
     <service id="twig.loader.native_filesystem" class="Twig\Loader\FilesystemLoader" public="false">
       <argument type="collection"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique</argument>
       <call method="addPath">
         <argument>/var/www/QuestionnaireLudique/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
@@ -2348,6 +2592,46 @@
       </call>
       <call method="addPath">
         <argument>/var/www/QuestionnaireLudique/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique</argument>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views</argument>
+        <argument>Framework</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/views</argument>
+        <argument>Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/views</argument>
+        <argument>Twig</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
+        <argument>Swiftmailer</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>Doctrine</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\src\ATC\AppBundle/Resources/views</argument>
+        <argument>ATCApp</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
+        <argument>Debug</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
+        <argument>WebProfiler</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\app/Resources/views</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bridge\Twig/Resources/views/Form</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       </call>
     </service>
     <service id="twig.loader.chain" class="Twig\Loader\ChainLoader" public="false"/>
@@ -2372,7 +2656,11 @@
     <service id="twig.extension.code" class="Symfony\Bridge\Twig\Extension\CodeExtension" public="false">
       <tag name="twig.extension"/>
       <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/app</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique\app</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument>UTF-8</argument>
     </service>
     <service id="twig.extension.routing" class="Symfony\Bridge\Twig\Extension\RoutingExtension" public="false">
@@ -2456,6 +2744,7 @@
       <tag name="twig.loader"/>
       <argument type="service" id="templating.locator"/>
       <argument type="service" id="templating.name_parser"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique</argument>
       <call method="addPath">
         <argument>/var/www/QuestionnaireLudique/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
@@ -2494,6 +2783,46 @@
       </call>
       <call method="addPath">
         <argument>/var/www/QuestionnaireLudique/vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique</argument>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views</argument>
+        <argument>Framework</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/views</argument>
+        <argument>Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/views</argument>
+        <argument>Twig</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\swiftmailer-bundle/Resources/views</argument>
+        <argument>Swiftmailer</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\doctrine\doctrine-bundle/Resources/views</argument>
+        <argument>Doctrine</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\src\ATC\AppBundle/Resources/views</argument>
+        <argument>ATCApp</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
+        <argument>Debug</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bundle\WebProfilerBundle/Resources/views</argument>
+        <argument>WebProfiler</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\app/Resources/views</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\wamp64\www\questionnaireLudique\vendor\symfony\symfony\src\Symfony\Bridge\Twig/Resources/views/Form</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       </call>
     </service>
     <service id="templating.engine.twig" class="Symfony\Bundle\TwigBundle\TwigEngine" public="false">
@@ -2545,7 +2874,11 @@
     </service>
     <service id="monolog.processor.psr_log_message" class="Monolog\Processor\PsrLogMessageProcessor" public="false"/>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/var/logs/dev.log</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique\var\logs/dev.log</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument>100</argument>
       <argument>true</argument>
       <argument>null</argument>
@@ -2564,9 +2897,15 @@
       <argument>100</argument>
       <argument>true</argument>
     </service>
+<<<<<<< HEAD
     <service id="3_75171d7abe9b8dd9aebb19bd2f41ca77804a897021de704bf0234d5b34202f9c" class="Swift_Transport_Esmtp_Auth_PlainAuthenticator" public="false"/>
     <service id="2_75171d7abe9b8dd9aebb19bd2f41ca77804a897021de704bf0234d5b34202f9c" class="Swift_Transport_Esmtp_Auth_LoginAuthenticator" public="false"/>
     <service id="1_75171d7abe9b8dd9aebb19bd2f41ca77804a897021de704bf0234d5b34202f9c" class="Swift_Transport_Esmtp_Auth_CramMd5Authenticator" public="false"/>
+=======
+    <service id="3_c9e721465d622c486dd94521c9096bbf8cb085c5e6faf11e69c23668a5ad34e8" class="Swift_Transport_Esmtp_Auth_PlainAuthenticator" public="false"/>
+    <service id="2_c9e721465d622c486dd94521c9096bbf8cb085c5e6faf11e69c23668a5ad34e8" class="Swift_Transport_Esmtp_Auth_LoginAuthenticator" public="false"/>
+    <service id="1_c9e721465d622c486dd94521c9096bbf8cb085c5e6faf11e69c23668a5ad34e8" class="Swift_Transport_Esmtp_Auth_CramMd5Authenticator" public="false"/>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     <service id="swiftmailer.mailer.abstract" class="Swift_Mailer" abstract="true">
       <argument type="service" id="swiftmailer.transport"/>
     </service>
@@ -2583,9 +2922,15 @@
     </service>
     <service id="swiftmailer.transport.authhandler.abstract" class="Swift_Transport_Esmtp_AuthHandler" public="false" abstract="true">
       <argument type="collection">
+<<<<<<< HEAD
         <argument type="service" id="1_75171d7abe9b8dd9aebb19bd2f41ca77804a897021de704bf0234d5b34202f9c"/>
         <argument type="service" id="2_75171d7abe9b8dd9aebb19bd2f41ca77804a897021de704bf0234d5b34202f9c"/>
         <argument type="service" id="3_75171d7abe9b8dd9aebb19bd2f41ca77804a897021de704bf0234d5b34202f9c"/>
+=======
+        <argument type="service" id="1_c9e721465d622c486dd94521c9096bbf8cb085c5e6faf11e69c23668a5ad34e8"/>
+        <argument type="service" id="2_c9e721465d622c486dd94521c9096bbf8cb085c5e6faf11e69c23668a5ad34e8"/>
+        <argument type="service" id="3_c9e721465d622c486dd94521c9096bbf8cb085c5e6faf11e69c23668a5ad34e8"/>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       </argument>
     </service>
     <service id="swiftmailer.transport.eventdispatcher.abstract" class="Swift_Events_SimpleEventDispatcher" public="false" abstract="true"/>
@@ -2597,7 +2942,11 @@
     <service id="swiftmailer.transport.smtp.abstract" class="Swift_Transport_EsmtpTransport" public="false" abstract="true"/>
     <service id="swiftmailer.transport.spool.abstract" class="Swift_Transport_SpoolTransport" public="false" abstract="true"/>
     <service id="swiftmailer.spool.file.abstract" class="Swift_FileSpool" public="false" abstract="true">
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/app/../data/swiftmailer/spool</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique\app/../data/swiftmailer/spool</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     </service>
     <service id="swiftmailer.spool.memory.abstract" class="Swift_MemorySpool" public="false" abstract="true"/>
     <service id="swiftmailer.email_sender.listener" class="Symfony\Bundle\SwiftmailerBundle\EventListener\EmailSenderListener">
@@ -2612,9 +2961,15 @@
     <service id="swiftmailer.mailer.default.transport.eventdispatcher" class="Swift_Events_SimpleEventDispatcher" public="false"/>
     <service id="swiftmailer.mailer.default.transport.authhandler" class="Swift_Transport_Esmtp_AuthHandler" public="false">
       <argument type="collection">
+<<<<<<< HEAD
         <argument type="service" id="1_75171d7abe9b8dd9aebb19bd2f41ca77804a897021de704bf0234d5b34202f9c"/>
         <argument type="service" id="2_75171d7abe9b8dd9aebb19bd2f41ca77804a897021de704bf0234d5b34202f9c"/>
         <argument type="service" id="3_75171d7abe9b8dd9aebb19bd2f41ca77804a897021de704bf0234d5b34202f9c"/>
+=======
+        <argument type="service" id="1_c9e721465d622c486dd94521c9096bbf8cb085c5e6faf11e69c23668a5ad34e8"/>
+        <argument type="service" id="2_c9e721465d622c486dd94521c9096bbf8cb085c5e6faf11e69c23668a5ad34e8"/>
+        <argument type="service" id="3_c9e721465d622c486dd94521c9096bbf8cb085c5e6faf11e69c23668a5ad34e8"/>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       </argument>
       <call method="setUsername">
         <argument>null</argument>
@@ -2826,7 +3181,11 @@
         <argument type="service" id="doctrine.orm.default_metadata_driver"/>
       </call>
       <call method="setProxyDir">
+<<<<<<< HEAD
         <argument>/var/www/QuestionnaireLudique/var/cache/dev/doctrine/orm/Proxies</argument>
+=======
+        <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev/doctrine/orm/Proxies</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       </call>
       <call method="setProxyNamespace">
         <argument>Proxies</argument>
@@ -2853,7 +3212,11 @@
     <service id="doctrine.orm.default_annotation_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
       <argument type="service" id="annotations.cached_reader"/>
       <argument type="collection">
+<<<<<<< HEAD
         <argument>/var/www/QuestionnaireLudique/src/ATC/AppBundle/Entity</argument>
+=======
+        <argument>D:\wamp64\www\questionnaireLudique\src\ATC\AppBundle\Entity</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       </argument>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
@@ -2864,17 +3227,29 @@
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_metadata_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
+<<<<<<< HEAD
         <argument>sf2orm_default_d9b7783d190e215bf28e2c118dc273383f3ad26ed68cc785bbb2b2f1f7209300</argument>
+=======
+        <argument>sf2orm_default_31ac91e8fc7e1a42694ce0aaa875606c9153722eb886bbc0fa97096518228318</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_result_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
+<<<<<<< HEAD
         <argument>sf2orm_default_d9b7783d190e215bf28e2c118dc273383f3ad26ed68cc785bbb2b2f1f7209300</argument>
+=======
+        <argument>sf2orm_default_31ac91e8fc7e1a42694ce0aaa875606c9153722eb886bbc0fa97096518228318</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       </call>
     </service>
     <service id="doctrine_cache.providers.doctrine.orm.default_query_cache" class="Doctrine\Common\Cache\ArrayCache">
       <call method="setNamespace">
+<<<<<<< HEAD
         <argument>sf2orm_default_d9b7783d190e215bf28e2c118dc273383f3ad26ed68cc785bbb2b2f1f7209300</argument>
+=======
+        <argument>sf2orm_default_31ac91e8fc7e1a42694ce0aaa875606c9153722eb886bbc0fa97096518228318</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       </call>
     </service>
     <service id="doctrine.orm.default_entity_listener_resolver" class="Doctrine\Bundle\DoctrineBundle\Mapping\ContainerAwareEntityListenerResolver">
@@ -3004,7 +3379,11 @@
         </argument>
       </call>
     </service>
+<<<<<<< HEAD
     <service id="2_c21159726c2814a3341ed051603468d6904d39d2a78bc9c82bc67419cb1b5858" class="Symfony\Component\VarDumper\Dumper\HtmlDumper" public="false">
+=======
+    <service id="2_0c9bc310c9c34f90ef7443e53767eed724ff18d5ed7b4886acf92a647dd37bb5" class="Symfony\Component\VarDumper\Dumper\HtmlDumper" public="false">
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument>null</argument>
       <argument>UTF-8</argument>
       <argument>1</argument>
@@ -3015,7 +3394,11 @@
         </argument>
       </call>
     </service>
+<<<<<<< HEAD
     <service id="1_c21159726c2814a3341ed051603468d6904d39d2a78bc9c82bc67419cb1b5858" class="Symfony\Bundle\WebProfilerBundle\Csp\NonceGenerator" public="false"/>
+=======
+    <service id="1_0c9bc310c9c34f90ef7443e53767eed724ff18d5ed7b4886acf92a647dd37bb5" class="Symfony\Bundle\WebProfilerBundle\Csp\NonceGenerator" public="false"/>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     <service id="web_profiler.controller.profiler" class="Symfony\Bundle\WebProfilerBundle\Controller\ProfilerController">
       <argument type="service" id="router.default" on-invalid="null"/>
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -3088,7 +3471,11 @@
       </argument>
       <argument>bottom</argument>
       <argument type="service" id="web_profiler.csp.handler"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     </service>
     <service id="web_profiler.controller.router" class="Symfony\Bundle\WebProfilerBundle\Controller\RouterController">
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -3101,11 +3488,19 @@
       <argument>true</argument>
     </service>
     <service id="web_profiler.csp.handler" class="Symfony\Bundle\WebProfilerBundle\Csp\ContentSecurityPolicyHandler" public="false">
+<<<<<<< HEAD
       <argument type="service" id="1_c21159726c2814a3341ed051603468d6904d39d2a78bc9c82bc67419cb1b5858"/>
     </service>
     <service id="twig.extension.webprofiler" class="Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension" public="false">
       <tag name="twig.extension"/>
       <argument type="service" id="2_c21159726c2814a3341ed051603468d6904d39d2a78bc9c82bc67419cb1b5858"/>
+=======
+      <argument type="service" id="1_0c9bc310c9c34f90ef7443e53767eed724ff18d5ed7b4886acf92a647dd37bb5"/>
+    </service>
+    <service id="twig.extension.webprofiler" class="Symfony\Bundle\WebProfilerBundle\Twig\WebProfilerExtension" public="false">
+      <tag name="twig.extension"/>
+      <argument type="service" id="2_0c9bc310c9c34f90ef7443e53767eed724ff18d5ed7b4886acf92a647dd37bb5"/>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     </service>
     <service id="web_profiler.debug_toolbar" class="Symfony\Bundle\WebProfilerBundle\EventListener\WebDebugToolbarListener">
       <tag name="kernel.event_subscriber"/>
@@ -3124,12 +3519,20 @@
     </service>
     <service id="web_server.command.server_run" class="Symfony\Bundle\WebServerBundle\Command\ServerRunCommand" public="false">
       <tag name="console.command"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/web</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique/web</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument>dev</argument>
     </service>
     <service id="web_server.command.server_start" class="Symfony\Bundle\WebServerBundle\Command\ServerStartCommand" public="false">
       <tag name="console.command"/>
+<<<<<<< HEAD
       <argument>/var/www/QuestionnaireLudique/web</argument>
+=======
+      <argument>D:\wamp64\www\questionnaireLudique/web</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument>dev</argument>
     </service>
     <service id="web_server.command.server_stop" class="Symfony\Bundle\WebServerBundle\Command\ServerStopCommand" public="false">
@@ -3344,42 +3747,76 @@
       <argument>true</argument>
     </service>
     <service id="cache.app.recorder_inner" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="false" lazy="true">
+<<<<<<< HEAD
       <argument>L2mNC5G+Pc</argument>
       <argument>0</argument>
       <argument>/var/www/QuestionnaireLudique/var/cache/dev/pools</argument>
+=======
+      <argument>PWDqhtpwhL</argument>
+      <argument>0</argument>
+      <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev/pools</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
+<<<<<<< HEAD
       <argument>47ZQEu1hhR</argument>
       <argument>0</argument>
       <argument>TLFUD6XfM4JdMFBrfjNgEf</argument>
       <argument>/var/www/QuestionnaireLudique/var/cache/dev/pools</argument>
+=======
+      <argument>M5lkMu-qOC</argument>
+      <argument>0</argument>
+      <argument>lLmjxA-ruSGgbO0AEqiNtS</argument>
+      <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev/pools</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
+<<<<<<< HEAD
       <argument>7OsMq6HFrF</argument>
       <argument>0</argument>
       <argument>TLFUD6XfM4JdMFBrfjNgEf</argument>
       <argument>/var/www/QuestionnaireLudique/var/cache/dev/pools</argument>
+=======
+      <argument>-cmUENcVA6</argument>
+      <argument>0</argument>
+      <argument>lLmjxA-ruSGgbO0AEqiNtS</argument>
+      <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev/pools</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
+<<<<<<< HEAD
       <argument>2B0hfIjWAV</argument>
       <argument>0</argument>
       <argument>TLFUD6XfM4JdMFBrfjNgEf</argument>
       <argument>/var/www/QuestionnaireLudique/var/cache/dev/pools</argument>
+=======
+      <argument>8mlhKAsFwy</argument>
+      <argument>0</argument>
+      <argument>lLmjxA-ruSGgbO0AEqiNtS</argument>
+      <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev/pools</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
+<<<<<<< HEAD
       <argument>C3yOqnmnsp</argument>
       <argument>0</argument>
       <argument>TLFUD6XfM4JdMFBrfjNgEf</argument>
       <argument>/var/www/QuestionnaireLudique/var/cache/dev/pools</argument>
+=======
+      <argument>15z3pUhquF</argument>
+      <argument>0</argument>
+      <argument>lLmjxA-ruSGgbO0AEqiNtS</argument>
+      <argument>D:\wamp64\www\questionnaireLudique\var\cache\dev/pools</argument>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -3480,7 +3917,11 @@
     <service id="console.command.symfony_bundle_webserverbundle_command_serverstopcommand" alias="web_server.command.server_stop"/>
     <service id="console.command.symfony_bundle_webserverbundle_command_serverstatuscommand" alias="web_server.command.server_status"/>
     <service id="twig.loader" alias="twig.loader.filesystem"/>
+<<<<<<< HEAD
     <service id="service_locator.b8d2046fb854cde05549fb309e1a80d2" alias="1_acea537c3bbb1b31eef013a6f3cf95795d399fd6033f778eac355a9c1d13dd01" public="false"/>
+=======
+    <service id="service_locator.b8d2046fb854cde05549fb309e1a80d2" alias="1_7f5f07a12d0c9a6ee7ae4ddf8d90ef2b98ad23bf3a73249ce8f4bf64bb6edb31" public="false"/>
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
     <service id="event_dispatcher" alias="debug.event_dispatcher"/>
     <service id="controller_resolver" alias="debug.controller_resolver" public="false"/>
     <service id="argument_resolver" alias="debug.argument_resolver" public="false"/>

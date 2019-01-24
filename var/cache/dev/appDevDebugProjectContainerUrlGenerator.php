@@ -44,7 +44,10 @@ class appDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
         'questionnaire_facile_math' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'ATC\\AppBundle\\Controller\\QuestionnaireController::mathAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/questionnaire/facile/math',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'administrateur' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'ATC\\AppBundle\\Controller\\AdministrateurController::indexAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/administrateur',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
         'administrateur_ajout_formulaire' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'ATC\\AppBundle\\Controller\\FormulaireController::addAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/administrateur/ajout_formulaire',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+<<<<<<< HEAD
         'administrateur_ajout_formulaire2' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'ATC\\AppBundle\\Controller\\FormulaireController::add2Action',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/administrateur/ajout_formulaire2',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
+=======
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         'classement' => array (  0 =>   array (  ),  1 =>   array (    '_controller' => 'ATC\\AppBundle\\Controller\\ClassementController::indexAction',  ),  2 =>   array (  ),  3 =>   array (    0 =>     array (      0 => 'text',      1 => '/classement',    ),  ),  4 =>   array (  ),  5 =>   array (  ),),
     );
         }

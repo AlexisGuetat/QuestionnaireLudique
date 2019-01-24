@@ -2,9 +2,10 @@
 
 namespace ATC\AppBundle\Controller;
 
-use ATC\AppBundle\Entity\Formulaire;
+use ATC\AppBundle\Entity\Questionnaire;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use ATC\AppBundle\Entity\Question;
 
 class FormulaireController extends Controller
 {
@@ -15,32 +16,28 @@ class FormulaireController extends Controller
 
     public function addAction(Request $request)
     {   
-        $formulaire = new Formulaire();
+        $questionnaire = new Questionnaire();
 
-        $nom        = !empty($request->query->get('nom'))           ? $request->query->get('nom')       : "";
+        $titre      = !empty($request->query->get('titre'))         ? $request->query->get('titre')     : "";
         $theme      = !empty($request->query->get('theme'))         ? $request->query->get('theme')     : "";
         $difficulte = !empty($request->query->get('difficulte'))    ? $request->query->get('difficulte'): "";
 
-        $formulaire->setNom($nom);
-        $formulaire->setTheme($theme);
-        $formulaire->setDifficulte($difficulte);
-        //$formulaire->setIdQuestionnaire('4');
+        $questionnaire->setTitre($titre);
+        $questionnaire->setTheme($theme);
+        $questionnaire->setDifficulte($difficulte);
 
         $manager = $this->getDoctrine()->getManager();
-        $manager->persist($formulaire);
+        $manager->persist($questionnaire);
         $manager->flush();
 
         
-        if($request->isMethod('POST')){
+        
             return $this->render('ATCAppBundle:Administrateur:add.html.twig',array(
-                'nom'           => $nom,
+                'titre'         => $titre,
                 'theme'         => $theme,
                 'difficulte'    => $difficulte
             ));
         
-        }
-
-        return $this->render('ATCAppBundle:Administrateur:index.html.twig');
         
     }
     

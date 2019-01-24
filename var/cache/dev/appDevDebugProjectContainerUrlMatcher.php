@@ -153,22 +153,34 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+<<<<<<< HEAD
         // administrateur
         if ('/administrateur' === $pathinfo) {
             return array (  '_controller' => 'ATC\\AppBundle\\Controller\\AdministrateurController::indexAction',  '_route' => 'administrateur',);
         }
 
         if (0 === strpos($pathinfo, '/administrateur/ajout_formulaire')) {
+=======
+        elseif (0 === strpos($pathinfo, '/administrateur')) {
+            // administrateur
+            if ('/administrateur' === $pathinfo) {
+                return array (  '_controller' => 'ATC\\AppBundle\\Controller\\AdministrateurController::indexAction',  '_route' => 'administrateur',);
+            }
+
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
             // administrateur_ajout_formulaire
             if ('/administrateur/ajout_formulaire' === $pathinfo) {
                 return array (  '_controller' => 'ATC\\AppBundle\\Controller\\FormulaireController::addAction',  '_route' => 'administrateur_ajout_formulaire',);
             }
 
+<<<<<<< HEAD
             // administrateur_ajout_formulaire2
             if ('/administrateur/ajout_formulaire2' === $pathinfo) {
                 return array (  '_controller' => 'ATC\\AppBundle\\Controller\\FormulaireController::add2Action',  '_route' => 'administrateur_ajout_formulaire2',);
             }
 
+=======
+>>>>>>> fc3c48cb1f8e86be664608112f125c37b5b7303f
         }
 
         // classement
