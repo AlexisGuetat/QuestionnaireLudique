@@ -2491,3 +2491,6 @@ de4dd3,::1,GET,http://localhost/questionnaireludique/web/app_dev.php/questionnai
 0803c8,::1,GET,http://localhost/questionnaireludique/web/app_dev.php/administrateur,1548348028,,200
 6ebc1b,::1,GET,http://localhost/questionnaireludique/web/app_dev.php/administrateur/ajout_formulaire?difficulte=DIFFICILE&theme=FRANCAIS&titre=tete,1548348035,88050c,200
 88050c,::1,GET,http://localhost/questionnaireludique/web/app_dev.php/administrateur/ajout_formulaire?difficulte=DIFFICILE&theme=FRANCAIS&titre=tete,1548348035,,500
+0a4096,::1,GET,http://localhost/questionnaireludique/web/app_dev.php/administrateur/ajout_formulaire2,1548348557,,200
+5fe737,::1,GET,http://localhost/questionnaireludique/web/app_dev.php/administrateur/ajout_formulaire,1548348570,70bee7,200
+70bee7,::1,GET,http://localhost/questionnaireludique/web/app_dev.php/administrateur/ajout_formulaire,1548348570,,500
