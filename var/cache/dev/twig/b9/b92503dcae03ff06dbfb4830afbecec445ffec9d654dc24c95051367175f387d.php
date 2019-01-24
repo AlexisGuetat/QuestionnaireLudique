@@ -22,106 +22,112 @@ class __TwigTemplate_7fbc718f16f54f9a8d868dc1391077cc74222c64db1a66eaf4a73fb8413
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a3b967dad1bb808d39959355e46a225fa43a4d4b3c0d3e58dbd01a9ff90a21d9 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_a3b967dad1bb808d39959355e46a225fa43a4d4b3c0d3e58dbd01a9ff90a21d9->enter($__internal_a3b967dad1bb808d39959355e46a225fa43a4d4b3c0d3e58dbd01a9ff90a21d9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ATCAppBundle:Administrateur:index.html.twig"));
+        $__internal_2e7f20e8958914105e17142e00514dfd95ea59f70dad9f3a8e4a54f3dfd2d8ba = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_2e7f20e8958914105e17142e00514dfd95ea59f70dad9f3a8e4a54f3dfd2d8ba->enter($__internal_2e7f20e8958914105e17142e00514dfd95ea59f70dad9f3a8e4a54f3dfd2d8ba_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ATCAppBundle:Administrateur:index.html.twig"));
 
-        $__internal_ed6519d27102b0a41d1d40d3747df479dd0b20f7f4aa9f89ade9c9ea5d99c274 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_ed6519d27102b0a41d1d40d3747df479dd0b20f7f4aa9f89ade9c9ea5d99c274->enter($__internal_ed6519d27102b0a41d1d40d3747df479dd0b20f7f4aa9f89ade9c9ea5d99c274_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ATCAppBundle:Administrateur:index.html.twig"));
+        $__internal_9d9f32669c78636a24f088914ec9ec6ce95999bed473e1d9ac081162f5aafdd2 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_9d9f32669c78636a24f088914ec9ec6ce95999bed473e1d9ac081162f5aafdd2->enter($__internal_9d9f32669c78636a24f088914ec9ec6ce95999bed473e1d9ac081162f5aafdd2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "ATCAppBundle:Administrateur:index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_a3b967dad1bb808d39959355e46a225fa43a4d4b3c0d3e58dbd01a9ff90a21d9->leave($__internal_a3b967dad1bb808d39959355e46a225fa43a4d4b3c0d3e58dbd01a9ff90a21d9_prof);
+        $__internal_2e7f20e8958914105e17142e00514dfd95ea59f70dad9f3a8e4a54f3dfd2d8ba->leave($__internal_2e7f20e8958914105e17142e00514dfd95ea59f70dad9f3a8e4a54f3dfd2d8ba_prof);
 
         
-        $__internal_ed6519d27102b0a41d1d40d3747df479dd0b20f7f4aa9f89ade9c9ea5d99c274->leave($__internal_ed6519d27102b0a41d1d40d3747df479dd0b20f7f4aa9f89ade9c9ea5d99c274_prof);
+        $__internal_9d9f32669c78636a24f088914ec9ec6ce95999bed473e1d9ac081162f5aafdd2->leave($__internal_9d9f32669c78636a24f088914ec9ec6ce95999bed473e1d9ac081162f5aafdd2_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_6041b82912b88ee076bbbda7c9ce7903dac89a356ad170832480fc8019ccbe97 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_6041b82912b88ee076bbbda7c9ce7903dac89a356ad170832480fc8019ccbe97->enter($__internal_6041b82912b88ee076bbbda7c9ce7903dac89a356ad170832480fc8019ccbe97_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_3877cd5b199b3c139ac07fda898de268366ce0538125e5c707fb98acaa6bd678 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_3877cd5b199b3c139ac07fda898de268366ce0538125e5c707fb98acaa6bd678->enter($__internal_3877cd5b199b3c139ac07fda898de268366ce0538125e5c707fb98acaa6bd678_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_82dcc2e47fac17bb2007c7a84f2149be8806c2d942dea5786461d48e158604ca = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_82dcc2e47fac17bb2007c7a84f2149be8806c2d942dea5786461d48e158604ca->enter($__internal_82dcc2e47fac17bb2007c7a84f2149be8806c2d942dea5786461d48e158604ca_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_26b08a3771034009c20204a8e657fd7fddabd366a868ea5561ac5bf3f801a420 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_26b08a3771034009c20204a8e657fd7fddabd366a868ea5561ac5bf3f801a420->enter($__internal_26b08a3771034009c20204a8e657fd7fddabd366a868ea5561ac5bf3f801a420_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "<div class=\"container border border-primary rem-5\">
-
-<!-- Default form contact -->
-<form class=\"text-center border border-light p-5\" action=\"";
+        echo "<div class=\"view\">
+    
+    <div class=\"container border border-primary rem-5\">
+<img src=\"";
         // line 7
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("img/fond3.gif"), "html", null, true);
+        echo "\" class=\"fond\">
+    <!-- Default form contact -->
+    <form class=\"text-center border border-light p-5\" action=\"";
+        // line 9
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("administrateur_ajout_formulaire");
         echo "\">
 
-    <p class=\"h4 mb-4\">Entrez les informations du formulaire</p>
+        <p class=\"h4 mb-4\">Entrez les informations du formulaire</p>
 
-    <!-- Nom -->
-    <input type=\"text\" name=\"titre\" class=\"form-control mb-4\" placeholder=\"Titre du formulaire\" required=\"\">
+        <!-- Nom -->
+        <input type=\"text\" name=\"titre\" class=\"form-control mb-4\" placeholder=\"Titre du formulaire\" required=\"\">
 
-    <!-- Themes -->
-    <label>Thémes du formulaire</label>
-    <select name=\"theme\" class=\"browser-default custom-select mb-4\" required=\"\">
-        <option value=\"\" selected>Sélectionner une option</option>
-        <option value=\"MATH\">Mathématique</option>
-        <option value=\"FRANCAIS\">Français</option>
-        <option value=\"HISTOIRE\">Histoire</option>
-        <option value=\"GEO\">Géographie</option>
-        <option value=\"AUTRES\">Autres</option>
-    </select>
+        <!-- Themes -->
+        <label>Thémes du formulaire</label>
+        <select name=\"theme\" class=\"browser-default custom-select mb-4\" required=\"\">
+            <option value=\"\" selected>Sélectionner une option</option>
+            <option value=\"MATH\">Mathématique</option>
+            <option value=\"FRANCAIS\">Français</option>
+            <option value=\"HISTOIRE\">Histoire</option>
+            <option value=\"GEO\">Géographie</option>
+            <option value=\"AUTRES\">Autres</option>
+        </select>
 
-     <!-- Autres -->
-    <input type=\"text\" id=\"theme2\" class=\"form-control mb-4\" placeholder=\"Themes du formulaire\">
+        <!-- Autres -->
+        <input type=\"text\" id=\"theme2\" class=\"form-control mb-4\" placeholder=\"Themes du formulaire\">
 
-    <!-- Difficulté -->
-    <label>Difficulté du formulaire</label>
-    <select name=\"difficulte\" class=\"browser-default custom-select mb-4\" required=\"\">
-        <option value=\"\" seected>Sélectionner une option</option>
-        <option value=\"FACILE\">Facile</option>
-        <option value=\"MOYEN\">Moyen</option>
-        <option value=\"DIFFICILE\">Difficile</option>
-    </select>
+        <!-- Difficulté -->
+        <label>Difficulté du formulaire</label>
+        <select name=\"difficulte\" class=\"browser-default custom-select mb-4\" required=\"\">
+            <option value=\"\" seected>Sélectionner une option</option>
+            <option value=\"FACILE\">Facile</option>
+            <option value=\"MOYEN\">Moyen</option>
+            <option value=\"DIFFICILE\">Difficile</option>
+        </select>
 
-    <!-- Send button -->
-    <button class=\"btn btn-info btn-block\" type=\"submit\">Valider</button>
+        <!-- Send button -->
+        <button class=\"btn btn-info btn-block\" type=\"submit\">Valider</button>
 
-</form>
-<!-- Default form contact -->
+    </form>
+    <!-- Default form contact -->
 
-  <!-- Content here -->
+    <!-- Content here -->
+    </div>
 </div>
 ";
         
-        $__internal_82dcc2e47fac17bb2007c7a84f2149be8806c2d942dea5786461d48e158604ca->leave($__internal_82dcc2e47fac17bb2007c7a84f2149be8806c2d942dea5786461d48e158604ca_prof);
+        $__internal_26b08a3771034009c20204a8e657fd7fddabd366a868ea5561ac5bf3f801a420->leave($__internal_26b08a3771034009c20204a8e657fd7fddabd366a868ea5561ac5bf3f801a420_prof);
 
         
-        $__internal_6041b82912b88ee076bbbda7c9ce7903dac89a356ad170832480fc8019ccbe97->leave($__internal_6041b82912b88ee076bbbda7c9ce7903dac89a356ad170832480fc8019ccbe97_prof);
+        $__internal_3877cd5b199b3c139ac07fda898de268366ce0538125e5c707fb98acaa6bd678->leave($__internal_3877cd5b199b3c139ac07fda898de268366ce0538125e5c707fb98acaa6bd678_prof);
 
     }
 
-    // line 47
+    // line 50
     public function block_footer($context, array $blocks = array())
     {
-        $__internal_b3becc81ebdbecd8135ee421ab082b212c6b53b836659e3b9cccd1d119850b19 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_b3becc81ebdbecd8135ee421ab082b212c6b53b836659e3b9cccd1d119850b19->enter($__internal_b3becc81ebdbecd8135ee421ab082b212c6b53b836659e3b9cccd1d119850b19_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
+        $__internal_1329716e713e499242e975bcacd435a1849ed28c6a8cbbcfef84a00afa972ba6 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_1329716e713e499242e975bcacd435a1849ed28c6a8cbbcfef84a00afa972ba6->enter($__internal_1329716e713e499242e975bcacd435a1849ed28c6a8cbbcfef84a00afa972ba6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
 
-        $__internal_34a4f646032aa97c3653da37953cad6a9df816fa6b2f7e555f8ec488740286ea = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_34a4f646032aa97c3653da37953cad6a9df816fa6b2f7e555f8ec488740286ea->enter($__internal_34a4f646032aa97c3653da37953cad6a9df816fa6b2f7e555f8ec488740286ea_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
+        $__internal_a920e1a3fc7de8f93f9ed4c2829afc32bb53643720fe305b6ba9a5110e739b06 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a920e1a3fc7de8f93f9ed4c2829afc32bb53643720fe305b6ba9a5110e739b06->enter($__internal_a920e1a3fc7de8f93f9ed4c2829afc32bb53643720fe305b6ba9a5110e739b06_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "footer"));
 
-        // line 48
+        // line 51
         $this->displayParentBlock("footer", $context, $blocks);
         echo "
  <script src=\"";
-        // line 49
+        // line 52
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/administrateur.js"), "html", null, true);
         echo "\"></script>
  ";
         
-        $__internal_34a4f646032aa97c3653da37953cad6a9df816fa6b2f7e555f8ec488740286ea->leave($__internal_34a4f646032aa97c3653da37953cad6a9df816fa6b2f7e555f8ec488740286ea_prof);
+        $__internal_a920e1a3fc7de8f93f9ed4c2829afc32bb53643720fe305b6ba9a5110e739b06->leave($__internal_a920e1a3fc7de8f93f9ed4c2829afc32bb53643720fe305b6ba9a5110e739b06_prof);
 
         
-        $__internal_b3becc81ebdbecd8135ee421ab082b212c6b53b836659e3b9cccd1d119850b19->leave($__internal_b3becc81ebdbecd8135ee421ab082b212c6b53b836659e3b9cccd1d119850b19_prof);
+        $__internal_1329716e713e499242e975bcacd435a1849ed28c6a8cbbcfef84a00afa972ba6->leave($__internal_1329716e713e499242e975bcacd435a1849ed28c6a8cbbcfef84a00afa972ba6_prof);
 
     }
 
@@ -137,7 +143,7 @@ class __TwigTemplate_7fbc718f16f54f9a8d868dc1391077cc74222c64db1a66eaf4a73fb8413
 
     public function getDebugInfo()
     {
-        return array (  117 => 49,  113 => 48,  104 => 47,  55 => 7,  50 => 4,  41 => 3,  11 => 1,);
+        return array (  123 => 52,  119 => 51,  110 => 50,  60 => 9,  55 => 7,  50 => 4,  41 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -153,46 +159,49 @@ class __TwigTemplate_7fbc718f16f54f9a8d868dc1391077cc74222c64db1a66eaf4a73fb8413
         return new Twig_Source("{% extends \"ATCAppBundle::index.html.twig\" %}
 
 {% block body %}
-<div class=\"container border border-primary rem-5\">
+<div class=\"view\">
+    
+    <div class=\"container border border-primary rem-5\">
+<img src=\"{{  asset('img/fond3.gif') }}\" class=\"fond\">
+    <!-- Default form contact -->
+    <form class=\"text-center border border-light p-5\" action=\"{{ path('administrateur_ajout_formulaire') }}\">
 
-<!-- Default form contact -->
-<form class=\"text-center border border-light p-5\" action=\"{{ path('administrateur_ajout_formulaire') }}\">
+        <p class=\"h4 mb-4\">Entrez les informations du formulaire</p>
 
-    <p class=\"h4 mb-4\">Entrez les informations du formulaire</p>
+        <!-- Nom -->
+        <input type=\"text\" name=\"titre\" class=\"form-control mb-4\" placeholder=\"Titre du formulaire\" required=\"\">
 
-    <!-- Nom -->
-    <input type=\"text\" name=\"titre\" class=\"form-control mb-4\" placeholder=\"Titre du formulaire\" required=\"\">
+        <!-- Themes -->
+        <label>Thémes du formulaire</label>
+        <select name=\"theme\" class=\"browser-default custom-select mb-4\" required=\"\">
+            <option value=\"\" selected>Sélectionner une option</option>
+            <option value=\"MATH\">Mathématique</option>
+            <option value=\"FRANCAIS\">Français</option>
+            <option value=\"HISTOIRE\">Histoire</option>
+            <option value=\"GEO\">Géographie</option>
+            <option value=\"AUTRES\">Autres</option>
+        </select>
 
-    <!-- Themes -->
-    <label>Thémes du formulaire</label>
-    <select name=\"theme\" class=\"browser-default custom-select mb-4\" required=\"\">
-        <option value=\"\" selected>Sélectionner une option</option>
-        <option value=\"MATH\">Mathématique</option>
-        <option value=\"FRANCAIS\">Français</option>
-        <option value=\"HISTOIRE\">Histoire</option>
-        <option value=\"GEO\">Géographie</option>
-        <option value=\"AUTRES\">Autres</option>
-    </select>
+        <!-- Autres -->
+        <input type=\"text\" id=\"theme2\" class=\"form-control mb-4\" placeholder=\"Themes du formulaire\">
 
-     <!-- Autres -->
-    <input type=\"text\" id=\"theme2\" class=\"form-control mb-4\" placeholder=\"Themes du formulaire\">
+        <!-- Difficulté -->
+        <label>Difficulté du formulaire</label>
+        <select name=\"difficulte\" class=\"browser-default custom-select mb-4\" required=\"\">
+            <option value=\"\" seected>Sélectionner une option</option>
+            <option value=\"FACILE\">Facile</option>
+            <option value=\"MOYEN\">Moyen</option>
+            <option value=\"DIFFICILE\">Difficile</option>
+        </select>
 
-    <!-- Difficulté -->
-    <label>Difficulté du formulaire</label>
-    <select name=\"difficulte\" class=\"browser-default custom-select mb-4\" required=\"\">
-        <option value=\"\" seected>Sélectionner une option</option>
-        <option value=\"FACILE\">Facile</option>
-        <option value=\"MOYEN\">Moyen</option>
-        <option value=\"DIFFICILE\">Difficile</option>
-    </select>
+        <!-- Send button -->
+        <button class=\"btn btn-info btn-block\" type=\"submit\">Valider</button>
 
-    <!-- Send button -->
-    <button class=\"btn btn-info btn-block\" type=\"submit\">Valider</button>
+    </form>
+    <!-- Default form contact -->
 
-</form>
-<!-- Default form contact -->
-
-  <!-- Content here -->
+    <!-- Content here -->
+    </div>
 </div>
 {% endblock %}
 
