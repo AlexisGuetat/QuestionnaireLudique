@@ -3,6 +3,7 @@
 
 
 {% block body %}
+
 <div class="view">
     <img src="{{  asset('img/fond.gif') }}" class="fond">
     
@@ -22,7 +23,7 @@
           <div class="row black-text justify-content-center">
 
             <!--Grid column-->
-            <div class="col-lg-3 col-md-4 mb-lg-2 mb-5 ">
+            <div class="card ">
               <!--Card-->
               <div class="card testimonial-card">
                 <!--Background color-->
@@ -41,7 +42,7 @@
                   </div>
                   <hr>
                   <!--Quotation-->
-                  <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>Ici les test seront constitué d'image et de truc nul connard</p>
+                  <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>Ici que des questions faciles pour s'échauffer</p>
                      <a href="{{ path('questionnaire_facile') }}" class="btn peach-gradient">JOUER </a>
                 </div>
               </div>
@@ -51,7 +52,7 @@
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-3 col-md-10">
+            <div class="card">
               <!--Card-->
               <div class="card testimonial-card">
                 <!--Background color-->
@@ -71,7 +72,7 @@
                   </div>
                   <hr>
                   <!--Quotation-->
-                  <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>Oci tu vas en prendre plein le cul pd de tes morts</p>
+                  <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>On met la barre un peu plus dans cette difficulté</p>
                      <a href="{{ path('questionnaire_moyen') }}" class="btn peach-gradient">JOUER </a>
                 </div>
                 
@@ -81,7 +82,7 @@
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="col-lg-3 col-md-10">
+            <div class="card">
               <!--Card-->
               <div class="card testimonial-card">
                 <!--Background color-->
@@ -100,7 +101,7 @@
                   </div>
                   <hr>
                   <!--Quotation-->
-                  <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>on va prendre ta mere tellemen fort que t'aura plus jamais de frere </p>
+                  <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>Est-tu prêt à relevé un vrai défi ? </p>
                    <a href="{{ path('questionnaire_difficile') }}" class="btn peach-gradient">JOUER </a>
                 </div>
                   
@@ -114,5 +115,6 @@
 
       </div>
     </div>
+</div>
 </div>
 {% endblock %}
