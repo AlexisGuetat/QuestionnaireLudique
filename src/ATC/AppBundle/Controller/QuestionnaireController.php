@@ -53,9 +53,16 @@ class QuestionnaireController extends Controller
         $manager = $this->getDoctrine()->getManager();
         $manager->persist($questionnaire);
         $manager->flush();
+<<<<<<< HEAD
         
         
             return $this->render('ATCAppBundle:Question:add.html.twig' /*,array(
+=======
+
+        
+        
+            return $this->render('ATCAppBundle:Question:add.html.twig',array(
+>>>>>>> 0ed321a6b9bd57e6d759bf21de03652ba4d25601
                 'titre'         => $titre,
                 'theme'         => $theme,
                 'difficulte'    => $difficulte
