@@ -13,7 +13,7 @@
 
         <!-- Themes -->
         <label>Thémes du formulaire</label>
-        <select name="theme" class="browser-default custom-select mb-4" required="">
+        <select name="theme" class="browser-default custom-select mb-4" required="" id="theme">
             <option value="" selected>Sélectionner une option</option>
             <option value="MATH">Mathématique</option>
             <option value="FRANCAIS">Français</option>
@@ -21,9 +21,11 @@
             <option value="GEO">Géographie</option>
             <option value="AUTRES">Autres</option>
         </select>
+        
+            <!-- Autres -->
+        <input type="text" id="other" class="form-control mb-4" placeholder="Themes du formulaire">
 
-        <!-- Autres -->
-        <input type="text" id="theme2" class="form-control mb-4" placeholder="Themes du formulaire">
+        
 
         <!-- Difficulté -->
         <label>Difficulté du formulaire</label>
