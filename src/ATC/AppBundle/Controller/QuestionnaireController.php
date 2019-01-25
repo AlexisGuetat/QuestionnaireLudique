@@ -54,15 +54,11 @@ class QuestionnaireController extends Controller
         $manager->persist($questionnaire);
         $manager->flush();
 
-        
-        
             return $this->render('ATCAppBundle:Administrateur:add.html.twig',array(
                 'titre'         => $titre,
                 'theme'         => $theme,
                 'difficulte'    => $difficulte
             ));
-        
-        
     }
 
     public function add2Action(Request $request)
