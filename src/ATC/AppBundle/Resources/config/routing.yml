@@ -36,7 +36,13 @@ administrateur_ajout_questionnaire:
 
 administrateur_ajout_questionnaire2:                              # Chemin lien entre pages du site  
     path: /administrateur/ajout_questionnaire2
-    defaults: {_controller: ATCAppBundle:Questionnaire:add2}
+    defaults: {_controller: ATCAppBundle:Question:add}
+
+
+#ROUTE QUESTION
+question_ajout:
+    path: /administrateur/ajout_questionnaire/ajout_question
+    defaults: {_controller: ATCAppBundle:Question:add}
 
 #ROUTE CLASSEMENT
 classement:
