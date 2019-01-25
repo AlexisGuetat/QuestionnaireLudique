@@ -56,7 +56,7 @@ class QuestionnaireController extends Controller
 
         
         
-            return $this->render('ATCAppBundle:Administrateur:add.html.twig',array(
+            return $this->render('ATCAppBundle:Question:add.html.twig',array(
                 'titre'         => $titre,
                 'theme'         => $theme,
                 'difficulte'    => $difficulte
