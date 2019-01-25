@@ -40,22 +40,26 @@ class QuestionnaireController extends Controller
 
     public function addAction(Request $request)
     {   
-        $questionnaire = new Questionnaire();
-
+       
+        #Récupération valeur dans la requête      en marron c'est la recupération de la valeur des name= dans le front
         $titre      = !empty($request->query->get('titre'))         ? $request->query->get('titre')     : "";
         $theme      = !empty($request->query->get('theme'))         ? $request->query->get('theme')     : "";
         $difficulte = !empty($request->query->get('difficulte'))    ? $request->query->get('difficulte'): "";
-
+        
+        #Remplit l'objet questionnaire et les valeures recupéré ci-dessus
+        $questionnaire = new Questionnaire();
         $questionnaire->setTitre($titre);
         $questionnaire->setTheme($theme);
         $questionnaire->setDifficulte($difficulte);
 
+
+        #On envois l'objet questionnaire dans la base de donnée 
         $manager = $this->getDoctrine()->getManager();
         $manager->persist($questionnaire);
         $manager->flush();
 
         
-        
+        #Retourne la page et lui permet d'utiliser les valeurs de titre theme et difficulte
             return $this->render('ATCAppBundle:Administrateur:add.html.twig',array(
                 'titre'         => $titre,
                 'theme'         => $theme,
