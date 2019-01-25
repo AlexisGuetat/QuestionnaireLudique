@@ -30,13 +30,13 @@ administrateur:
     path: /administrateur
     defaults: {_controller: ATCAppBundle:Administrateur:index}
 
-administrateur_ajout_formulaire:
-    path: /administrateur/ajout_formulaire
-    defaults: {_controller: ATCAppBundle:Formulaire:add}
+administrateur_ajout_questionnaire:
+    path: /administrateur/ajout_questionnaire
+    defaults: {_controller: ATCAppBundle:Questionnaire:add}
 
-administrateur_ajout_formulaire2:                              # Chemin lien entre pages du site  
-    path: /administrateur/ajout_formulaire2
-    defaults: {_controller: ATCAppBundle:Formulaire:add2}
+administrateur_ajout_questionnaire2:                              # Chemin lien entre pages du site  
+    path: /administrateur/ajout_questionnaire2
+    defaults: {_controller: ATCAppBundle:Questionnaire:add2}
 
 #ROUTE CLASSEMENT
 classement:
