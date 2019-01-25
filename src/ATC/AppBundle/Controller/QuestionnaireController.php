@@ -59,8 +59,8 @@ class QuestionnaireController extends Controller
         $manager->flush();
 
         
-        #Retourne la page et lui permet d'utiliser les valeurs de titre theme et difficulte
-            return $this->render('ATCAppBundle:Administrateur:add.html.twig',array(
+        
+            return $this->render('ATCAppBundle:Question:add.html.twig',array(
                 'titre'         => $titre,
                 'theme'         => $theme,
                 'difficulte'    => $difficulte
