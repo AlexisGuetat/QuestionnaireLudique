@@ -73,22 +73,25 @@ class QuestionnaireController extends Controller
             return $this->render('ATCAppBundle:Administrateur:add2.html.twig');
     }
 
-    public function viewAction($id)
+    public function viewAction($id,$theme,$difficulte)
     {       
                 
             if ($id === null) {
-                throw new NotFoundHttpException("Aucun questionnaire ayant l'id " .$id.'     trouvé.');
+                throw new NotFoundHttpException("Aucun id de questionnaire récupéré.");
                     }
           
             $bdd = $this->getDoctrine()->getManager();
 
             $questionnaire  =  $bdd->getRepository('ATCAppBundle:Questionnaire')->find($id);
-            
+
+            if ($questionnaire === null) {
+                throw new NotFoundHttpException("Aucun questionnaire ayant l'id " .$id.'     trouvé.');
+                    }
             
             $listeQuestions = $this->getDoctrine()
             ->getEntityManager()
             ->getRepository('ATCAppBundle:Question')
-            ->findAllQuestion($id);
+            ->findAllQuestion($id,$theme,$difficulte);
             
             return $this->render('ATCAppBundle:Question:index.html.twig', array(
             'questionnaire'      => $questionnaire, 

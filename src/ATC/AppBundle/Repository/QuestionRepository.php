@@ -10,15 +10,17 @@ namespace ATC\AppBundle\Repository;
  */
 class QuestionRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findAllQuestion($id)
+    public function findAllQuestion($id,$theme,$difficulte)
     {       
             $query = $this->_em->createQuery('SELECT q
             FROM ATCAppBundle:Question q
             JOIN ATCAppBundle:Contenu c WHERE q.id = c.idQuestion
             JOIN ATCAppBundle:Questionnaire qs WHERE qs.id = c.idQuestionnaire
-            WHERE qs.id = :id');
+            WHERE qs.id = :id AND qs.theme = :theme AND qs.difficulte = :difficulte');
             
             $query->setParameter('id', $id);
+            $query->setParameter('theme', $theme);
+            $query->setParameter('difficulte', $difficulte);
             
             return  $query->getResult();
        
