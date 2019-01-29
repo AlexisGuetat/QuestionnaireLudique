@@ -10,4 +10,17 @@ namespace ATC\AppBundle\Repository;
  */
 class QuestionRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAllQuestion($id)
+    {       
+            $query = $this->_em->createQuery('SELECT q
+            FROM ATCAppBundle:Question q
+            JOIN ATCAppBundle:Contenu c WHERE q.id = c.idQuestion
+            JOIN ATCAppBundle:Questionnaire qs WHERE qs.id = c.idQuestionnaire
+            WHERE qs.id = :id');
+            
+            $query->setParameter('id', $id);
+            
+            return  $query->getResult();
+       
+    }
 }

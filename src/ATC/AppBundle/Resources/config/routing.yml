@@ -22,7 +22,7 @@ questionnaire_difficile:
 
 #AFFICHAGE DES QUESTION
 questionnaire_facile_math:
-    path: /questionnaire/facile/math
+    path: /questionnaire/facile/math{id}
     defaults: {_controller: ATCAppBundle:Questionnaire:view }
 
 
@@ -35,7 +35,7 @@ administrateur_ajout_questionnaire:
     path: /administrateur/ajout_questionnaire
     defaults: {_controller: ATCAppBundle:Questionnaire:add}
 
-administrateur_ajout_questionnaire2:                              # Chemin lien entre pages du site  
+administrateur_ajout_questionnaire2:  # Chemin lien entre pages du site  
     path: /administrateur/ajout_questionnaire2
     defaults: {_controller: ATCAppBundle:Question:add}
 

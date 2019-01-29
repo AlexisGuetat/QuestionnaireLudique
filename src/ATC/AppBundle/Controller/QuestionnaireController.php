@@ -2,16 +2,16 @@
 
 namespace ATC\AppBundle\Controller;
 
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 use  ATC\AppBundle\Entity\Questionnaire;
 use  ATC\AppBundle\Entity\Question;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-
+use ATC\AppBundle\Repository\QuestionnaireRepository; 
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class QuestionnaireController extends Controller
 {
-    public function indexAction(Request $request)
-    {
+    public function indexAction(Request $request){
         $pseudo = $request->query->get('pseudo'); 
         return $this->render('ATCAppBundle:Questionnaire:index.html.twig',array('pseudo'=>$pseudo));
     }
@@ -73,39 +73,28 @@ class QuestionnaireController extends Controller
             return $this->render('ATCAppBundle:Administrateur:add2.html.twig');
     }
 
-    public function viewAction()
-    {  
-        /*
-        $bdd = $this->getDoctrine()->getManager();
-        
-        
-        //on recupere l'id du questionnaire
-        $questionnaire      =  $bdd->getRepository('ATCAppBundle:Questionnaire')->find($id);
-        
-        $sql = "SELECT *
-        from question 
-        join contenu on question.id = contenu.idQuestion
-        join questionnaire on questionnaire.id = contenu.idQuestionnaire
-        where questionnaire.id = 40;";
+    public function viewAction($id)
+    {       
+                
+            if ($id === null) {
+                throw new NotFoundHttpException("Aucun questionnaire ayant l'id " .$id.'     trouvé.');
+                    }
+          
+            $bdd = $this->getDoctrine()->getManager();
 
-        /*
-        p
-        var_dump($Reponse); // Array
+            $questionnaire  =  $bdd->getRepository('ATCAppBundle:Questionnaire')->find($id);
+            
+            
+            $listeQuestions = $this->getDoctrine()
+            ->getEntityManager()
+            ->getRepository('ATCAppBundle:Question')
+            ->findAllQuestion($id);
+            
+            return $this->render('ATCAppBundle:Question:index.html.twig', array(
+            'questionnaire'      => $questionnaire, 
+            'listeQuestions'     => $listeQuestions
+          ));
         
-        /*
-        if (null === $questionnaire) {
-            throw new NotFoundHttpException("Le questionnaire d'id ".$id." n'existe pas.");
-          }
-        
-
-        //on recupere toutes les questions du questionnaire grace à son id
-        $listQuestions = $bdd
-        ->getRepository('ATCAppBundle:Question')
-        ->findBy(array('questionnaire' => $questionnaire));
-        
-       */
-        return $this->render('ATCAppBundle:Question:index.html.twig');
-    
 
           
     }
