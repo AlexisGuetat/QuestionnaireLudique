@@ -6,12 +6,15 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Questionnaire
- *
- * @ORM\Table(name="questionnaire")
- * @ORM\Entity(repositoryClass="ATC\AppBundle\Repository\QuestionnaireRepository")
+ * @ORM\Entity
  */
 class Questionnaire
-{
+{   
+    /**
+    * @ORM\OneToOne(targetEntity="ATC\AppBundle\Entity\Question", cascade={"persist"})
+    */
+    private $question;
+
     /**
      * @var int
      *
@@ -42,6 +45,19 @@ class Questionnaire
      */
     private $difficulte;
 
+    
+
+
+    public function setQuestion(Question $question = null)
+    {
+        $this->question = $question;
+    }
+
+    public function getQuestion()
+    {
+        return $this->question;
+    }
+    
 
     /**
      * Get id

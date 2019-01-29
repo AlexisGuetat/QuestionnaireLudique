@@ -1,15 +1,16 @@
 
 {% extends "ATCAppBundle::index.html.twig" %}
-
+  {# 
         {% block fond_anime %}
           <img src="{{  asset('img/fond.gif') }}" class="fond">
         {% endblock %}
+  #}
 
-        {% block body %}
-        <!-- Section heading -->
-        <h1 class="display-4 mt-5 mb-6">  Il faut avoir du courage pour affronter l'ile... Bravo <u>{{ pseudo }}</u> ! </h1>
-        <h2 class="mb-5"> Maintenant choisis ton niveau de difficulté.</h2>     
-        <!-- Grid row -->
+  {% block body %}
+    <!-- Section heading -->
+    <h1 class=" mt-5 mb-6">  Il faut avoir du courage pour affronter l'ile... Bravo <u>{{ pseudo }}</u> ! </h1>
+    <h2 class="mb-5"> Maintenant choisis ton niveau de difficulté.</h2>     
+    <!-- Grid row -->
           <div class="row black-text ">
 
             <!--Grid column-->
@@ -101,6 +102,6 @@
             <!--Grid column-->
 
           </div>
-        <!-- Grid row -->
-      {% endblock %}
+    <!-- Grid row -->
+  {% endblock %}
 
