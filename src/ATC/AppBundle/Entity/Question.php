@@ -63,6 +63,22 @@ class Question
      */
     private $reponseExplication;
 
+    /**
+    * @ORM\ManyToOne(targetEntity="ATC\AppBundle\Entity\Questionnaire")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $questionnaire;
+
+    public function setQuestionnaire(Question $question = null)
+    {
+        $this->questionnaire = $questionnaire;
+        return $this;
+    }
+
+    public function getQuestionnaire()
+    {
+        return $this->questionnaire;
+    }
 
     /**
      * Get id

@@ -2,6 +2,7 @@
 
 namespace ATC\AppBundle\Controller;
 
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use  ATC\AppBundle\Entity\Questionnaire;
 use  ATC\AppBundle\Entity\Question;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -70,6 +71,31 @@ class QuestionnaireController extends Controller
     public function add2Action(Request $request)
     {   
             return $this->render('ATCAppBundle:Administrateur:add2.html.twig');
+    }
+
+    public function viewAction($id)
+    {  
+        $bdd = $this->getDoctrine()->getManager();
+        
+        //on recupere l'id du questionnaire
+        $questionnaire      =  $bdd->getRepository('ATCAppBundle:Questionnaire')->find($id);
+        
+        
+        if (null === $questionnaire) {
+            throw new NotFoundHttpException("Le questionnaire d'id ".$id." n'existe pas.");
+          }
+        
+
+        //on recupere toutes les questions du questionnaire grace à son id
+        $listQuestions = $bdd
+        ->getRepository('ATCAppBundle:Question')
+        ->findBy(array('questionnaire' => $questionnaire));
+
+       
+        return $this->render('ATCAppBundle:Question:index.html.twig', array(
+            'questionnaire'    => $questionnaire,
+            'listQuestions'     => $listQuestions
+          ));
     }
 
 }
