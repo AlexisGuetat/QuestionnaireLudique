@@ -22,7 +22,7 @@ questionnaire_difficile:
 
 #AFFICHAGE DES QUESTION
 questionnaire_facile_math:
-    path: /questionnaire/facile/math{id}
+    path: /questionnaire/facile/math
     defaults: {_controller: ATCAppBundle:Questionnaire:view }
 
 

@@ -75,12 +75,24 @@ class QuestionnaireController extends Controller
 
     public function viewAction($id)
     {  
+        
         $bdd = $this->getDoctrine()->getManager();
+        
         
         //on recupere l'id du questionnaire
         $questionnaire      =  $bdd->getRepository('ATCAppBundle:Questionnaire')->find($id);
         
+        $sql = "SELECT *
+        from question 
+        join contenu on question.id = contenu.idQuestion
+        join questionnaire on questionnaire.id = contenu.idQuestionnaire
+        where questionnaire.id = 40;";
+
+        /*
+        p
+        var_dump($Reponse); // Array
         
+        /*
         if (null === $questionnaire) {
             throw new NotFoundHttpException("Le questionnaire d'id ".$id." n'existe pas.");
           }
@@ -90,12 +102,15 @@ class QuestionnaireController extends Controller
         $listQuestions = $bdd
         ->getRepository('ATCAppBundle:Question')
         ->findBy(array('questionnaire' => $questionnaire));
-
+        
        
         return $this->render('ATCAppBundle:Question:index.html.twig', array(
             'questionnaire'    => $questionnaire,
             'listQuestions'     => $listQuestions
           ));
+          */
+
+          
     }
 
 }
