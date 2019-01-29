@@ -1,35 +1,25 @@
 
 {% extends "ATCAppBundle::index.html.twig" %}
 
+        {% block fond_anime %}
+          <img src="{{  asset('img/fond.gif') }}" class="fond">
+        {% endblock %}
 
-{% block body %}
-
-<div class="view">
-    <img src="{{  asset('img/fond.gif') }}" class="fond">
-    
-
-     <!-- Mask & flexbox options-->
-    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
-
-      <!-- Content -->
-      <div class="text-center white-text mx-5 wow fadeIn">
-
+        {% block body %}
         <!-- Section heading -->
         <h1 class="display-4 mt-5 mb-6">  Il faut avoir du courage pour affronter l'ile... Bravo <u>{{ pseudo }}</u> ! </h1>
-        <h2 class="mb-5"> Maintenant choisis ton niveau de difficulté.</h2>
-     
+        <h2 class="mb-5"> Maintenant choisis ton niveau de difficulté.</h2>     
         <!-- Grid row -->
-
-          <div class="row black-text justify-content-center">
+          <div class="row black-text ">
 
             <!--Grid column-->
-            <div class="card ">
+            <div class="col-sm">
               <!--Card-->
               <div class="card testimonial-card">
                 <!--Background color-->
                 <div class="card-up info-color"></div>
                 <!--Avatar-->
-                <div class="avatar mt-2 mx-4 white">
+                <div class="avatar mt-2 mx-4 white ">
                   <img src="{{ asset('img/fox.gif') }}" class="rounded-circle img-fluid">
                 </div>
                 <div class="card-body">
@@ -52,7 +42,7 @@
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="card">
+            <div class="col-sm ">
               <!--Card-->
               <div class="card testimonial-card">
                 <!--Background color-->
@@ -82,7 +72,7 @@
             <!--Grid column-->
 
             <!--Grid column-->
-            <div class="card">
+            <div class="col-sm">
               <!--Card-->
               <div class="card testimonial-card">
                 <!--Background color-->
@@ -112,9 +102,5 @@
 
           </div>
         <!-- Grid row -->
+      {% endblock %}
 
-      </div>
-    </div>
-</div>
-</div>
-{% endblock %}
