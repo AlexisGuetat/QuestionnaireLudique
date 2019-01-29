@@ -73,9 +73,9 @@ class QuestionnaireController extends Controller
             return $this->render('ATCAppBundle:Administrateur:add2.html.twig');
     }
 
-    public function viewAction($id)
+    public function viewAction()
     {  
-        
+        /*
         $bdd = $this->getDoctrine()->getManager();
         
         
@@ -103,12 +103,9 @@ class QuestionnaireController extends Controller
         ->getRepository('ATCAppBundle:Question')
         ->findBy(array('questionnaire' => $questionnaire));
         
-       
-        return $this->render('ATCAppBundle:Question:index.html.twig', array(
-            'questionnaire'    => $questionnaire,
-            'listQuestions'     => $listQuestions
-          ));
-          */
+       */
+        return $this->render('ATCAppBundle:Question:index.html.twig');
+    
 
           
     }
