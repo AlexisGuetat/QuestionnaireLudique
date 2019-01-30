@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use ATC\AppBundle\Repository\QuestionnaireRepository; 
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 class QuestionnaireController extends Controller
 {
     public function indexAction(Request $request){
@@ -16,28 +17,15 @@ class QuestionnaireController extends Controller
         return $this->render('ATCAppBundle:Questionnaire:index.html.twig',array('pseudo'=>$pseudo));
     }
 
-    public function facileAction(Request $request)
+    public function difficulteAction()
     {
-        $pseudo = $request->query->get('pseudo'); 
-        return $this->render('ATCAppBundle:Questionnaire:Difficulte/facile.html.twig',array('pseudo'=>$pseudo));
+        return $this->render('ATCAppBundle:Questionnaire:Difficulte/index.html.twig');
     }
 
-    public function moyenAction(Request $request)
-    {
-        $pseudo = $request->query->get('pseudo'); 
-        return $this->render('ATCAppBundle:Questionnaire:Difficulte/moyen.html.twig',array('pseudo'=>$pseudo));
-    }
 
-    public function difficileAction(Request $request)
+    public function themeAction(Request $request)
     {
-        $pseudo = $request->query->get('pseudo'); 
-        return $this->render('ATCAppBundle:Questionnaire:Difficulte/difficile.html.twig',array('pseudo'=>$pseudo));
-    }
-
-    public function mathAction(Request $request)
-    {
-        $pseudo = $request->query->get('pseudo'); 
-        return $this->render('ATCAppBundle:Questionnaire:Theme/math.html.twig',array('pseudo'=>$pseudo));
+        return $this->render('ATCAppBundle:Questionnaire:Theme/index.html.twig');
     }
 
     public function addAction(Request $request)

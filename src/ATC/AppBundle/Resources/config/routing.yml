@@ -8,17 +8,13 @@ questionnaire:
     path: /questionnaire
     defaults: { _controller: ATCAppBundle:Questionnaire:index }
 
-questionnaire_facile:
-    path: /questionnaire/facile
-    defaults: { _controller: ATCAppBundle:Questionnaire:facile }
+questionnaire_difficulte:
+    path: /questionnaire/{difficulte}
+    defaults: { _controller: ATCAppBundle:Questionnaire:difficulte }
 
-questionnaire_moyen:
-    path: /questionnaire/moyen
-    defaults: { _controller: ATCAppBundle:Questionnaire:moyen }
-
-questionnaire_difficile:
-    path: /questionnaire/difficile
-    defaults: { _controller: ATCAppBundle:Questionnaire:difficile }
+questionnaire_theme:
+    path: /questionnaire/{difficulte}/{theme}
+    defaults: { _controller: ATCAppBundle:Questionnaire:theme }
 
 #AFFICHAGE DES QUESTION
 questionnaire_facile_math:

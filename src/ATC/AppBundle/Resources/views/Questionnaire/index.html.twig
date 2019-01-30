@@ -34,7 +34,7 @@
                   <hr>
                   <!--Quotation-->
                   <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>Ici que des questions faciles pour s'échauffer</p>
-                     <a href="{{ path('questionnaire_facile') }}" class="btn peach-gradient">JOUER </a>
+                     <a href="{{ path('questionnaire_difficulte' , {'difficulte' : 'facile'}) }}" class="btn peach-gradient">JOUER </a>
                 </div>
               </div>
               <!--Card-->
@@ -46,7 +46,7 @@
             <div class="col-sm ">
               <!--Card-->
               <div class="card testimonial-card">
-                <!--Background color-->
+                <!--Background color--> 
                 <div class="card-up blue-gradient">
                 </div>
                 <!--Avatar-->
@@ -64,7 +64,7 @@
                   <hr>
                   <!--Quotation-->
                   <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>On met la barre un peu plus dans cette difficulté</p>
-                     <a href="{{ path('questionnaire_moyen') }}" class="btn peach-gradient">JOUER </a>
+                     <a href="{{ path('questionnaire_difficulte' ,{'difficulte' : 'moyen'}) }}" class="btn peach-gradient">JOUER </a>
                 </div>
                 
               </div>
@@ -93,7 +93,7 @@
                   <hr>
                   <!--Quotation-->
                   <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>Est-tu prêt à relevé un vrai défi ? </p>
-                   <a href="{{ path('questionnaire_difficile') }}" class="btn peach-gradient">JOUER </a>
+                   <a href="{{ path('questionnaire_difficulte' ,{'difficulte' : 'difficile'}) }}" class="btn peach-gradient">JOUER </a>
                 </div>
                   
               </div>
