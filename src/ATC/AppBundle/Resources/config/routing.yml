@@ -4,26 +4,17 @@ homepage:
     defaults: { _controller: ATCAppBundle:Default:index }
 
 #ROUTE POUR LE QUESTIONNAIRE 
-questionnaire:
+questionnaire_difficulte:
     path: /questionnaire
-    defaults: { _controller: ATCAppBundle:Questionnaire:index }
+    defaults: { _controller: ATCAppBundle:Questionnaire:indexDifficulte }
 
-questionnaire_facile:
-    path: /questionnaire/facile
-    defaults: { _controller: ATCAppBundle:Questionnaire:facile }
+questionnaire_theme:
+    path: /questionnaire/{difficulte}
+    defaults: { _controller: ATCAppBundle:Questionnaire:indexTheme }
 
-questionnaire_moyen:
-    path: /questionnaire/moyen
-    defaults: { _controller: ATCAppBundle:Questionnaire:moyen }
-
-questionnaire_difficile:
-    path: /questionnaire/difficile
-    defaults: { _controller: ATCAppBundle:Questionnaire:difficile }
-
-#AFFICHAGE DES QUESTION
-questionnaire_facile_math:
-    path: /questionnaire/facile/math
-    defaults: {_controller: ATCAppBundle:Questionnaire:view }
+questionnaire:
+    path: /questionnaire/{difficulte}/{theme}/{id}
+    defaults: { _controller: ATCAppBundle:Questionnaire:view }
 
 
 #ROUTE ADMINISTRATEUR
@@ -35,7 +26,7 @@ administrateur_ajout_questionnaire:
     path: /administrateur/ajout_questionnaire
     defaults: {_controller: ATCAppBundle:Questionnaire:add}
 
-administrateur_ajout_questionnaire2:                              # Chemin lien entre pages du site  
+administrateur_ajout_questionnaire2:  # Chemin lien entre pages du site  
     path: /administrateur/ajout_questionnaire2
     defaults: {_controller: ATCAppBundle:Question:add}
 

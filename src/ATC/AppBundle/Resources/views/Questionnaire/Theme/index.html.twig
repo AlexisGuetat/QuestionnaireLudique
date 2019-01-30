@@ -8,7 +8,7 @@
     <section class="text-center my-5">
                 <div class="container">
                     <!-- Section heading -->
-                    <h2 class="h1-responsive  font-weight-bold text-center my-5">Facile ! Sélectionnez votre thème favoris !</h2>
+                    <h2 class="h1-responsive  font-weight-bold text-center my-5"> {{ app.request.attributes.get('difficulte') }} : Sélectionnez votre thème favoris !</h2>
                     
                 </div>
                 <!-- Grid row -->
@@ -16,7 +16,7 @@
 
                     <!-- Grid column -->
                     <div class="col-md-5 mb-md-0 mb-4 ">
-                    <div class="card card-image  " style="background-image: url({{  asset('img/math.jpg') }}); background-size: 100% 100%;">
+                    <div class="card card-image  " style="background-image: url( {{  asset('img/math.jpg') }} ); background-size: 100% 100%;">
                         <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4 rounded">
                         <div>
                             <h6 class="pink-text">
@@ -27,7 +27,7 @@
                             <strong>Choisis le questionnaire de Mathématiques</strong>
                             </h3>
                     
-                            <a href="{{ path('questionnaire_facile_math')}}" class="btn purple-gradient"><i class="fas fa-clone left"></i> Lancement du questionnaire </a>
+                            <a href="{{ path('questionnaire' , {'difficulte' : app.request.attributes.get('difficulte') , 'theme' : 'math' , 'id' : '40'}) }}" class="btn purple-gradient"><i class="fas fa-clone left"></i> Lancement du questionnaire </a>
                         </div>
                         </div>
                     </div>

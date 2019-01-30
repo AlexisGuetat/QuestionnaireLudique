@@ -2,42 +2,24 @@
 
 namespace ATC\AppBundle\Controller;
 
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 use  ATC\AppBundle\Entity\Questionnaire;
 use  ATC\AppBundle\Entity\Question;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use ATC\AppBundle\Repository\QuestionnaireRepository; 
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class QuestionnaireController extends Controller
 {
-    public function indexAction(Request $request)
-    {
+    public function indexDifficulteAction(Request $request){
         $pseudo = $request->query->get('pseudo'); 
-        return $this->render('ATCAppBundle:Questionnaire:index.html.twig',array('pseudo'=>$pseudo));
+        return $this->render('ATCAppBundle:Questionnaire:Difficulte/index.html.twig',array('pseudo'=>$pseudo));
     }
 
-    public function facileAction(Request $request)
-    {
-        $pseudo = $request->query->get('pseudo'); 
-        return $this->render('ATCAppBundle:Questionnaire:Difficulte/facile.html.twig',array('pseudo'=>$pseudo));
-    }
-
-    public function moyenAction(Request $request)
-    {
-        $pseudo = $request->query->get('pseudo'); 
-        return $this->render('ATCAppBundle:Questionnaire:Difficulte/moyen.html.twig',array('pseudo'=>$pseudo));
-    }
-
-    public function difficileAction(Request $request)
-    {
-        $pseudo = $request->query->get('pseudo'); 
-        return $this->render('ATCAppBundle:Questionnaire:Difficulte/difficile.html.twig',array('pseudo'=>$pseudo));
-    }
-
-    public function mathAction(Request $request)
-    {
-        $pseudo = $request->query->get('pseudo'); 
-        return $this->render('ATCAppBundle:Questionnaire:Theme/math.html.twig',array('pseudo'=>$pseudo));
+    public function indexThemeAction()
+    {   
+        return $this->render('ATCAppBundle:Questionnaire:Theme/index.html.twig');
     }
 
     public function addAction(Request $request)
@@ -73,39 +55,31 @@ class QuestionnaireController extends Controller
             return $this->render('ATCAppBundle:Administrateur:add2.html.twig');
     }
 
-    public function viewAction()
-    {  
-        /*
-        $bdd = $this->getDoctrine()->getManager();
-        
-        
-        //on recupere l'id du questionnaire
-        $questionnaire      =  $bdd->getRepository('ATCAppBundle:Questionnaire')->find($id);
-        
-        $sql = "SELECT *
-        from question 
-        join contenu on question.id = contenu.idQuestion
-        join questionnaire on questionnaire.id = contenu.idQuestionnaire
-        where questionnaire.id = 40;";
+    public function viewAction($id,$theme,$difficulte)
+    {       
+                
+            if ($id === null) {
+                throw new NotFoundHttpException("Aucun id de questionnaire récupéré.");
+                    }
+          
+            $bdd = $this->getDoctrine()->getManager();
 
-        /*
-        p
-        var_dump($Reponse); // Array
-        
-        /*
-        if (null === $questionnaire) {
-            throw new NotFoundHttpException("Le questionnaire d'id ".$id." n'existe pas.");
-          }
-        
+            $questionnaire  =  $bdd->getRepository('ATCAppBundle:Questionnaire')->find($id);
 
-        //on recupere toutes les questions du questionnaire grace à son id
-        $listQuestions = $bdd
-        ->getRepository('ATCAppBundle:Question')
-        ->findBy(array('questionnaire' => $questionnaire));
+            if ($questionnaire === null) {
+                throw new NotFoundHttpException("Aucun questionnaire ayant l'id " .$id.'     trouvé.');
+                    }
+            
+            $listeQuestions = $this->getDoctrine()
+            ->getEntityManager()
+            ->getRepository('ATCAppBundle:Question')
+            ->findAllQuestion($id,$theme,$difficulte);
+            
+            return $this->render('ATCAppBundle:Questionnaire:index.html.twig', array(
+            'questionnaire'      => $questionnaire, 
+            'listeQuestions'     => $listeQuestions
+          ));
         
-       */
-        return $this->render('ATCAppBundle:Question:index.html.twig');
-    
 
           
     }
