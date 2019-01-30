@@ -2,11 +2,12 @@
 {{ include("ATCAppBundle::header.html.twig") }}
 {% endblock %}
 
-{% block body %}
+
   <!-- Full Page Intro -->
-  <div class="view">
+  <div class="view responsive">
+    {% block fond_anime %}
     <img src="{{  asset('img/fond3.gif') }}" class="fond">
-    
+    {% endblock %}
 
     <!-- Mask & flexbox options-->
     <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
@@ -14,13 +15,13 @@
       <!-- Content -->
       <div class="text-center white-text mx-5 wow fadeIn">
 
+      {% block body %}
         <h1 class="display-3 mb-5">
           <strong>Lud'ile Quiz</strong>
         </h1>
 
         <!-- Time Counter -->
         <p id="time-counter" class="border border-light my-4"></p>
-
 
         <h4 class="mb-4">
           <strong>Bienvenue sur l'ile du Quiz Ludique. </strong>
@@ -33,17 +34,15 @@
         <a  id ="questionnaire2" href="#" class="btn btn-outline-white btn-lg" data-toggle="modal" data-target="#QuestionnaireModal">Lancer le Lud'ile Quiz 
           <i class="fas fa-graduation-cap ml-2"></i>
         </a>
-        
+        {% endblock %}
         
       </div>
       <!-- Content -->
-
     </div>
     <!-- Mask & flexbox options-->
-
   </div>
   <!-- Full Page Intro -->
-{% endblock %}
+
 
 
 {% block footer %}

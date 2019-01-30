@@ -1,16 +1,11 @@
 {% extends "ATCAppBundle::index.html.twig" %}
 
-{% block body %}
-<div class="view">
+{% block fond_anime %}
     <img src="{{  asset('img/fond.gif') }}" class="fond">
-    
+{% endblock %}
 
-    <!-- Mask & flexbox options-->
-    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
-        <!-- Content -->
-        <div class="text-center white-text mx-5 wow fadeIn">
-            
-            <section class="text-center my-5">
+{% block body %}
+    <section class="text-center my-5">
                 <div class="container">
                     <!-- Section heading -->
                     <h2 class="h1-responsive  font-weight-bold text-center my-5">Facile ! Sélectionnez votre thème favoris !</h2>
@@ -149,7 +144,4 @@
                 
                 </div>
             </section>
-        </div>
-    </div>
-</div>
-{% endblock %}
+            {% endblock %}

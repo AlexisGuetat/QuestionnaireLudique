@@ -6,12 +6,11 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Questionnaire
- *
- * @ORM\Table(name="questionnaire")
- * @ORM\Entity(repositoryClass="ATC\AppBundle\Repository\QuestionnaireRepository")
+ * @ORM\Entity
  */
 class Questionnaire
-{
+{   
+    
     /**
      * @var int
      *
@@ -41,8 +40,9 @@ class Questionnaire
      * @ORM\Column(name="difficulte", type="string", length=255)
      */
     private $difficulte;
-
-
+    
+   
+    
     /**
      * Get id
      *
@@ -115,6 +115,7 @@ class Questionnaire
         return $this;
     }
 
+    
     /**
      * Get difficulte
      *
@@ -124,5 +125,8 @@ class Questionnaire
     {
         return $this->difficulte;
     }
+
+
+    
 }
 

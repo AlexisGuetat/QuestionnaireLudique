@@ -1,103 +1,106 @@
 {% extends "ATCAppBundle::index.html.twig" %}
 
-{% block body %}
-<!-- Table with panel -->
-<div class="card card-cascade narrower responsive">
+      
 
-  <!--Card image-->
-  <div class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+      {% block body %}
+        <!-- Table with panel -->
+        <div class=" card card-cascade responsive z-depth-4">
 
-    <div>
-      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-        <i class="fas fa-th-large mt-0"></i>
-      </button>
-      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-        <i class="fas fa-columns mt-0"></i>
-      </button>
-    </div>
+          <!--Card image-->
+          <div class="view view-cascade gradient-card-header blue-gradient narrower py-2 mb-3 d-flex justify-content-between align-items-center ">
 
-    <a href="" class="white-text mx-3">Classement des joueurs</a>
+            <div>
+              <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                <i class="fas fa-th-large mt-0"></i>
+              </button>
+              <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                <i class="fas fa-columns mt-0"></i>
+              </button>
+            </div>
 
-    <div>
-      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-        <i class="fas fa-pencil-alt mt-0"></i>
-      </button>
-      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-        <i class="far fa-trash-alt mt-0"></i>
-      </button>
-      <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
-        <i class="fas fa-info-circle mt-0"></i>
-      </button>
-    </div>
+            <a class="white-text mx-3">Classement des joueurs</a>
 
-  </div>
-  <!--/Card image-->
+            <div>
+              <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                <i class="fas fa-pencil-alt mt-0"></i>
+              </button>
+              <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                <i class="far fa-trash-alt mt-0"></i>
+              </button>
+              <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                <i class="fas fa-info-circle mt-0"></i>
+              </button>
+            </div>
 
-  <div class="px-4">
+          </div>
+          <!--/Card image-->
 
-    <div class="table-wrapper">
-      <!--Table-->
-      <table class="table table-hover mb-0">
+          <div class="px-4">
 
-        <!--Table head-->
-        <thead>
-          <tr>
-            <th class="th-lg">
-              <a>Pseudo
-                <i class="fas fa-sort ml-1"></i>
-              </a>
-            </th>
-            <th class="th-lg">
-              <a href="">Score
-                <i class="fas fa-sort ml-1"></i>
-              </a>
-            </th>
-            <th class="th-lg">
-              <a href="">Jour de la partie
-                <i class="fas fa-sort ml-1"></i>
-              </a>
-            </th>
-            <th class="th-lg">
-              <a href="">Temps mis pour finir le questionnaire
-                <i class="fas fa-sort ml-1"></i>
-              </a>
-            </th>
-            <th class="th-lg">
-              <a href="">Theme du questionnaire
-                <i class="fas fa-sort ml-1"></i>
-              </a>
-            </th>
-            <th class="th-lg">
-              <a href="">Difficulté du questionnaire
-                <i class="fas fa-sort ml-1"></i>
-              </a>
-            </th>
-          </tr>
-        </thead>
-        <!--Table head-->
+            <div class="table-wrapper">
+              <!--Table-->
+              <table class="table table-hover ">
 
-        <!--Table body-->
-        <tbody>
+                <!--Table head-->
+                <thead>
+                  <tr>
+                    <th class="th-lg">
+                      <a href="">Pseudo
+                       <i class="fas fa-angle-down"></i>
+                      </a>
+                    </th>
+                    <th class="th-lg">
+                      <a href="">Score
+                        <i class="fas fa-angle-down"></i>
+                      </a>
+                    </th>
+                    <th class="th-lg">
+                      <a href="">Jour de la partie
+                        <i class="fas fa-angle-down"></i>
+                      </a>
+                    </th>
+                    <th class="th-lg">
+                      <a href="">Temps mis pour finir le questionnaire
+                        <i class="fas fa-angle-down"></i>
+                      </a>
+                    </th>
+                    <th class="th-lg">
+                      <a href="">Theme du questionnaire
+                        <i class="fas fa-angle-down"></i>
+                      </a>
+                    </th>
+                    <th class="th-lg">
+                      <a href="">Difficulté du questionnaire
+                       <i class="fas fa-angle-down"></i>
+                      </a>
+                    </th>
+                  </tr>
+                </thead>
+                <!--Table head-->
 
-       {% for joueur in joueurs %}
-          <tr>
-            <td>{{ joueur.pseudo }}</td>
-            <td>{{ joueur.score }} %</td>
-            <td>{{ joueur.date|date("m/d/Y") }}</td> 
-            <td>{{ joueur.tempsRep }} mn</td>
-            <td>{{ joueur.themeForm }}</td>
-            <td>{{ joueur.difficultTheme }}</td>
-          </tr>
-        {% endfor %}
+                <!--Table body-->
+                <tbody>
 
-        </tbody>
-        <!--Table body-->
-      </table>
-      <!--Table-->
-    </div>
+              {% for joueur in joueurs %}
+                  <tr>
+                    <td>{{ joueur.pseudo }}</td>
+                    <td>{{ joueur.score }} %</td>
+                    <td>{{ joueur.date|date("m/d/Y") }}</td> 
+                    <td>{{ joueur.tempsRep }} mn</td>
+                    <td>{{ joueur.themeForm }}</td>
+                    <td>{{ joueur.difficultTheme }}</td>
+                  </tr>
+                {% endfor %}
 
-  </div>
+                </tbody>
+                <!--Table body-->
+              </table>
+              <!--Table-->
+            </div>
 
-</div>
-<!-- Table with panel -->
-{% endblock %}
+          </div>
+
+        </div>
+        <!-- Table with panel -->
+        {% endblock %}
+ 
