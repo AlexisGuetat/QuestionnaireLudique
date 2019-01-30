@@ -50,10 +50,6 @@ class QuestionnaireController extends Controller
             )*/);
     }
 
-    public function add2Action(Request $request)
-    {   
-            return $this->render('ATCAppBundle:Administrateur:add2.html.twig');
-    }
 
     public function viewAction($id,$theme,$difficulte)
     {       
