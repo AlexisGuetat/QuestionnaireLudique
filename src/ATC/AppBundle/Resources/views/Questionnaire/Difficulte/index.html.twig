@@ -1,0 +1,107 @@
+
+{% extends "ATCAppBundle::index.html.twig" %}
+  {# 
+        {% block fond_anime %}
+          <img src="{{  asset('img/fond.gif') }}" class="fond">
+        {% endblock %}
+  #}
+
+  {% block body %}
+    <!-- Section heading -->
+    <h1 class=" mt-5 mb-6">  Il faut avoir du courage pour affronter l'ile... Bravo <u>{{ pseudo }}</u> ! </h1>
+    <h2 class="mb-5"> Maintenant choisis ton niveau de difficulté.</h2>     
+    <!-- Grid row -->
+          <div class="row black-text ">
+
+            <!--Grid column-->
+            <div class="col-sm">
+              <!--Card-->
+              <div class="card testimonial-card">
+                <!--Background color-->
+                <div class="card-up info-color"></div>
+                <!--Avatar-->
+                <div class="avatar mt-2 mx-4 white ">
+                  <img src="{{ asset('img/fox.gif') }}" class="rounded-circle img-fluid">
+                </div>
+                <div class="card-body">
+                  <!--Name-->
+                  <h4 class="font-weight-bold mb-2">FACILE</h4>
+                  <div class="orange-text">
+                    <i class="fas fa-star"> </i>
+                    <i class="far fa-star"> </i>
+                    <i class="far fa-star"> </i>
+                  </div>
+                  <hr>
+                  <!--Quotation-->
+                  <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>Ici que des questions faciles pour s'échauffer</p>
+                     <a href="{{ path('questionnaire_theme' , {'difficulte' : 'facile'}) }}" class="btn peach-gradient">JOUER </a>
+                </div>
+              </div>
+              <!--Card-->
+            </div>
+           
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-sm ">
+              <!--Card-->
+              <div class="card testimonial-card">
+                <!--Background color--> 
+                <div class="card-up blue-gradient">
+                </div>
+                <!--Avatar-->
+                <div class="avatar mt-2 mx-4 white">
+                  <img src="{{ asset('img/panda.gif') }}" class="rounded-circle img-fluid">
+                </div>
+                <div class="card-body">
+                  <!--Name-->
+                  <h4 class="font-weight-bold mb-2">MOYEN</h4>
+                  <div class="orange-text">
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="far fa-star"> </i>
+                  </div>
+                  <hr>
+                  <!--Quotation-->
+                  <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>On met la barre un peu plus dans cette difficulté</p>
+                     <a href="{{ path('questionnaire_theme' ,{'difficulte' : 'moyen'}) }}" class="btn peach-gradient">JOUER </a>
+                </div>
+                
+              </div>
+              <!--Card-->
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-sm">
+              <!--Card-->
+              <div class="card testimonial-card">
+                <!--Background color-->
+                <div class="card-up indigo"></div>
+                <!--Avatar-->
+                <div class="avatar mt-2 mx-4 white">
+                  <img src="{{ asset('img/lion.gif') }}" class="rounded-circle img-fluid">
+                </div>
+                <div class="card-body">
+                  <!--Name-->
+                  <h4 class="font-weight-bold mb-2">DIFFICILE</h4>
+                  <div class="orange-text">
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                    <i class="fas fa-star"> </i>
+                  </div>
+                  <hr>
+                  <!--Quotation-->
+                  <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>Est-tu prêt à relevé un vrai défi ? </p>
+                   <a href="{{ path('questionnaire_theme' ,{'difficulte' : 'difficile'}) }}" class="btn peach-gradient">JOUER </a>
+                </div>
+                  
+              </div>
+              <!--Card-->
+            </div>
+            <!--Grid column-->
+
+          </div>
+    <!-- Grid row -->
+  {% endblock %}
+

@@ -12,19 +12,13 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class QuestionnaireController extends Controller
 {
-    public function indexAction(Request $request){
+    public function indexDifficulteAction(Request $request){
         $pseudo = $request->query->get('pseudo'); 
-        return $this->render('ATCAppBundle:Questionnaire:index.html.twig',array('pseudo'=>$pseudo));
+        return $this->render('ATCAppBundle:Questionnaire:Difficulte/index.html.twig',array('pseudo'=>$pseudo));
     }
 
-    public function difficulteAction()
-    {
-        return $this->render('ATCAppBundle:Questionnaire:Difficulte/index.html.twig');
-    }
-
-
-    public function themeAction(Request $request)
-    {
+    public function indexThemeAction()
+    {   
         return $this->render('ATCAppBundle:Questionnaire:Theme/index.html.twig');
     }
 
@@ -81,7 +75,7 @@ class QuestionnaireController extends Controller
             ->getRepository('ATCAppBundle:Question')
             ->findAllQuestion($id,$theme,$difficulte);
             
-            return $this->render('ATCAppBundle:Question:index.html.twig', array(
+            return $this->render('ATCAppBundle:Questionnaire:index.html.twig', array(
             'questionnaire'      => $questionnaire, 
             'listeQuestions'     => $listeQuestions
           ));
