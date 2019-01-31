@@ -19,14 +19,13 @@
         <div class="row justify-content-center">
 
             <div class="col-sm">
-                <div class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></div>
-                <div class="btn btn-lg  btn-danger  col-xs-12 col-md-8">{{ question.reponsedeuxfausse }}</div>
+                <div id="rep1" class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></div>
+                <div id="rep2" class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></div>
             </div>
             <div class="col-sm">
-                <div class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ question.reponsetroisfausse }}</b></div>
-                <div class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ question.reponsequatrefausse }}</b></div>
-            </div>
-           
+                <div id="rep3" class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ question.reponsetroisfausse }}</b></div>
+                <div id="rep4" class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ question.reponsequatrefausse }}</b></div>
+            </div>            
         </div>
         <!-- Grid row -->
         {% endfor %}
@@ -34,4 +33,5 @@
       </div>
     
 </div>
+<script src="{{  asset('js/random.js') }}"></script>
 {% endblock %}
