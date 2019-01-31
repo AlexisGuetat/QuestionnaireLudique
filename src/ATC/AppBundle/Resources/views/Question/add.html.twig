@@ -4,10 +4,17 @@
 <div class="container mt-4 pt-5 pb-5 ">
 		
 
-                <h5 class="card-header"><b>Ajouter une question au questionnaire : {{ app.request.query.get('titre') }}</b></h5>
-
-					<form id="addQuestion" action="{{ path('question_ajout') }}">
-                        <div class="container ">
+                <h5 class="card-header"><b>Ajouter une question au questionnaire : 
+                {% if titre is defined %} 
+                        {{ titre }}    
+                        <form id="addQuestion" action="{{ path('question_ajout' , {'titre' :  titre  }) }}">
+                    {% else %} 
+                        {{app.request.attributes.get('titre') }} 
+                        <form id="addQuestion" action="{{ path('question_ajout' , {'titre' :  app.request.attributes.get('titre')  }) }}">
+                {% endif %} </b></h5>
+                    
+                    <h4 class="card-header"><b>Question N°   : </h4>
+				        <div class="container ">
 
                             <div class="form-group " >
             

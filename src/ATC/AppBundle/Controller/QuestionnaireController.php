@@ -42,12 +42,10 @@ class QuestionnaireController extends Controller
         $manager->persist($questionnaire);
         $manager->flush();
         
-        
-            return $this->render('ATCAppBundle:Question:add.html.twig' /*,array(
-                'titre'         => $titre,
-                'theme'         => $theme,
-                'difficulte'    => $difficulte
-            )*/);
+                
+            return $this->render('ATCAppBundle:Question:add.html.twig' ,array(
+                'titre' => $questionnaire->getTitre()
+            ));
     }
 
 
@@ -69,7 +67,7 @@ class QuestionnaireController extends Controller
             $listeQuestions = $this->getDoctrine()
             ->getEntityManager()
             ->getRepository('ATCAppBundle:Question')
-            ->findAllQuestion($id,$theme,$difficulte);
+            ->findAllQuestionByQuestionnaire($id,$theme,$difficulte);
             
             return $this->render('ATCAppBundle:Questionnaire:index.html.twig', array(
             'questionnaire'      => $questionnaire, 
