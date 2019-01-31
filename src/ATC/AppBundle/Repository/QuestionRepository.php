@@ -10,7 +10,7 @@ namespace ATC\AppBundle\Repository;
  */
 class QuestionRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findAllQuestion($id,$theme,$difficulte)
+    public function findAllQuestionByQuestionnaire($id,$theme,$difficulte)
     {       
             $query = $this->_em->createQuery('SELECT q
             FROM ATCAppBundle:Question q
@@ -24,5 +24,16 @@ class QuestionRepository extends \Doctrine\ORM\EntityRepository
             
             return  $query->getResult();
        
+    }
+
+    public function countQuestionByQuestionnaire($id)
+    {
+            $query = $this->_em->createQuery('SELECT COUNT(c) AS nbrQuestionn 
+            FROM contenu c
+            WHERE c.idQuestionnaire = :id');
+            
+            $query->setParameter('id', $id);
+            
+            return  $query->getResult();
     }
 }

@@ -50,5 +50,28 @@ class Contenu
         return $this->idQuestionnaire;
     }
 
+     /**
+     * Set idQuestion
+     * @param int $idQuestion
+     *
+     * @return Contenu
+     */
+    public function setIdQuestion(int $idQuestion)
+    {
+         $this->idQuestion = $idQuestion;
+         return $this;
+    }
+
+   /**
+     * set idQuestionnaire
+     *@param int $idQuestionnaire
+     *
+     * @return Contenu
+     */
+    public function setIdQuestionnaire(int $idQuestionnaire)
+    {
+         $this->idQuestionnaire = $idQuestionnaire;
+         return $this;
+    }
 }
 

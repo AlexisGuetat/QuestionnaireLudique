@@ -1,17 +1,20 @@
-{% extends "ATCAppBundle::index.html.twig" %}
+{% extends "ATCAppBundle:Administrateur:index.html.twig" %}
 
 {% block body %}
 <div class="container mt-4 pt-5 pb-5 ">
 		
-			<div class="card text-white" style="text-align:center;">
-            <img class="responsive" src="{{  asset('img/jungle.jpg') }}" alt"Card image"> 
-            
-               <div class="card-img-overlay "> 
 
-                <h5 class="card-header"><b>Ajouter une question au questionnaire</b></h5>
-
-					<form id="addQuestion" action="{{ path('question_ajout') }}">
-                        <div class="container ">
+                <h5 class="card-header"><b>Ajouter une question au questionnaire : 
+                {% if titre is defined %} 
+                        {{ titre }}    
+                        <form id="addQuestion" action="{{ path('question_ajout' , {'titre' :  titre  }) }}">
+                    {% else %} 
+                        {{app.request.attributes.get('titre') }} 
+                        <form id="addQuestion" action="{{ path('question_ajout' , {'titre' :  app.request.attributes.get('titre')  }) }}">
+                {% endif %} </b></h5>
+                    
+                    <h4 class="card-header"><b>Question N°   : </h4>
+				        <div class="container ">
 
                             <div class="form-group " >
             
@@ -35,13 +38,12 @@
                                 <label for="reponseQuatreFausse" class="text-center btn btn-danger"><b>Choix 3 à la question (celle-ci sera fausse):</b>
                                 <input type="text" name="reponseQuatreFausse" class="form-control"  /></label>
                                <div>
-                                <button type="submit" class="btn btn-primary">Envois</button>
+                                <button type="submit" class="btn btn-primary">Envoyer</button>
                                </div>
                             </div>
                         </div>  
 					</form>
-				</div>
-			</div>
+
 		
 		</div>
 

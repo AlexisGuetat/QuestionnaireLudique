@@ -33,7 +33,7 @@ administrateur_ajout_questionnaire2:  # Chemin lien entre pages du site
 
 #ROUTE QUESTION
 question_ajout:
-    path: /administrateur/ajout_questionnaire/ajout_question
+    path: /administrateur/ajout_questionnaire/ajout_question/{titre}
     defaults: {_controller: ATCAppBundle:Question:add}
 
 #ROUTE CLASSEMENT
