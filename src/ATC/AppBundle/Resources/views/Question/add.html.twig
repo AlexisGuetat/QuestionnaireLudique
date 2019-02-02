@@ -12,8 +12,13 @@
                         {{app.request.attributes.get('titre') }} 
                         <form id="addQuestion" action="{{ path('question_ajout' , {'titre' :  app.request.attributes.get('titre')  }) }}">
                 {% endif %} </b></h5>
-                    
-                    <h4 class="card-header"><b>Question N°   : </h4>
+                
+                {% if nombre_question is defined %}    
+                    <h4  class="card-header"><b>Question N° <a id="nbrQuestion">{{ nombre_question + 1}}</a> / 50 : </b></h4>
+                {% else %}
+                     <h4 id="nbrQuestion" value="1" class="card-header"><b>Question N°  1 / 50 : </b></h4>
+                {% endif %}
+                
 				        <div class="container ">
 
                             <div class="form-group " >
@@ -38,7 +43,9 @@
                                 <label for="reponseQuatreFausse" class="text-center btn btn-danger"><b>Choix 3 à la question (celle-ci sera fausse):</b>
                                 <input type="text" name="reponseQuatreFausse" class="form-control"  /></label>
                                <div>
-                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                                <button id="ajout" type="submit" class="btn btn-primary">Ajouter la question</button>
+                                <button id="finis" type="submit" class="btn btn-primary">J'ai finis</button>
+                               
                                </div>
                             </div>
                         </div>  
@@ -48,3 +55,14 @@
 		</div>
 
 {% endblock %}
+
+{% block modaux %}
+ {{ include("ATCAppBundle:Question:modal.html.twig") }}
+{% endblock %}
+
+
+{% block footer %}
+{{ parent()}}
+<script src="{{ asset('js/question.js' )}}"></script>
+{% endblock %}
+

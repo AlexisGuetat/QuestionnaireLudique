@@ -26,14 +26,21 @@ class QuestionRepository extends \Doctrine\ORM\EntityRepository
        
     }
 
+    /**
+     * @param int
+     * 
+     * return le nombre de question du questionnaire
+     * @return int 
+     */
     public function countQuestionByQuestionnaire($id)
     {
-            $query = $this->_em->createQuery('SELECT COUNT(c) AS nbrQuestionn 
-            FROM contenu c
+            $query = $this->_em->createQuery('SELECT COUNT(c) 
+            FROM ATCAppBundle:Contenu c
             WHERE c.idQuestionnaire = :id');
             
             $query->setParameter('id', $id);
             
-            return  $query->getResult();
+            return  (int) $query->getSingleScalarResult();
+        
     }
 }

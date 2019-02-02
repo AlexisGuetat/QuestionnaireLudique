@@ -39,37 +39,37 @@
 
             <div class="table-wrapper">
               <!--Table-->
-              <table class="table table-hover ">
+              <table id="tab" class="table table-hover ">
 
                 <!--Table head-->
                 <thead>
                   <tr>
-                    <th class="th-lg">
-                      <a href="">Pseudo
+                    <th data-sort="String" class="th-lg">
+                      <a id="pseudo" >Pseudo
                        <i class="fas fa-angle-down"></i>
                       </a>
                     </th>
-                    <th class="th-lg">
-                      <a href="">Score
+                    <th data-sort="int" class="th-lg">
+                      <a  href="">Score
                         <i class="fas fa-angle-down"></i>
                       </a>
                     </th>
-                    <th class="th-lg">
+                    <th data-sort="String" class="th-lg">
                       <a href="">Jour de la partie
                         <i class="fas fa-angle-down"></i>
                       </a>
                     </th>
-                    <th class="th-lg">
+                    <th data-sort="int" class="th-lg">
                       <a href="">Temps mis pour finir le questionnaire
                         <i class="fas fa-angle-down"></i>
                       </a>
                     </th>
-                    <th class="th-lg">
+                    <th data-sort="String" class="th-lg">
                       <a href="">Theme du questionnaire
                         <i class="fas fa-angle-down"></i>
                       </a>
                     </th>
-                    <th class="th-lg">
+                    <th data-sort="String" class="th-lg">
                       <a href="">Difficulté du questionnaire
                        <i class="fas fa-angle-down"></i>
                       </a>
@@ -104,3 +104,13 @@
         <!-- Table with panel -->
         {% endblock %}
  
+ {% block footer %}
+{{ parent() }}
+  <script src="VotreChemin/stupidtable.min.js"></script>  
+
+  <script>
+   $('#pseudo').ready(function($) { 
+    $("#tab").stupidtable();
+   });
+   </script>
+{% endblock %}

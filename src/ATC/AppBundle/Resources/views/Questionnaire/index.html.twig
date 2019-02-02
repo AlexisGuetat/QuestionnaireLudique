@@ -19,13 +19,8 @@
         <div class="row justify-content-center">
 
             <div class="col-sm">
-<<<<<<< HEAD
-                <div id="rep1" class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></div>
+                <div id="rep1"  class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></div>
                 <div id="rep2" class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></div>
-=======
-                <div class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></div>
-                <div class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></div>
->>>>>>> 0e713518f3020f0479c2652fb7b70cb53c0abf39
             </div>
             <div class="col-sm">
                 <div id="rep3" class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ question.reponsetroisfausse }}</b></div>
@@ -38,5 +33,13 @@
       </div>
     
 </div>
-<script src="{{  asset('js/random.js') }}"></script>
+
+{% endblock %}
+
+{% block javascript %}
+{{ parent() }}
+<script>
+    $('#rep3').hide();
+</script>
+<script> src="{{  asset('js/random.js') }}"></script>
 {% endblock %}
