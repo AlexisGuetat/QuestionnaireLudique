@@ -16,27 +16,28 @@
          
       
         <!-- Grid row -->
-        <div class="row justify-content-center">
+        <div class="divPrincipal row justify-content-center">
 
             <div class="col-sm">
-<<<<<<< HEAD
-                <div id="rep1" class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></div>
-                <div id="rep2" class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></div>
-=======
-                <div class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></div>
-                <div class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></div>
->>>>>>> 0e713518f3020f0479c2652fb7b70cb53c0abf39
+                <div id="rep1" value="{{ question.reponseunjuste }}" class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></div>
+                <div id="rep2" value="{{ question.reponsedeuxfausse }}" class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></div>
             </div>
             <div class="col-sm">
-                <div id="rep3" class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ question.reponsetroisfausse }}</b></div>
-                <div id="rep4" class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ question.reponsequatrefausse }}</b></div>
-            </div>            
+                <div id="rep3" value="{{ question.reponsetroisfausse }}" class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ question.reponsetroisfausse }}</b></div>
+                <div id="rep4" value="{{ question.reponsequatrefausse }}" class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ question.reponsequatrefausse }}</b></div>
+            </div>     
+                   
         </div>
+        
         <!-- Grid row -->
         {% endfor %}
-
       </div>
     
 </div>
+
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
 <script src="{{  asset('js/random.js') }}"></script>
 {% endblock %}
