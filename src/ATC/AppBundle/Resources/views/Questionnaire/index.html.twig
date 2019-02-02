@@ -21,12 +21,12 @@
         <div class="row justify-content-center">
 
             <div class="col-sm">
-                <button id="rep1"  value="{{ question.reponseunjuste }}" class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></button>
-                <button id="rep2"  value="{{ question.reponsedeuxfausse }}" class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></button>
+                <button id="rep0"  value="{{ question.reponseunjuste }}" class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></button>
+                <button id="rep1"  value="{{ question.reponsedeuxfausse }}" class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></button>
             </div>
             <div class="col-sm">
-                <button id="rep3" value=" {{ question.reponsetroisfausse }}" class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ question.reponsetroisfausse }}</b></button>
-                <button id="rep4" value=" {{ question.reponsequatrefausse }}" class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ question.reponsequatrefausse }}</b></button>
+                <button id="rep2" value=" {{ question.reponsetroisfausse }}" class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ question.reponsetroisfausse }}</b></button>
+                <button id="rep3" value=" {{ question.reponsequatrefausse }}" class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ question.reponsequatrefausse }}</b></button>
             </div>            
         </div>
         <!-- Grid row -->
@@ -42,48 +42,28 @@
 {{ parent() }}
 <script>
 
-var reponse_juste   = $('#rep1').val();
+//FONCTION JS PERMETTANT D'ATTRIBUER UNE VALEUR ALEATOIRE AU QUESTION
+var reponse_juste   = $('#rep0').val();
 
 $(document).ready(function() {
 
+var reponse0        = $('#rep0').val();
 var reponse1        = $('#rep1').val();
 var reponse2        = $('#rep2').val();
 var reponse3        = $('#rep3').val();
-var reponse4        = $('#rep4').val();
 
-var reponses = Array(reponse1,reponse2,reponse3,reponse4);
-var reponse = reponses[Math.floor(Math.random()*reponses.length)];
+var reponses = Array(reponse0,reponse1,reponse2,reponse3);
+var reponse;
 
-$('#rep1').val(reponse);
-$('#rep1').text(reponse);
-
-for(var i = 0 ; i< reponses.length ; i++)
-{
-    if(reponse == reponses[i]) delete reponses[i]; 
+for(var i = 0 ; i< 4 ; i++)
+{   
+    reponse = reponses[Math.floor(Math.random()*reponses.length)];
+    $('#rep' + i ).val(reponse).text(reponse);
+    for(var j = 0; j< reponses.length ; j++)
+        {
+            if(reponse == reponses[j]) { reponses.splice(j,1); }
+        }
 }
-
-reponse = reponses[Math.floor(Math.random()*reponses.length)];
-$('#rep2').val(reponse);
-$('#rep2').text(reponse);
-
-for(var i = 0 ; i< reponses.length ; i++)
-{
-    if(reponse == reponses[i]) delete reponses[i]; 
-}
-
-reponse = reponses[Math.floor(Math.random()*reponses.length)];
-$('#rep3').val(reponse);
-$('#rep3').text(reponse);
-
-for(var i = 0 ; i< reponses.length ; i++)
-{
-    if(reponse == reponses[i]) delete reponses[i]; 
-}
-
-
-reponse = reponses[Math.floor(Math.random()*reponses.length)];
-$('#rep4').val(reponse);
-$('#rep4').text(reponse);
 
 });
 
