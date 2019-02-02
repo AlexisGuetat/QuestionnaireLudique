@@ -1,6 +1,8 @@
 
 {% extends "ATCAppBundle::index.html.twig" %}
 
+
+
 {% block body %}
 <div class= "responsive bg-transparent">
     
@@ -19,12 +21,12 @@
         <div class="row justify-content-center">
 
             <div class="col-sm">
-                <div id="rep1"  class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></div>
-                <div id="rep2" class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></div>
+                <button id="rep1"  value="{{ question.reponseunjuste }}" class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></button>
+                <button id="rep2"  value="{{ question.reponsedeuxfausse }}" class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></button>
             </div>
             <div class="col-sm">
-                <div id="rep3" class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ question.reponsetroisfausse }}</b></div>
-                <div id="rep4" class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ question.reponsequatrefausse }}</b></div>
+                <button id="rep3" value=" {{ question.reponsetroisfausse }}" class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ question.reponsetroisfausse }}</b></button>
+                <button id="rep4" value=" {{ question.reponsequatrefausse }}" class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ question.reponsequatrefausse }}</b></button>
             </div>            
         </div>
         <!-- Grid row -->
@@ -36,10 +38,54 @@
 
 {% endblock %}
 
-{% block javascript %}
+{% block footer %}
 {{ parent() }}
 <script>
-    $('#rep3').hide();
+
+var reponse_juste   = $('#rep1').val();
+
+$(document).ready(function() {
+
+var reponse1        = $('#rep1').val();
+var reponse2        = $('#rep2').val();
+var reponse3        = $('#rep3').val();
+var reponse4        = $('#rep4').val();
+
+var reponses = Array(reponse1,reponse2,reponse3,reponse4);
+var reponse = reponses[Math.floor(Math.random()*reponses.length)];
+
+$('#rep1').val(reponse);
+$('#rep1').text(reponse);
+
+for(var i = 0 ; i< reponses.length ; i++)
+{
+    if(reponse == reponses[i]) delete reponses[i]; 
+}
+
+reponse = reponses[Math.floor(Math.random()*reponses.length)];
+$('#rep2').val(reponse);
+$('#rep2').text(reponse);
+
+for(var i = 0 ; i< reponses.length ; i++)
+{
+    if(reponse == reponses[i]) delete reponses[i]; 
+}
+
+reponse = reponses[Math.floor(Math.random()*reponses.length)];
+$('#rep3').val(reponse);
+$('#rep3').text(reponse);
+
+for(var i = 0 ; i< reponses.length ; i++)
+{
+    if(reponse == reponses[i]) delete reponses[i]; 
+}
+
+
+reponse = reponses[Math.floor(Math.random()*reponses.length)];
+$('#rep4').val(reponse);
+$('#rep4').text(reponse);
+
+});
+
 </script>
-<script> src="{{  asset('js/random.js') }}"></script>
 {% endblock %}
