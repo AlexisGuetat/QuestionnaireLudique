@@ -9,6 +9,7 @@ use ATC\AppBundle\Entity\Contenu;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class QuestionController extends Controller
 {
@@ -63,7 +64,23 @@ class QuestionController extends Controller
         $manager->persist($contenu);
         $manager->flush();
 
-        return $this->render('ATCAppBundle:Question:add.html.twig');
+        //AJOUT DU COMPTEUR DE QUESTION
+        $bdd = $this->getDoctrine()->getManager();
+
+           
+        $nombreDeQuestion = $this->getDoctrine()
+            ->getEntityManager()
+            ->getRepository('ATCAppBundle:Question')
+            ->countQuestionByQuestionnaire($idquestionnaire);
+
+        if(empty($nombreDeQuestion))
+        {
+            throw new NotFoundHttpException("Impossible de récupérer le nombre de question du questionnaire " . $idquestionnaire);
+        }
+
+        return $this->render('ATCAppBundle:Question:add.html.twig', array(
+            'nombre_question' => $nombreDeQuestion
+        ));
     }
 
    

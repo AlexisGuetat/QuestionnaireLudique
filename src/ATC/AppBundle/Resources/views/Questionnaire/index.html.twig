@@ -1,6 +1,8 @@
 
 {% extends "ATCAppBundle::index.html.twig" %}
 
+
+
 {% block body %}
 <div class= "responsive bg-transparent">
     
@@ -19,14 +21,13 @@
         <div class="divPrincipal row justify-content-center">
 
             <div class="col-sm">
-                <div id="rep1" value="{{ question.reponseunjuste }}" class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></div>
-                <div id="rep2" value="{{ question.reponsedeuxfausse }}" class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></div>
+                <button name ="rep" id="rep0"  value="{{ question.reponseunjuste }}" class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></button>
+                <button name ="rep" id="rep1"  value="{{ question.reponsedeuxfausse }}" class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></button>
             </div>
             <div class="col-sm">
-                <div id="rep3" value="{{ question.reponsetroisfausse }}" class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ question.reponsetroisfausse }}</b></div>
-                <div id="rep4" value="{{ question.reponsequatrefausse }}" class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ question.reponsequatrefausse }}</b></div>
-            </div>     
-                   
+                <button  name ="rep" id="rep2" value=" {{ question.reponsetroisfausse }}" class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ question.reponsetroisfausse }}</b></button>
+                <button  name ="rep" id="rep3" value=" {{ question.reponsequatrefausse }}" class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ question.reponsequatrefausse }}</b></button>
+            </div>            
         </div>
         
         <!-- Grid row -->
@@ -37,7 +38,11 @@
 
 {% endblock %}
 
+{% block modaux %}
+ {{ include("ATCAppBundle:Questionnaire:modal.html.twig") }}
+{% endblock %}
+
 {% block footer %}
 {{ parent() }}
-<script src="{{  asset('js/random.js') }}"></script>
+<script src='{{ asset("js/questionnaire.js") }}' ></script>
 {% endblock %}
