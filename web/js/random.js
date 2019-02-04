@@ -1,4 +1,4 @@
-  /*function orderElems()
+  function orderElems()
     {
       var elems = [], tempElem, pn, args = orderElems.arguments;
                  
@@ -13,9 +13,42 @@
               for( var i = 0; i < len; i++ )
               pn.appendChild( elems[ i ] );
     }
-        orderElems( 'rep1', 'rep2', 'rep3', 'rep4' );*/
+        orderElems( 'rep1', 'rep2', 'rep3', 'rep4' );
 
-        /*$(".row").html($(".row justify-content-center .btn").sort(function(){
+        for (var i = 0; i < 5; i++) {
+          $('.divPrincipal').append('<div class="btn"></div>');
+        }
+        $( '.btn' ).each(function( index ) {
+          $(this).css({
+            left : ((Math.random() * $('.main').width())),
+            top : ((Math.random() * $('.main').height()))
+          });
+        });
+        
+  /*$(".test").html($(".test .btn").sort(function(){
           return Math.random()-0.5;
       }));*/
+        
+      /*$(document).ready(function(){
+        $('div').each(function(){
+              // get current div
+              var $div = $(this);
+              // get array of list items in current div
+              var $liArr = $div.children('div');
+              // sort array of list items in current div randomly
+              $liArr.sort(function(a,b){
+                    // Get a random number between 0 and 10
+                    var temp = parseInt( Math.random()*10 );
+                    // Get 1 or 0, whether temp is odd or even
+                    var isOddOrEven = temp%2;
+                    // Get +1 or -1, whether temp greater or smaller than 5
+                    var isPosOrNeg = temp>5 ? 1 : -1;
+                    // Return -1, 0, or +1
+                    return( isOddOrEven*isPosOrNeg );
+              })
+              // append list items to div
+              .appendTo($div);            
+        });
+  });*/
+        
                 
