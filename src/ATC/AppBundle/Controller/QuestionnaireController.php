@@ -48,7 +48,6 @@ class QuestionnaireController extends Controller
             ));
     }
 
-
     public function viewAction($id,$theme,$difficulte)
     {       
                 
@@ -76,6 +75,11 @@ class QuestionnaireController extends Controller
         
 
           
+    }
+
+    public function completeAction(){
+
+        return $this->render('ATCAppBundle:Questionnaire:complete.html.twig');
     }
 
 }

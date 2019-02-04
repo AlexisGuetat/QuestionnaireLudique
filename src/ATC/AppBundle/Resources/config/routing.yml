@@ -26,6 +26,10 @@ administrateur_ajout_questionnaire:
     path: /administrateur/ajout_questionnaire
     defaults: {_controller: ATCAppBundle:Questionnaire:add}
 
+administrateur_complete_questionnaire:
+    path: /administrateur/complete_questionnaire
+    defaults: {_controller: ATCAppBundle:Questionnaire:complete}
+
 #ROUTE QUESTION
 question_ajout:
     path: /administrateur/ajout_questionnaire/ajout_question/{titre}
