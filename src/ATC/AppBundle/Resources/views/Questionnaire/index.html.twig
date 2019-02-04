@@ -11,25 +11,35 @@
      <div class="responsive text-center white-text ">
 
         <!-- Section heading -->
-        <h1 class="display-4 mt-5 mb-6">{{ questionnaire.titre }} </h1>
-        {% for question in listeQuestions %}
-        <h2 class="mb-5" ><b>{{ question.intitule }}</b></h2>
+        <h1 class="display-4 mt-5 mb-6">
+        {% set numero_question = app.request.attributes.get('numero_question')|number_format %}
+        <b>Question N° <a  value="1" >{{ numero_question + 1 }}</a> / 50 : </b></h4>
+        
+        <div class="progress">
+            <div  id="progress_bar" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="50" style="width:0%">
+                <b><a id="score" >0</a> points</b>
+            </div>
+        </div> 
+
+        <h2 class="display-4 mt-5 mb-6">{{ questionnaire.titre }} </h2>
+        <h3 class="mb-5" ><b>{{ listeQuestions[numero_question].intitule }}</b></h3>
          
-      
         <!-- Grid row -->
         <div class="row justify-content-center">
-
             <div class="col-sm">
-                <button name ="rep" id="rep0"  value="{{ question.reponseunjuste }}" class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ question.reponseunjuste }}</b></button>
-                <button name ="rep" id="rep1"  value="{{ question.reponsedeuxfausse }}" class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></button>
+                <button name ="rep" id="rep0"   value="{{ listeQuestions[numero_question].reponseunjuste }}" 
+                class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ listeQuestions[numero_question].reponseunjuste }}</b></button>
+                <button name ="rep" id="rep1"  value="{{ listeQuestions[numero_question].reponsedeuxfausse }}" 
+                class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ listeQuestions[numero_question].reponsedeuxfausse }}</b></button>
             </div>
             <div class="col-sm">
-                <button  name ="rep" id="rep2" value=" {{ question.reponsetroisfausse }}" class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ question.reponsetroisfausse }}</b></button>
-                <button  name ="rep" id="rep3" value=" {{ question.reponsequatrefausse }}" class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ question.reponsequatrefausse }}</b></button>
+                <button  name ="rep" id="rep2" value=" {{ listeQuestions[numero_question].reponsetroisfausse }}" 
+                class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ listeQuestions[numero_question].reponsetroisfausse }}</b></button>
+                <button  name ="rep" id="rep3" value=" {{ listeQuestions[numero_question].reponsequatrefausse }}" 
+                class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ listeQuestions[numero_question].reponsequatrefausse }}</b></button>
             </div>            
         </div>
         <!-- Grid row -->
-        {% endfor %}
 
       </div>
     

@@ -13,7 +13,7 @@ questionnaire_theme:
     defaults: { _controller: ATCAppBundle:Questionnaire:indexTheme }
 
 questionnaire:
-    path: /questionnaire/{difficulte}/{theme}/{id}
+    path: /questionnaire/{difficulte}/{theme}/{id}/{numero_question}
     defaults: { _controller: ATCAppBundle:Questionnaire:view }
 
 
