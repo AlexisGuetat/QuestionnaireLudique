@@ -59,7 +59,8 @@ $('button[name="rep"]').click(function(){
     if( $(this).val() ==  reponse_juste)
     {
         $('#centralModalSuccess').modal('show');
-        score++;
+        score = score + 1;
+        $('#score').text(score);
     }
     else
     {
@@ -75,5 +76,5 @@ $('button[name="rep"]').click(function(){
 randomQuestion();
 clickButton();
 
-$('#score').text(score);
+
 $('#progress_bar').width( 80  +"%");
