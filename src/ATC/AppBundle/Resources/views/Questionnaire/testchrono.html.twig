@@ -1,19 +1,42 @@
 {% extends "ATCAppBundle::index.html.twig" %}
 
 {% block body %}
-<div id="basicUsage">00:00:00</div>
+  <p id="time-counter" class="border border-light my-4"></p>
+
 {% endblock %}
+
 
 {% block footer %}
 {{ parent() }}
+<!-- Time Counter -->
+  <script type="text/javascript">
+    
+    // Set the date we're counting down to
+    var countDownDate = new Date();
+    countDownDate.setDate(countDownDate.getDate() + 30);
 
-<script src='{{ asset("js/easytimer.js") }}'></script>
+    // Update the count down every 1 second
+    var x = setInterval(function () {
 
-<script>
-var timer = new Timer();
-timer.start();
-timer.addEventListener('secondsUpdated', function (e) {
-    $('#basicUsage').html(timer.getTimeValues().toString());
-});
+      // Get todays date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now an the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var seconds = Math.floor((distance % (1000 * 12)) / 1000);
+
+      // Display the result in the element with id="demo"
+      document.getElementById("time-counter").innerHTML = seconds + "s ";
+
+      // If the count down is finished, write some text
+      if (seconds <= 0) {
+        clearInterval(x);
+        document.getElementById("time-counter").innerHTML = "T'AS PERDU CONNARD";
+      }
+    }, 1000);
+
 </script>
+
 {% endblock %}
