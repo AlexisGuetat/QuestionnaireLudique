@@ -27,7 +27,7 @@ function randomQuestion(){
 }
 
 //CHARGE LA QUESTION SUIVANTE
-function newQuestion(){
+function newQuestion(score_register){
     $('a[name="click_modal"]').click(function(){
        
         var pathArray = window.location.pathname.split('/');
@@ -38,13 +38,14 @@ function newQuestion(){
             newPathname += "/";
             newPathname += pathArray[i];
         }
-    
+        
         $.ajax({
-            type: "GET",
-            data: "num_question=" + $('#numero_question').text(),
+            type: "POST",
+            data: "&score=" + score_register, 
             dataType : 'html',
             success: function (response) {
-                window.location =  num_question ;
+               window.location =  num_question + "." + score_register;
+            
             }
         });
         
@@ -66,15 +67,11 @@ $('button[name="rep"]').click(function(){
     {
         $('#centralModalError').modal('show');
     }
-    console.log(score);
-    newQuestion();
+    newQuestion(score);
 });
 }
-
-
 
 randomQuestion();
 clickButton();
 
-
-$('#progress_bar').width( 80  +"%");
+$('#progress_bar').width( score * 2  +"%");

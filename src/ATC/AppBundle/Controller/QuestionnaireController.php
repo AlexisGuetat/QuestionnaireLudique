@@ -48,9 +48,11 @@ class QuestionnaireController extends Controller
             ));
     }
 
+   
+
     public function viewAction($id,$theme,$difficulte)
     {       
-                
+              
             if ($id === null) {
                 throw new NotFoundHttpException("Aucun id de questionnaire récupéré.");
                     }
@@ -70,7 +72,7 @@ class QuestionnaireController extends Controller
             
             return $this->render('ATCAppBundle:Questionnaire:index.html.twig', array(
             'questionnaire'      => $questionnaire, 
-            'listeQuestions'     => $listeQuestions
+            'listeQuestions'     => $listeQuestions 
           ));
         
 

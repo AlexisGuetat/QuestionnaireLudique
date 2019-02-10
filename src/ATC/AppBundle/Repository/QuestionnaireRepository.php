@@ -10,4 +10,5 @@ namespace ATC\AppBundle\Repository;
  */
 class QuestionnaireRepository extends \Doctrine\ORM\EntityRepository
 {
+    
 }
