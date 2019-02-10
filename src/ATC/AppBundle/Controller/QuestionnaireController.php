@@ -84,4 +84,9 @@ class QuestionnaireController extends Controller
         return $this->render('ATCAppBundle:Questionnaire:complete.html.twig');
     }
 
+    function chronoAction ()
+    {
+        return $this->render('ATCAppBundle:Questionnaire:testchrono.html.twig');
+    }
+
 }

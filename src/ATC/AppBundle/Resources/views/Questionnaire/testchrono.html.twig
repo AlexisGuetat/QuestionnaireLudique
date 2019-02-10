@@ -1,0 +1,19 @@
+{% extends "ATCAppBundle::index.html.twig" %}
+
+{% block body %}
+<div id="basicUsage">00:00:00</div>
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+
+<script src='{{ asset("js/easytimer.js") }}'></script>
+
+<script>
+var timer = new Timer();
+timer.start();
+timer.addEventListener('secondsUpdated', function (e) {
+    $('#basicUsage').html(timer.getTimeValues().toString());
+});
+</script>
+{% endblock %}

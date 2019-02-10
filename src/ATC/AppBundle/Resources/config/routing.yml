@@ -39,3 +39,8 @@ question_ajout:
 classement:
     path: /classement   
     defaults: {_controller: ATCAppBundle:Classement:index}
+
+#ROUTE CHRONO
+chrono:
+    path: /chrono
+    defaults: {_controller: ATCAppBundle:Questionnaire:chrono}
