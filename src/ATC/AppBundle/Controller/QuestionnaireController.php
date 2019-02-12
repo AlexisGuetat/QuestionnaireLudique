@@ -17,10 +17,6 @@ class QuestionnaireController extends Controller
         return $this->render('ATCAppBundle:Questionnaire:Difficulte/index.html.twig',array('pseudo'=>$pseudo));
     }
 
-    public function indexThemeAction()
-    {   
-        return $this->render('ATCAppBundle:Questionnaire:Theme/index.html.twig');
-    }
 
     public function addAction(Request $request)
     {   

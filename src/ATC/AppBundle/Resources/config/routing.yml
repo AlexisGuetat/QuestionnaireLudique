@@ -10,7 +10,7 @@ questionnaire_difficulte:
 
 questionnaire_theme:
     path: /questionnaire/{difficulte}
-    defaults: { _controller: ATCAppBundle:Questionnaire:indexTheme }
+    defaults: { _controller: ATCAppBundle:Theme:index}
 
 questionnaire:
     path: /questionnaire/{difficulte}/{theme}/{id}/{numero_question}.{score}

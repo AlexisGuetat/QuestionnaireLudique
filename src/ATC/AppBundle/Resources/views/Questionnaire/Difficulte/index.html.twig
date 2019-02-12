@@ -2,6 +2,7 @@
 {% extends "ATCAppBundle::index.html.twig" %}
 
   {% block body %}
+  <div class="container">
     <!-- Section heading -->
     <h1 class=" mt-5 mb-6">  Il faut avoir du courage pour affronter l'ile... Bravo <u>{{ pseudo }}</u> ! </h1>
     <h2 class="mb-5"> Maintenant choisis ton niveau de difficulté.</h2>     
@@ -16,7 +17,7 @@
                 <div class="card-up info-color"></div>
                 <!--Avatar-->
                 <div class="avatar mt-2 mx-4 white ">
-                  <img src="{{ asset('img/fox.gif') }}" class="rounded-circle img-fluid">
+                  <img src="{{ asset('images/fox.gif') }}" class="rounded-circle img-fluid">
                 </div>
                 <div class="card-body">
                   <!--Name-->
@@ -46,7 +47,7 @@
                 </div>
                 <!--Avatar-->
                 <div class="avatar mt-2 mx-4 white">
-                  <img src="{{ asset('img/panda.gif') }}" class="rounded-circle img-fluid">
+                  <img src="{{ asset('images/panda.gif') }}" class="rounded-circle img-fluid">
                 </div>
                 <div class="card-body">
                   <!--Name-->
@@ -75,7 +76,7 @@
                 <div class="card-up indigo"></div>
                 <!--Avatar-->
                 <div class="avatar mt-2 mx-4 white">
-                  <img src="{{ asset('img/lion.gif') }}" class="rounded-circle img-fluid">
+                  <img src="{{ asset('images/lion.gif') }}" class="rounded-circle img-fluid">
                 </div>
                 <div class="card-body">
                   <!--Name-->
@@ -98,5 +99,7 @@
 
           </div>
     <!-- Grid row -->
+
+  </div>
   {% endblock %}
 

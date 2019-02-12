@@ -1,7 +1,7 @@
 {% extends "ATCAppBundle::index.html.twig" %}
 
 {% block fond_anime %}
-    <img src="{{  asset('img/fond_desert.gif') }}" class="fond">
+    <img src="{{  asset('images/fonds/fond_desert.gif') }}" class="fond">
 {% endblock %}
 
 {% block body %}
@@ -19,11 +19,10 @@
         <label>Thémes du formulaire</label>
         <select name="theme" class="browser-default custom-select mb-4" required="" id="theme">
             <option value="" selected>Sélectionner une option</option>
-            <option value="MATH">Mathématique</option>
-            <option value="FRANCAIS">Français</option>
-            <option value="HISTOIRE">Histoire</option>
-            <option value="GEO">Géographie</option>
-            <option value="AUTRES">Autres</option>
+            {% for theme in themes %}
+            <option value="{{ theme.nom }}">{{ theme.nom }}</option>
+            {% endfor %}
+            <option value="autres">Autres</option>
         </select>
         
             <!-- Autres -->

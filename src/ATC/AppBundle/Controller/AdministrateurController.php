@@ -6,8 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class AdministrateurController extends Controller
 {
     public function indexAction()
-    {
-        return $this->render('ATCAppBundle:Administrateur:index.html.twig');
+    {   
+        $bdd = $this->getDoctrine()->getManager();
+        $themes =   $bdd->getRepository('ATCAppBundle:Themes')->findAll();
+
+        return $this->render('ATCAppBundle:Administrateur:index.html.twig',array(
+            'themes' => $themes
+        ));
     }
 
 }
