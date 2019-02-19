@@ -13,8 +13,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class QuestionController extends Controller
 {
-    public function addAction(Request $request)
-    {   
+    public function addAction(Request $request){   
         // AJOUT DE LA QUESTION
         $intitule               = !empty($request->query->get('intitule'))              ? $request->query->get('intitule')              : "";
         $reponseUnJuste         = !empty($request->query->get('reponseUnJuste'))        ? $request->query->get('reponseUnJuste')        : "";
@@ -82,8 +81,6 @@ class QuestionController extends Controller
             'nombre_question' => $nombreDeQuestion
         ));
     }
-
-   
 
    
 }

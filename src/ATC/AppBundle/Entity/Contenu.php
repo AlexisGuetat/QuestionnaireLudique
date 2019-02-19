@@ -6,13 +6,14 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Contenu
- * @ORM\Entity
+ * 
  * @ORM\Table(name="contenu")
+ * @ORM\Entity(repositoryClass="ATC\AppBundle\Repository\ContenuRepository")
  */
 class Contenu
 {
 
-        /**
+    /**
      * @var int
      *
      * @ORM\Column(name="idQuestionnaire", type="integer")

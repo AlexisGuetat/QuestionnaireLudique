@@ -1,6 +1,10 @@
 var reponse_juste   = $('#rep0').val();
 var score           = parseInt($('#score').text()) ;
 
+// Set the date we're counting down to
+var countDownDate = new Date();
+countDownDate.setDate(countDownDate.getDate() + 30);
+
 
 //FONCTION JS PERMETTANT D'ATTRIBUER UNE VALEUR ALEATOIRE AU QUESTION
 function randomQuestion(){
@@ -71,6 +75,39 @@ $('button[name="rep"]').click(function(){
 });
 }
 
+function decompte(){
+    
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+      // Get todays date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now an the count down date
+      var distance = countDownDate - now;
+
+      // Time calculations for days, hours, minutes and seconds
+      var seconds = Math.floor((distance % (1000 * 12)) / 1000);
+
+      // Display the result in the element with id="demo"
+      document.getElementById("time-counter").innerHTML = seconds + "s ";
+
+      // If the count down is finished, write some text
+      $('button[name="rep"]').click(function (e) { 
+          e.preventDefault();
+          clearInterval(x);
+          newQuestion(score);
+      });
+
+      if (seconds <= 0) {
+        clearInterval(x);
+        $('#centralModalTimer').modal('show');
+        newQuestion(score);
+      }
+    }, 1000);
+}
+
+decompte();
 randomQuestion();
 clickButton();
 

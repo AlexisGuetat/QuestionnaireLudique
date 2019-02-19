@@ -7,11 +7,13 @@ class AdministrateurController extends Controller
 {
     public function indexAction()
     {   
-        $bdd = $this->getDoctrine()->getManager();
-        $themes =   $bdd->getRepository('ATCAppBundle:Themes')->findAll();
+        $bdd        = $this->getDoctrine()->getManager();
+        $themes     =   $bdd->getRepository('ATCAppBundle:Themes')->findAll();
+        $difficultes =   $bdd->getRepository('ATCAppBundle:Difficulte')->findAll();
 
         return $this->render('ATCAppBundle:Administrateur:index.html.twig',array(
-            'themes' => $themes
+            'themes' => $themes,
+            'difficultes' => $difficultes
         ));
     }
 

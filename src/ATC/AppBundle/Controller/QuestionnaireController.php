@@ -7,7 +7,7 @@ use  ATC\AppBundle\Entity\Questionnaire;
 use  ATC\AppBundle\Entity\Question;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use ATC\AppBundle\Repository\QuestionnaireRepository; 
+use ATC\AppBundle\Repository\QuestionnaireRepository;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class QuestionnaireController extends Controller
@@ -17,20 +17,26 @@ class QuestionnaireController extends Controller
         return $this->render('ATCAppBundle:Questionnaire:Difficulte/index.html.twig',array('pseudo'=>$pseudo));
     }
 
-
-    public function addAction(Request $request)
-    {   
+    public function addAction(Request $request){   
        
+        $bdd = $this->getDoctrine()->getManager();
+
         #Récupération valeur dans la requête      en marron c'est la recupération de la valeur des name= dans le front
-        $titre      = !empty($request->query->get('titre'))         ? $request->query->get('titre')     : "";
-        $theme      = !empty($request->query->get('theme'))         ? $request->query->get('theme')     : "";
-        $difficulte = !empty($request->query->get('difficulte'))    ? $request->query->get('difficulte'): "";
+        $titre          = !empty($request->query->get('titre'))         ? $request->query->get('titre')     : "";
+        $themeName      = !empty($request->query->get('theme'))         ? $request->query->get('theme')     : "";
+        $difficulteName = !empty($request->query->get('difficulte'))    ? $request->query->get('difficulte'): "";
         
+        $theme          =  $bdd->getRepository('ATCAppBundle:Themes')->findByNom($themeName);
+        $difficulte     =  $bdd->getRepository('ATCAppBundle:Difficulte')->findByNom($difficulteName);
+
+        $themeID        = $theme[0]->getId();
+        $difficulteID   = $difficulte[0]->getId();
+           
         #Remplit l'objet questionnaire et les valeures recupéré ci-dessus
         $questionnaire = new Questionnaire();
         $questionnaire->setTitre($titre);
-        $questionnaire->setTheme($theme);
-        $questionnaire->setDifficulte($difficulte);
+        $questionnaire->setIdTheme($themeID);
+        $questionnaire->setIdDifficulte($difficulteID);
 
 
         #On envois l'objet questionnaire dans la base de donnée 
@@ -44,11 +50,10 @@ class QuestionnaireController extends Controller
             ));
     }
 
-   
+    public function viewAction($id,$theme,$difficulte) {       
+            
+            $questionnaires = $bdd->getRepository('ATCAppBundle:Questionnaire')->findAll();
 
-    public function viewAction($id,$theme,$difficulte)
-    {       
-              
             if ($id === null) {
                 throw new NotFoundHttpException("Aucun id de questionnaire récupéré.");
                     }
@@ -62,9 +67,9 @@ class QuestionnaireController extends Controller
                     }
             
             $listeQuestions = $this->getDoctrine()
-            ->getEntityManager()
-            ->getRepository('ATCAppBundle:Question')
-            ->findAllQuestionByQuestionnaire($id,$theme,$difficulte);
+                                   ->getEntityManager()
+                                   ->getRepository('ATCAppBundle:Question')
+                                   ->findAllQuestionByQuestionnaire($id,$theme,$difficulte);
             
             return $this->render('ATCAppBundle:Questionnaire:index.html.twig', array(
             'questionnaire'      => $questionnaire, 
@@ -75,14 +80,27 @@ class QuestionnaireController extends Controller
           
     }
 
-    public function completeAction(){
-
-        return $this->render('ATCAppBundle:Questionnaire:complete.html.twig');
+    public function completeViewAction(){
+        
+        $questionnaireIncomplets =  $this->getDoctrine()
+                                         ->getEntityManager()
+                                         ->getRepository('ATCAppBundle:Questionnaire')
+                                         ->findAllQuestionnaireByUncompletede();
+       
+        return $this->render('ATCAppBundle:Questionnaire:complete.html.twig',array(
+            'questionnaireIncomplets' => $questionnaireIncomplets
+        ));
     }
 
-    function chronoAction ()
-    {
-        return $this->render('ATCAppBundle:Questionnaire:testchrono.html.twig');
+    public function completeRedirectAction(Request $request){
+
+            $titre = $request->query->get('titre') ;
+            return $this->redirectToRoute('question_ajout' ,array(
+                'titre' => $titre
+            ));
     }
+
+    
+
 
 }
