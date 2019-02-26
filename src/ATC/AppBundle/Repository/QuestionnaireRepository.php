@@ -28,10 +28,13 @@ class QuestionnaireRepository extends \Doctrine\ORM\EntityRepository
             $allQuestionnaire = array();
             $allQuestionnaire = $query->getResult();
 
-            $i = rand(0,count($allQuestionnaire)-1);
+            $tailleTab = count($allQuestionnaire) == 0 ? 0 : count($allQuestionnaire) - 1;
+            $i = rand(0,$tailleTab);
 
-            var_dump($i);
+            var_dump($tailleTab);
 
+            //mettre un truc si pas de valeur
+            
             return $allQuestionnaire[$i];
     }
 
