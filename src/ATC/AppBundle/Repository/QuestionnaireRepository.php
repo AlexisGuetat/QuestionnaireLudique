@@ -2,6 +2,9 @@
 
 namespace ATC\AppBundle\Repository;
 
+use Symfony\Component\Validator\Constraints\Length;
+
+
 /**
  * QuestionnaireRepository
  *
@@ -12,17 +15,24 @@ class QuestionnaireRepository extends \Doctrine\ORM\EntityRepository
 {
     public function findOneRandQuestionnaireByTheme($theme,$difficulte)
     {
-            $query = $this->_em->createQuery('SELECT q 
+            $query = $this->_em->createQuery('SELECT q
             FROM ATCAppBundle:Questionnaire q
             JOIN ATCAppBundle:Themes t WHERE q.id_theme = t.id
             JOIN ATCAppBundle:Difficulte d WHERE q.id_difficulte = d.id
-            WHERE t.nom = :theme AND d.nom = :difficulte
-            ORDER BY RAND() LIMIT 1');
-            
+            WHERE t.id = :theme AND d.id = :difficulte');
+
+           
             $query->setParameter('theme', $theme);
             $query->setParameter('difficulte', $difficulte);
 
-            return  $query->getResult();
+            $allQuestionnaire = array();
+            $allQuestionnaire = $query->getResult();
+
+            $i = rand(0,count($allQuestionnaire)-1);
+
+            var_dump($i);
+
+            return $allQuestionnaire[$i];
     }
 
     public function findAllQuestionnaireByUncompletede()
@@ -38,4 +48,6 @@ class QuestionnaireRepository extends \Doctrine\ORM\EntityRepository
 
         return $query->getResult();
     }
+
+    
 }
