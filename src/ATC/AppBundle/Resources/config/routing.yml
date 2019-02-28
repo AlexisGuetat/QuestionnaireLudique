@@ -13,7 +13,7 @@ questionnaire_theme:
     defaults: { _controller: ATCAppBundle:Theme:index}
 
 questionnaire:
-    path: /questionnaire/{difficulte}/{theme}/{id}/{numero_question}.{score}
+    path: /questionnaire/{difficulte}/{theme}/{numero_question}.{score}
     defaults: { _controller: ATCAppBundle:Questionnaire:view }
 
 
@@ -28,7 +28,7 @@ administrateur_ajout_questionnaire:
 
 administrateur_complete_questionnaire:
     path: /administrateur/complete_questionnaire
-    defaults: {_controller: ATCAppBundle:Questionnaire:complete}
+    defaults: {_controller: ATCAppBundle:Questionnaire:completeView}
 
 #ROUTE QUESTION
 question_ajout:

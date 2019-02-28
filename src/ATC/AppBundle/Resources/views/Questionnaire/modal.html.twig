@@ -2,7 +2,7 @@
 <!-- Central Modal Medium Success -->
 <div class="modal fade" id="centralModalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
-  <div class="modal-dialog modal-notify modal-success" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-success" role="document">
     <!--Content-->
     <div class="modal-content">
       <!--Header-->
@@ -36,7 +36,7 @@
 {# MODAL SI FAUX #}
 <div class="modal fade" id="centralModalError" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
   aria-hidden="true">
-  <div class="modal-dialog modal-notify modal-danger" role="document">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-danger" role="document">
     <!--Content-->
     <div class="modal-content">
       <!--Header-->
@@ -53,6 +53,39 @@
         <div class="text-center">
           <i class="fas fa-times fa-4x mb-3 animated rotateIn"></i>
           <p>Mince ce n'était pas la bonne réponse... La bonne réponse était XXX ça serait bien de mettre ICI la bonne reponse. Et pourquoi pas l'explication, faudra demander a lardeux.</p>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a type="button"  name="click_modal" class="btn btn-outline-danger waves-effect" data-dismiss="modal">Question suivante</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!-- Central Modal Medium Success-->
+
+{# MODAL SI FAUX #}
+<div class="modal fade" id="centralModalTimer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">AIE !!</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fas fa-times fa-4x mb-3 animated rotateIn"></i>
+          <p>Mince le temps est écoulé... La bonne réponse était XXX ça serait bien de mettre ICI la bonne reponse. Et pourquoi pas l'explication, faudra demander a lardeux.</p>
         </div>
       </div>
 

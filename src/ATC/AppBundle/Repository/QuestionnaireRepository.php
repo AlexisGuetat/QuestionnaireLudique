@@ -2,6 +2,9 @@
 
 namespace ATC\AppBundle\Repository;
 
+use Symfony\Component\Validator\Constraints\Length;
+
+
 /**
  * QuestionnaireRepository
  *
@@ -10,5 +13,44 @@ namespace ATC\AppBundle\Repository;
  */
 class QuestionnaireRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findOneRandQuestionnaireByTheme($theme,$difficulte)
+    {
+            $query = $this->_em->createQuery('SELECT q
+            FROM ATCAppBundle:Questionnaire q
+            JOIN ATCAppBundle:Themes t WHERE q.id_theme = t.id
+            JOIN ATCAppBundle:Difficulte d WHERE q.id_difficulte = d.id
+            WHERE t.id = :theme AND d.id = :difficulte');
+
+           
+            $query->setParameter('theme', $theme);
+            $query->setParameter('difficulte', $difficulte);
+
+            $allQuestionnaire = array();
+            $allQuestionnaire = $query->getResult();
+
+            $tailleTab = count($allQuestionnaire) == 0 ? 0 : count($allQuestionnaire) - 1;
+            $i = rand(0,$tailleTab);
+
+            var_dump($tailleTab);
+
+            //mettre un truc si pas de valeur
+            
+            return $allQuestionnaire[$i];
+    }
+
+    public function findAllQuestionnaireByUncompletede()
+    {
+        $sql = "SELECT COUNT(q), q.id, q.titre, t.nom as theme , d.nom as difficulte
+        FROM ATCAppBundle:Contenu c
+        JOIN ATCAppBundle:Questionnaire q WHERE q.id = c.idQuestionnaire
+        JOIN ATCAppBundle:Themes t WHERE q.id_theme = t.id
+        JOIN ATCAppBundle:Difficulte d WHERE q.id_difficulte = d.id
+        GROUP BY c.idQuestionnaire";
+
+        $query = $this->_em->createQuery($sql);
+
+        return $query->getResult();
+    }
+
     
 }

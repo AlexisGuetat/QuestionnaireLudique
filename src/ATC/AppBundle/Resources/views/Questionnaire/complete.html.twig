@@ -1,12 +1,49 @@
 {% extends "ATCAppBundle::index.html.twig" %}
 
+{% block fond_anime %}
+    <img src="{{  asset('images/fonds/fond_desert.gif') }}" class="fond">
+{% endblock %}
+
 {% block body %}
-<div>
-<h1> choisissez le formualire a complete </h1>
-<select class="custom-select">
-  <option value="" disabled selected>Choose your option</option>
-  <option value="" data-icon="https://mdbootstrap.com/img/Photos/Avatars/avatar-1.jpg" class="rounded-circle">example
-</select>
+<div class="rem-5 responsive ">
+
+    <!-- Default form contact -->
+    <form id="form_complete" method="post" class="text-center border border-light p-5" action=" {{ path('administrateur_complete_questionnaire') }}" >
+
+        <p class="h4 mb-4">Quels formulaire voulez vous completez ?</p>
+
+         <!-- Themes -->
+        <label>Formulaire</label>
+        <select name="titre" class="browser-default custom-select mb-4" required="" >
+            {% for questionnaireIncomplet in questionnaireIncomplets %}
+              <option value="{{ questionnaireIncomplet.titre }}"> {{ questionnaireIncomplet.titre }} - {{questionnaireIncomplet.theme}} - {{questionnaireIncomplet.difficulte }}</option>
+            {% endfor %}
+        </select>
+
+        
+      
+        <!-- Send button -->
+        <button class="btn btn-info btn-block" type="submit">Valider</button>
+
+    </form>
 </div>
 
 {% endblock %}
+
+{% block footer %}
+{{ parent() }}
+ <script src="{{  asset('js/administrateur.js') }}"></script>
+ <script>
+/*
+  var chemin = "";
+
+ $(".questionnaire_complete" ).change(function () {
+    $( "select option:selected" ).each(function() {
+        chemin = $(this).val();
+    });
+ });
+
+ $("#form_complete").attr("action","{{ path('question_ajout' ,{ 'titre' : " + chemin + " } ) }}");
+*/
+    </script>
+ {% endblock %}

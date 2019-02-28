@@ -6,7 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Questionnaire
- * @ORM\Entity
+ * 
+ * @ORM\Table(name="questionnaire")
+ * @ORM\Entity(repositoryClass="ATC\AppBundle\Repository\QuestionnaireRepository")
  */
 class Questionnaire
 {   
@@ -28,18 +30,18 @@ class Questionnaire
     private $titre;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="theme", type="string", length=255)
+     * @ORM\Column(name="id_theme", type="integer")
      */
-    private $theme;
+    private $id_theme;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="difficulte", type="string", length=255)
+     * @ORM\Column(name="id_difficulte", type="integer")
      */
-    private $difficulte;
+    private $id_difficulte;
     
    
     
@@ -84,9 +86,9 @@ class Questionnaire
      *
      * @return Questionnaire
      */
-    public function setTheme($theme)
+    public function setIdTheme($id_theme)
     {
-        $this->theme = $theme;
+        $this->id_theme = $id_theme;
 
         return $this;
     }
@@ -94,23 +96,23 @@ class Questionnaire
     /**
      * Get theme
      *
-     * @return string
+     * @return integer
      */
-    public function getTheme()
+    public function getIdTheme()
     {
-        return $this->theme;
+        return $this->id_theme;
     }
 
     /**
      * Set difficulte
      *
-     * @param string $difficulte
+     * @param integer
      *
      * @return Questionnaire
      */
-    public function setDifficulte($difficulte)
+    public function setIdDifficulte($id_difficulte)
     {
-        $this->difficulte = $difficulte;
+        $this->id_difficulte = $id_difficulte;
 
         return $this;
     }
@@ -119,11 +121,11 @@ class Questionnaire
     /**
      * Get difficulte
      *
-     * @return string
+     * @return int
      */
-    public function getDifficulte()
+    public function getIdDifficulte()
     {
-        return $this->difficulte;
+        return $this->id_difficulte;
     }
 
 

@@ -7,10 +7,10 @@
                 <h5 class="card-header"><b>Ajouter une question au questionnaire : 
                 {% if titre is defined %} 
                         {{ titre }}    
-                        <form id="addQuestion" action="{{ path('question_ajout' , {'titre' :  titre  }) }}">
+                        <form id="addQuestion" method="get" action="{{ path('question_ajout' , {'titre' :  titre  }) }}">
                     {% else %} 
                         {{app.request.attributes.get('titre') }} 
-                        <form id="addQuestion" action="{{ path('question_ajout' , {'titre' :  app.request.attributes.get('titre')  }) }}">
+                        <form id="addQuestion" method="get" action="{{ path('question_ajout' , {'titre' :  app.request.attributes.get('titre')  }) }}">
                 {% endif %} </b></h5>
                 
                 {% if nombre_question is defined %}    
@@ -44,7 +44,7 @@
                                 <input type="text" name="reponseQuatreFausse" class="form-control"  /></label>
                                <div>
                                 <button id="ajout" type="submit" class="btn btn-primary">Ajouter la question</button>
-                                <button id="finis" type="submit" class="btn btn-primary">J'ai finis</button>
+                                <a id="finis" href="{{path('homepage')}}" type="submit" class="btn btn-primary">J'ai finis</a>
                                
                                </div>
                             </div>

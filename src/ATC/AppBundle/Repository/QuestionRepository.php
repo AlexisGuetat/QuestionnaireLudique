@@ -16,7 +16,7 @@ class QuestionRepository extends \Doctrine\ORM\EntityRepository
             FROM ATCAppBundle:Question q
             JOIN ATCAppBundle:Contenu c WHERE q.id = c.idQuestion
             JOIN ATCAppBundle:Questionnaire qs WHERE qs.id = c.idQuestionnaire
-            WHERE qs.id = :id AND qs.theme = :theme AND qs.difficulte = :difficulte');
+            WHERE qs.id = :id AND qs.id_theme = :theme AND qs.id_difficulte = :difficulte');
             
             $query->setParameter('id', $id);
             $query->setParameter('theme', $theme);

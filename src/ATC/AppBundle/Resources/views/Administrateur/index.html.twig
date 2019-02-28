@@ -33,10 +33,10 @@
         <!-- Difficulté -->
         <label>Difficulté du formulaire</label>
         <select name="difficulte" class="browser-default custom-select mb-4" required="">
-            <option value="" seected>Sélectionner une option</option>
-            <option value="FACILE">Facile</option>
-            <option value="MOYEN">Moyen</option>
-            <option value="DIFFICILE">Difficile</option>
+            <option value="" selected>Sélectionner une option</option>
+            {% for difficulte in difficultes %}
+            <option value="{{ difficulte.nom }}">{{ difficulte.nom }}</option>
+            {% endfor %}
         </select>
 
         <!-- Send button -->
