@@ -31,7 +31,7 @@
         {#<img src="{{ asset('images/images_theme/{{ theme.nom }}.png') }}" class="d-block w-100" alt=" image">#}
         <img src="{{  asset('images/images_theme/theme' ~  theme.id  ~  '.png') }}" class="d-block w-100" >
         <div class="carousel-caption d-none d-md-block">
-          <a class="btn btn-primary" href="{{ path('questionnaire', {'difficulte' : difficulte[0].id , 'theme' : theme.id  , 'numero_question' : '0', 'score' : '0' } ) }}" >CHOISIS LE THEME DE {{theme.nom|upper}} </a>
+          <a class="btn btn-primary" href="{{ path('questionnaire', {'difficulte' : difficulte.nom , 'theme' : theme.nom  , 'numero_question' : '0', 'score' : '0' } ) }}" >CHOISIS LE THEME DE {{theme.nom|upper}} </a>
         </div>
       </div>
     {% endfor %}

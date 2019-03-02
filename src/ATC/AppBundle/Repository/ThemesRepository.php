@@ -2,6 +2,9 @@
 
 namespace ATC\AppBundle\Repository;
 
+use ATC\AppBundle\Entity\Themes;
+
+
 /**
  * ThemesRepository
  *
@@ -10,14 +13,5 @@ namespace ATC\AppBundle\Repository;
  */
 class ThemesRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function getByNom($nom)
-    {
-        $query = $this->_em->createQuery('SELECT t
-        FROM ATCAppBundle:Themes t
-        WHERE t.nom = :nom ');
-        
-        $query->setParameter('nom', $nom);
-        
-        return  $query->getResult();
-    }
+    
 }

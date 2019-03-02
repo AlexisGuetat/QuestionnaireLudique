@@ -15,12 +15,11 @@ class ThemeController extends Controller
         
         $difficulte_nom = $request->attributes->get('difficulte');
 
-        $difficulte = $bdd->getRepository('ATCAppBundle:Difficulte')->getByNom($difficulte_nom);
+        $difficulte = $bdd->getRepository('ATCAppBundle:Difficulte')->findOneBy( array('nom' => $difficulte_nom));
 
         $themes =   $bdd->getRepository('ATCAppBundle:Themes')->findAll();
         
-        var_dump($difficulte);
-
+        
         return $this->render('ATCAppBundle:Questionnaire:Theme/index.html.twig',array(
             'themes' => $themes,
             'difficulte' => $difficulte
