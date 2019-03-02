@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class QuestionnaireController extends Controller
-{
+{   
     public function indexDifficulteAction(Request $request){
         $pseudo = $request->query->get('pseudo'); 
         return $this->render('ATCAppBundle:Questionnaire:Difficulte/index.html.twig',array('pseudo'=>$pseudo));
@@ -96,11 +96,15 @@ class QuestionnaireController extends Controller
                 $titre = $request->get('titre') ;
 
                 if ($titre == null) {
-                    throw new NotFoundHttpException("Aucun Questionnaire trouvé avec ce titre.");
+                    throw new NotFoundHttpException("Aucun Questionnaire trouvé.");
                 }
 
-                return $this->redirectToRoute('ajout_question/'.$titre ,array(
-                    'titre' => $titre
+                $bdd = $this->getDoctrine()->getManager();
+
+                $questionnaire =  $bdd->getRepository('ATCAppBundle:Questionnaire')->findOneBy(array('titre'=>$titre));
+
+                return $this->render('ATCAppBundle:Question:add.html.twig' ,array(
+                    'titre' => $questionnaire->getTitre()
                 ));
         }
         else{
