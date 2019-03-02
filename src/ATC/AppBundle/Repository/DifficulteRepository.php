@@ -10,7 +10,7 @@ namespace ATC\AppBundle\Repository;
  */
 class DifficulteRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function getByNom($nom)
+    public function findByNom($nom)
     {
         $query = $this->_em->createQuery('SELECT d
         FROM ATCAppBundle:Difficulte d

@@ -2,6 +2,7 @@
 
 namespace ATC\AppBundle\Repository;
 
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 /**
  * QuestionRepository
  *
@@ -21,8 +22,10 @@ class QuestionRepository extends \Doctrine\ORM\EntityRepository
             $query->setParameter('id', $id);
             $query->setParameter('theme', $theme);
             $query->setParameter('difficulte', $difficulte);
-            
-            return  $query->getResult();
+        
+            $questions =   $query->getResult();
+
+            return $questions;
        
     }
 

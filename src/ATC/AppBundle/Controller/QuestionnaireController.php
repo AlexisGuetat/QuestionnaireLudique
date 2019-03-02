@@ -4,10 +4,8 @@ namespace ATC\AppBundle\Controller;
 
 
 use  ATC\AppBundle\Entity\Questionnaire;
-use  ATC\AppBundle\Entity\Question;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use ATC\AppBundle\Repository\QuestionnaireRepository;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class QuestionnaireController extends Controller
@@ -50,38 +48,41 @@ class QuestionnaireController extends Controller
             ));
     }
 
-    public function viewAction($theme,$difficulte) {       
-            
-            $theme_id = $theme;
-            $difficulte_id = $difficulte;
-            var_dump($theme_id);
-            var_dump($difficulte_id);
-            $bdd = $this->getDoctrine()->getManager();
+    public function viewAction($theme,$difficulte) {  
 
-            $questionnaire = $bdd->getRepository('ATCAppBundle:Questionnaire')->findOneRandQuestionnaireByTheme($theme,$difficulte);
-            
-            if ($questionnaire === null) {
-                throw new NotFoundHttpException("Aucun questionnaire récupéré.");
-                    }
-          
-            $id  =  $questionnaire->getId();
-                
-            if ($id === null) {
-                throw new NotFoundHttpException("Aucun id de questionnaire récupéré.");
-                    }
-            
-            var_dump($id);
+        $bdd = $this->getDoctrine()->getManager();
 
-             $listeQuestions = $this->getDoctrine()
-                                   ->getEntityManager()
-                                   ->getRepository('ATCAppBundle:Question')
-                                   ->findAllQuestionByQuestionnaire($id,$theme_id,$difficulte_id);
+        $theme_id       = $bdd->getRepository('ATCAppBundle:Themes')->findOneBy(array('nom'=> $theme))->getId();
+        $difficulte_id  = $bdd->getRepository('ATCAppBundle:Difficulte')->findOneBy(array('nom'=>$difficulte))->getId();
+      
+        $questionnaire = $bdd->getRepository('ATCAppBundle:Questionnaire')->findOneRandQuestionnaireByTheme($theme_id,$difficulte_id);
+        
+        if ($questionnaire === null) {
+            throw new NotFoundHttpException("Aucun questionnaire récupéré.");
+                }
+      
+        $id  =  $questionnaire->getId();
             
-                                   var_dump($theme_id . " "  .$difficulte_id);
+        if ($id === null) {
+            throw new NotFoundHttpException("Aucun id de questionnaire récupéré.");
+                }
+        
+         $listeQuestions = array();
+         $listeQuestions = $this->getDoctrine()
+                               ->getEntityManager()
+                               ->getRepository('ATCAppBundle:Question')
+                               ->findAllQuestionByQuestionnaire($id,$theme_id,$difficulte_id);
 
-            return $this->render('ATCAppBundle:Questionnaire:index.html.twig', array(
-            'questionnaire'      => $questionnaire, 
-            'listeQuestions'     => $listeQuestions 
+        
+        if(!isset($listeQuestions[0]))
+        {
+            throw new NotFoundHttpException("Pas de question pour le questionnaire n° " . $id . " qui se nomme " . $questionnaire->getTitre() ." ... Va vite le completer !");
+        }
+
+        return $this->render('ATCAppBundle:Questionnaire:index.html.twig', array(
+        'questionnaire'      => $questionnaire, 
+        'listeQuestions'     => $listeQuestions
+        
           ));
         
 

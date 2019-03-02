@@ -1,9 +1,7 @@
 <?php
 
 namespace ATC\AppBundle\Repository;
-
-use Symfony\Component\Validator\Constraints\Length;
-
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * QuestionnaireRepository
@@ -31,9 +29,11 @@ class QuestionnaireRepository extends \Doctrine\ORM\EntityRepository
             $tailleTab = count($allQuestionnaire) == 0 ? 0 : count($allQuestionnaire) - 1;
             $i = rand(0,$tailleTab);
 
-            var_dump($tailleTab);
-
-            //mettre un truc si pas de valeur
+            
+            if(!isset($allQuestionnaire[$i]))
+            {
+                throw new NotFoundHttpException("Pas de questionnaire pour ce theme et cette difficultée. Va vite en créer un !");
+            }
             
             return $allQuestionnaire[$i];
     }
