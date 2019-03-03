@@ -3,22 +3,26 @@
 
 
 {% block body %}
-<div class= "responsive bg-transparent">
+{% set numero_question = app.request.attributes.get('numero_question')|number_format %}
+{% set score = app.request.attributes.get('score')|number_format %}
+
+<div class= " bg-transparent">
     
      <!-- Mask & flexbox options-->
 
      <!-- Content -->
-     <div class="responsive text-center white-text ">
+     <div class=" white-text ">
 
-       
-        <h1 class="display-4  mb-6"> <b><u>{{ questionnaire.titre }}</u></b> </h2>
+            <div class="d-flex justify-content-around bd-highlight">
+            <div id='titre' class="display-4  p-2 lg-5 bd-highlight"> <b><u>{{ questionnaire.titre }}</u></b> </div>
+            <div class="display-4  p-2 bd-highlight">Question N° <a id="numero_question" >{{ numero_question + 1 }}</a></div>
+            <div id="time-counter" class=" display-2 p-2 bd-highlight"></div>
+        </div>
         <!-- Section heading -->
-        <h4 class="display-4 mt-4 mb-6">
-        {% set numero_question = app.request.attributes.get('numero_question')|number_format %}
-        Question N° <a  value="1" >{{ numero_question + 1 }}</a> / 50 : </h4>
+        
                 
         <h2 class="display-4 mb-5 mt-4" ><b>{{ listeQuestions[numero_question].intitule }}</b></h2>
-           <p id="time-counter" class="border border-light my-4"></p>
+           
         <!-- Grid row -->
         <div class="row justify-content-center">
             <div class="col-sm">
@@ -36,11 +40,14 @@
         </div>
         <!-- Grid row -->
 
+        {% if numero_question >= 10 %}
+            <a href="{{ path('score', {'nom_questionnaire' : questionnaire.titre  , 'score' : score })}}" id="page_score"> FINIR LE QUESTIONNAIRE </a>
+        {% endif %}
 
         <div class="progress mt-4 mb-6" style="height:40px">
            
             <div  id="progress_bar" class="progress-bar progress-bar-striped progress-bar-animated bg-success"  role="progressbar" style="width:0%">
-                <b><a id="score" >{% set score = app.request.attributes.get('score')|number_format %}{{ score }}</a> points</b>
+                <b><a id="score" >{{ score }}</a> points</b>
             </div>
         </div> 
          

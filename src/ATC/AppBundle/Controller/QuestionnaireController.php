@@ -120,6 +120,22 @@ class QuestionnaireController extends Controller
         }
     }
 
+    public function scoreAction(Request $request){
+
+        $score = $request->get('score');
+        $questionnaire_titre = $request->get('nom_questionnaire');
+
+        $bdd =  $this->getDoctrine()->getManager();
+
+        $questionnaire = $bdd->getRepository('ATCAppBundle:Questionnaire')->findOneBy(array('titre'=> $questionnaire_titre));
+
+        
+        return $this->render("ATCAppBundle:Score:index.html.twig",array(
+            'score' => $score,
+            'questionnaire' => $questionnaire
+        ));
+    }
+
     
 
 

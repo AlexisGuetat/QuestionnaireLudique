@@ -16,6 +16,9 @@ questionnaire:
     path: /questionnaire/{difficulte}/{theme}/{numero_question}.{score}
     defaults: { _controller: ATCAppBundle:Questionnaire:view }
 
+score:
+    path: /score/{nom_questionnaire}.{score}
+    defaults: { _controller: ATCAppBundle:Questionnaire:score}
 
 #ROUTE ADMINISTRATEUR
 administrateur:

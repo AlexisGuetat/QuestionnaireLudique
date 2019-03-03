@@ -1,5 +1,6 @@
-var reponse_juste   = $('#rep0').val();
-var score           = parseInt($('#score').text()) ;
+var reponse_juste       = $('#rep0').val();
+var score               = parseInt($('#score').text()) ;
+var numero_question     = parseInt($('#numero_question').text()) ;
 
 // Set the date we're counting down to
 var countDownDate = new Date();
@@ -35,8 +36,7 @@ function newQuestion(score_register){
     $('a[name="click_modal"]').click(function(){
        
         var pathArray = window.location.pathname.split('/');
-        var num_question = parseInt(pathArray[8]) + 1;
-    
+        
         var newPathname="";
         for (i = 0; i < pathArray.length - 1; i++) {
             newPathname += "/";
@@ -48,7 +48,7 @@ function newQuestion(score_register){
             data: "&score=" + score_register, 
             dataType : 'html',
             success: function (response) {
-               window.location =  num_question + "." + score_register;
+               window.location =  numero_question + "." + score_register;
             
             }
         });
@@ -107,8 +107,11 @@ function decompte(){
     }, 1000);
 }
 
+
+
 decompte();
 randomQuestion();
 clickButton();
 
 $('#progress_bar').width( score * 2  +"%");
+

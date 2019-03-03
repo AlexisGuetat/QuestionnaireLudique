@@ -1,2 +1,22 @@
 {% extends "ATCAppBundle::index.html.twig" %}
 
+{% block fond_anime %}
+
+<img src="{{ asset('images/diplome.png')}}" class="fond" 
+style="padding-top :5%; padding-bottom :5%; padding-right :10%; padding-left :10%;">
+
+{% endblock %}
+
+{% block body %}
+
+<h3>{{score}}</h3>
+{{ questionnaire.idDifficulte}}
+
+
+
+
+{% endblock %}
+
+{% block footer %}
+{{ parent() }}
+{% endblock %}  
