@@ -79,7 +79,7 @@ function decompte(){
     
     
     var countdownNumberEl = document.getElementById('time-counter');
-            var countdown = 5; //choix du temps 
+            var countdown = 30; //choix du temps 
             
             countdownNumberEl.textContent = countdown;
             
