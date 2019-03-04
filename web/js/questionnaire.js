@@ -87,6 +87,13 @@ function decompte(){
               countdown = --countdown <= 0 ? 0 : countdown; //permet de pas recommencer a l'infini le chrono une fois arrivé à 0
               countdownNumberEl.textContent = countdown;
 
+              if(countdown==6){
+                document.getElementById('countdown-number').style.color = "orange";
+                
+              } else if (countdown==3){
+                document.getElementById('countdown-number').style.color = "red";
+              }
+
               // If the count down is finished, write some text
       $('button[name="rep"]').click(function (e) { 
         e.preventDefault();
