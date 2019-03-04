@@ -22,6 +22,7 @@
  integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
  integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+ <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet"> 
   </head>
 
   <!-- Navbar -->
@@ -46,22 +47,22 @@
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="{{ path('homepage') }}">Acceuil
+            <a class="nav-link" href="{{ path('homepage') }}"><i class="fas fa-igloo"></i>&nbsp;Acceuil
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ path('classement') }}" >Classement</a>
+            <a class="nav-link" href="{{ path('classement') }}" ><i class="fas fa-award"></i></i>&nbsp;Classement</a>
           </li>
           <li class="nav-item">
-            <a id="questionnaire" class="nav-link" data-toggle="modal" href="#QuestionnaireModal">Lancer le LudiQuiz</a>
+            <a id="questionnaire" class="nav-link" data-toggle="modal" href="#QuestionnaireModal"><i class="fas fa-play"></i>&nbsp;Lancer le LudiQuiz</a>
           </li>
            <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-             aria-haspopup="true" aria-expanded="false">Administrateur</a>
+             aria-haspopup="true" aria-expanded="false"><i class="fas fa-cogs"></i>&nbsp;Administrateur</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="{{ path('administrateur') }}">Créer un formulaire</a>
-              <a class="dropdown-item" href="{{ path('administrateur_complete_questionnaire') }}">Compléter un formulaire</a>
+              <a class="dropdown-item" href="{{ path('administrateur') }}"><i class="far fa-edit"></i>&nbsp;Créer un formulaire</a>
+              <a class="dropdown-item" href="{{ path('administrateur_complete_questionnaire') }}"><i class="fas fa-clipboard-list"></i>&nbsp;Compléter un formulaire</a>
             </div>
           </li>
           
