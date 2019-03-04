@@ -10,15 +10,15 @@
     <!-- Default form contact -->
     <form class="text-center border border-light p-5" action="{{ path('administrateur_ajout_questionnaire') }}">
 
-        <p class="h4 mb-4">Entrez les informations du formulaire</p>
+        <p class="h4 mb-4">Entre les informations pour créer le questionnaire</p>
 
         <!-- Nom -->
-        <input type="text" name="titre" class="form-control mb-4" placeholder="Titre du formulaire" required="">
+        <input type="text" name="titre" class="form-control mb-4" placeholder="Ecrit ici le titre du formulaire" required="">
 
         <!-- Themes -->
-        <label>Thémes du formulaire</label>
+        <label>Selectionne le thémes du formulaire</label>
         <select name="theme" class="browser-default custom-select mb-4" required="" id="theme">
-            <option value="" selected>Sélectionner une option</option>
+            <option value="" selected>Clique pour sélectionner</option>
             {% for theme in themes %}
             <option value="{{ theme.nom }}">{{ theme.nom }}</option>
             {% endfor %}
@@ -31,9 +31,9 @@
         
 
         <!-- Difficulté -->
-        <label>Difficulté du formulaire</label>
+        <label>Sélectionne la difficulté du formulaire</label>
         <select name="difficulte" class="browser-default custom-select mb-4" required="">
-            <option value="" selected>Sélectionner une option</option>
+            <option value="" selected>Clique pour sélectionner</option>
             {% for difficulte in difficultes %}
             <option value="{{ difficulte.nom }}">{{ difficulte.nom }}</option>
             {% endfor %}
