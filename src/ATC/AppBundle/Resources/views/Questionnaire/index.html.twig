@@ -14,20 +14,20 @@
      <div class=" white-text ">
 
             <div class="d-flex justify-content-around bd-highlight">
-            <div id='titre' class="display-4  p-2 lg-5 bd-highlight"> <b><u>{{ questionnaire.titre }}</u></b> </div>
-            <div class="display-4  p-2 bd-highlight">Question N° <a id="numero_question" >{{ numero_question + 1 }}</a></div>
+            <div id='titre' class="display-4 mb-2 mt-3 p-2 lg-5 bd-highlight"> <b>{{ questionnaire.titre }}</b> </div>
+            <div class="display-4 mb-2 mt-3 p-2 bd-highlight"><u>Question N° <a id="numero_question" >{{ numero_question + 1 }}&nbsp;</u></a></div>
             <div id="time-counter" class=" display-2 p-2 bd-highlight"></div>
         </div>
         <!-- Section heading -->
         
                 
-        <h2 class="display-4 mb-5 mt-4" ><b>{{ listeQuestions[numero_question].intitule }}</b></h2>
+        <h2 class="display-4 mb-5 mt-4" ><b>{{ listeQuestions[numero_question].intitule }} ?</b></h2>
            
         <!-- Grid row -->
         <div class="row justify-content-center">
             <div class="col-sm">
                 <button name ="rep" id="rep0"   value="{{ listeQuestions[numero_question].reponseunjuste }}" 
-                class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b>{{ listeQuestions[numero_question].reponseunjuste }}</b></button>
+                class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b><i class="fas fa-question"></i>{{ listeQuestions[numero_question].reponseunjuste }}</b></button>
                 <button name ="rep" id="rep1"  value="{{ listeQuestions[numero_question].reponsedeuxfausse }}" 
                 class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ listeQuestions[numero_question].reponsedeuxfausse }}</b></button>
             </div>

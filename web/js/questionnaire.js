@@ -87,7 +87,7 @@ function decompte(){
       var distance = countDownDate - now;
 
       // Time calculations for days, hours, minutes and seconds
-      var seconds = Math.floor((distance % (1000 * 12)) / 1000);
+      var seconds = Math.floor((distance % (3000 * 10)) / 1000);
 
       // Display the result in the element with id="demo"
       document.getElementById("time-counter").innerHTML = seconds + "s ";

@@ -20,9 +20,12 @@
     <div class="carousel-inner">
 
       <div class="carousel-item active">
-        <img src="{{  asset('images/images_theme/theme0.png') }}" class="d-block w-100">
-        <div class="carousel-caption d-none d-md-block btn btn-primary">
-          <h5>Bonjour je suis Fox ! </br>Choisi le theme avec lequel tu veux jouer </br> en cliquant sur les fleches à droite ou a gauche.</h5>
+        <img src="{{  asset('images/images_theme/theme0.png') }}" class="d-block w-150">
+        <div class="carousel-caption d-none d-md-block btn btn-outline-dark">
+          <h5>Choisi le theme avec lequel tu veux jouer <h5>
+          <a>en cliquant sur les fleches <strong>à gauche
+          "&nbsp;<i class="fas fa-angle-left"></i>&nbsp;" ou à droite 
+          "&nbsp;<i class="fas fa-angle-right"></i>&nbsp;" .</a></strong>
         </div>
       </div>
 
@@ -31,7 +34,7 @@
         {#<img src="{{ asset('images/images_theme/{{ theme.nom }}.png') }}" class="d-block w-100" alt=" image">#}
         <img src="{{  asset('images/images_theme/theme' ~  theme.id  ~  '.png') }}" class="d-block w-100" >
         <div class="carousel-caption d-none d-md-block">
-          <a class="btn btn-primary" href="{{ path('questionnaire', {'difficulte' : difficulte.nom , 'theme' : theme.nom  , 'numero_question' : '0', 'score' : '0' } ) }}" >CHOISIS LE THEME DE {{theme.nom|upper}} </a>
+          <a class="btn btn-outline-dark" href="{{ path('questionnaire', {'difficulte' : difficulte.nom , 'theme' : theme.nom  , 'numero_question' : '0', 'score' : '0' } ) }}" ><strong>&nbsp;{{theme.nom|upper}}&nbsp;</strong></a>
         </div>
       </div>
     {% endfor %}
