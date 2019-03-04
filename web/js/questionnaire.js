@@ -77,36 +77,31 @@ $('button[name="rep"]').click(function(){
 
 function decompte(){
     
-    // Update the count down every 1 second
-    var x = setInterval(function () {
+    
+    var countdownNumberEl = document.getElementById('time-counter');
+            var countdown = 5; //choix du temps 
+            
+            countdownNumberEl.textContent = countdown;
+            
+            var x = setInterval(function() {
+              countdown = --countdown <= 0 ? 0 : countdown; //permet de pas recommencer a l'infini le chrono une fois arrivé à 0
+              countdownNumberEl.textContent = countdown;
 
-      // Get todays date and time
-      var now = new Date().getTime();
-
-      // Find the distance between now an the count down date
-      var distance = countDownDate - now;
-
-      // Time calculations for days, hours, minutes and seconds
-      var seconds = Math.floor((distance % (3000 * 10)) / 1000);
-
-      // Display the result in the element with id="demo"
-      document.getElementById("time-counter").innerHTML = seconds + "s ";
-
-      // If the count down is finished, write some text
+              // If the count down is finished, write some text
       $('button[name="rep"]').click(function (e) { 
-          e.preventDefault();
-          clearInterval(x);
-          newQuestion(score);
-      });
-
-      if (seconds <= 0) {
+        e.preventDefault();
         clearInterval(x);
-        $('#centralModalTimer').modal('show');
         newQuestion(score);
-      }
-    }, 1000);
-}
+    });
 
+    if (countdown <= 0) {
+      clearInterval(x);
+      $('#centralModalTimer').modal('show');
+      newQuestion(score);
+    }
+              
+            }, 1000);
+}
 
 
 decompte();
