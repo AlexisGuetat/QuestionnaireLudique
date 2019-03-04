@@ -61,95 +61,92 @@
 {% block footer %}
 {{ parent() }}
 <script src='{{ asset("js/questionnaire.js") }}' ></script>
-<style> 
-    html{
-    height:100%;
-  }
-
-  body {
-      height: 100%;
-      width: 100%;
-      background-color: #333;
-      
-    }
-    
-    #countdown {
-      position: relative;
-      margin: auto;
-      margin-top: 100px;
-      height: 300px;
-      width: 300px;
-      text-align: center;
-
-      
-    }
-    
-    .circle {
-      background-image:linear-gradient(red,green);
-      padding:1px;
-      width:300px;
-      height:300px;
-      border-style: solid;
-      border-color:transparent;
-       border-radius: 50%;
-      border-width:1px;
-      animation:rot 1s linear infinite; 
-      padding:1px;
-    }
-    .circle > div {
-      background:white;
-      height: 299px;
-      width: 299px;
-      border-style: solid;
-       border-radius: 50%;
-      border-width:1px;
-     
-      
-      
-    }
-
-
-    #time-counter {
-      color: white;
-      display: inline-block;
-      line-height: 80px;
-      font-size: 120px;
-      color: white;
-    }
-    
-    svg {
-      position: absolute;
-      top: -170px;
-      right: 0;
-      left:-60px;
-      width: 100%;
-      height: 100%;
-      transform: rotateY(-180deg) rotateZ(-90deg);
-      
-      
-    }
-
-
-
-    svg circle {
-      stroke-dasharray: 400px;
-      stroke-dashoffset: 0px;
-      stroke-linecap: round;
-      stroke-width: 15px;
-      stroke: white;
-      fill: none;
-      animation: countdown 5s linear forwards;
-
-      
-    }
-    
-    @keyframes countdown {
-      from {
-        stroke-dashoffset: 0px;
+<style> html{
+        height:100%;
       }
-      to {
-        stroke-dashoffset: 400px;
-      }
-    }
-    </style>
+    
+      body {
+          height: 100%;
+          width: 100%;
+          
+        }
+        
+        #countdown {
+          position: relative;
+          margin: auto;
+          margin-top: 100px;
+          height: 300px;
+          width: 300px;
+          text-align: center;
+    
+          
+        }
+        
+        .circle {
+          background-image:linear-gradient(red,green);
+          padding:1px;
+          width:300px;
+          height:300px;
+          border-style: solid;
+          border-color:transparent;
+           border-radius: 50%;
+          border-width:1px;
+          animation:rot 1s linear infinite; 
+          padding:1px;
+        }
+        .circle > div {
+          background:white;
+          height: 299px;
+          width: 299px;
+          border-style: solid;
+           border-radius: 50%;
+          border-width:1px;
+         
+          
+          
+        }
+    
+    
+        #time-counter {
+          color: white;
+          display: inline-block;
+          line-height: 80px;
+          font-size: 120px;
+          color: white;
+        }
+        
+        svg {
+          position: absolute;
+          top: -170px;
+          right: 0;
+          left:-60px;
+          width: 100%;
+          height: 100%;
+          transform: rotateY(-180deg) rotateZ(-90deg);
+          
+          
+        }
+    
+    
+    
+        svg circle {
+          stroke-dasharray: 400px;
+          stroke-dashoffset: 0px;
+          stroke-linecap: round;
+          stroke-width: 15px;
+          stroke: white;
+          fill: none;
+          animation: countdown 5s linear forwards;
+    
+          
+        }
+        
+        @keyframes countdown {
+          from {
+            stroke-dashoffset: 0px;
+          }
+          to {
+            stroke-dashoffset: 400px;
+          }
+        }</style>
 {% endblock %}
