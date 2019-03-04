@@ -16,16 +16,15 @@
             <div class="d-flex justify-content-around bd-highlight">
             <div id='titre' class="display-4 mb-2 mt-3 p-2 lg-5 bd-highlight"> <b>{{ questionnaire.titre }}</b> </div>
             <div class="display-4 mb-2 mt-3 p-2 bd-highlight"><u>Question N° <a id="numero_question" >{{ numero_question + 1 }}&nbsp;</u></a></div>
-            <div id="time-counter" class=" display-2 p-2 bd-highlight"></div>
         </div>
         <!-- Section heading -->
         
                 
         <h2 class="display-4 mb-5 mt-4" ><b>{{ listeQuestions[numero_question].intitule }}</b></h2>
            <div id="countdown">
-            <div id="time-counter"></div>
+              <div id="countdown-number"></div>
             <svg>
-              <circle cx="90" cy="90" r="60"></circle>
+              <circle cx="90" cy="90" r="60" ></circle>
             </svg>
           </div>
         <!-- Grid row -->
@@ -68,15 +67,7 @@
 {% block footer %}
 {{ parent() }}
 <script src='{{ asset("js/questionnaire.js") }}' ></script>
-<style> html{
-        height:100%;
-      }
-    
-      body {
-          height: 100%;
-          width: 100%;
-          
-        }
+<style>
         
         #countdown {
           position: relative;
@@ -114,11 +105,11 @@
         }
     
     
-        #time-counter {
+        #countdown-number {
           color: white;
           display: inline-block;
           line-height: 80px;
-          font-size: 120px;
+          font-size: 80px;
           color: white;
         }
         
@@ -143,7 +134,7 @@
           stroke-width: 15px;
           stroke: white;
           fill: none;
-          animation: countdown 5s linear forwards;
+          animation: countdown 10s linear forwards; /* changer la valeur en s pour rentre proportionnel le décompte du timer a la disparition du cercle*/
     
           
         }

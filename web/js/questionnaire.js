@@ -78,8 +78,8 @@ $('button[name="rep"]').click(function(){
 function decompte(){
     
     
-    var countdownNumberEl = document.getElementById('time-counter');
-            var countdown = 30; //choix du temps 
+    var countdownNumberEl = document.getElementById('countdown-number');
+            var countdown = 10; //choix du temps 
             
             countdownNumberEl.textContent = countdown;
             
