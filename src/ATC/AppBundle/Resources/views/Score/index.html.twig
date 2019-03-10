@@ -2,15 +2,16 @@
 
 {% block fond_anime %}
 
-<img src="{{ asset('images/diplome.png')}}" class="fond" 
-style="padding-top :5%; padding-bottom :5%; padding-right :10%; padding-left :10%;">
+<img src="{{ asset('images/diplome.png')}}" class="fond"  style="padding-top :5%; padding-bottom :5%; padding-right :10%; padding-left :10%;">
+<button id="cmd">Télécharge ton précieux diplome!</button>
 
 {% endblock %}
 
 {% block body %}
 
-<h3>{{score}}</h3>
-{{ questionnaire.idDifficulte}}
+
+<h3>{{ score }}</h3>
+<h3>{{ questionnaire.idDifficulte}}</h3>
 
 
 
@@ -19,4 +20,6 @@ style="padding-top :5%; padding-bottom :5%; padding-right :10%; padding-left :10
 
 {% block footer %}
 {{ parent() }}
+<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
 {% endblock %}  
