@@ -37,11 +37,11 @@ class Questionnaire
     private $id_theme;
 
     /**
-     * @var integer
      *
-     * @ORM\Column(name="id_difficulte", type="integer")
+     * @ORM\ManyToOne(targetEntity="ATC\AppBundle\Entity\Difficulte", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $id_difficulte;
+    private $difficulte;
     
    
     
@@ -110,9 +110,9 @@ class Questionnaire
      *
      * @return Questionnaire
      */
-    public function setIdDifficulte($id_difficulte)
+    public function setDifficulte(Difficulte $difficulte)
     {
-        $this->id_difficulte = $id_difficulte;
+        $this->difficulte = $difficulte;
 
         return $this;
     }
@@ -123,12 +123,10 @@ class Questionnaire
      *
      * @return int
      */
-    public function getIdDifficulte()
+    public function getDifficulte()
     {
-        return $this->id_difficulte;
+        return $this->difficulte;
     }
-
-
     
 }
 

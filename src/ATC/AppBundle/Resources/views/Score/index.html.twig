@@ -9,8 +9,17 @@ style="padding-top :5%; padding-bottom :5%; padding-right :10%; padding-left :10
 
 {% block body %}
 
-<h3>{{score}}</h3>
-{{ questionnaire.idDifficulte}}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">NOM</th>
+      <th scope="col">{{ score }}</th>
+      <th scope="col">{{ theme.nom }}</th>
+      <th scope="col">{{ difficulte.nom }}</th>
+    </tr>
+  </thead>
+</table>
+<div class="d-inline-flex p-2 bd-highlight" style="" >{{score}}</h3>
 
 
 

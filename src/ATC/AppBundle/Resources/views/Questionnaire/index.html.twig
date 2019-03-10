@@ -3,8 +3,33 @@
 
 
 {% block body %}
+
+{# ON RECUPERE LE SOCRE ET LA NUMERO DE QUESTION PASSEE DANS L'URL #}
 {% set numero_question = app.request.attributes.get('numero_question')|number_format %}
 {% set score = app.request.attributes.get('score')|number_format %}
+
+
+{# ON DEFINIT LA VALEUR DU TITRE #}
+{% if questionnaire is defined %}
+  {% set titre =  questionnaire.titre %}
+{% elseif questionObj is defined %}
+  {% set titre = "Calcul" %}
+{% endif %}
+
+{# ON DEFINIT LA VALEUR DE LA DIFFICULTE POUR LE PASSER EN PARAMENTRE POUR LA PAGE SCORE #}
+{% if questionnaire is defined %}
+  {% set difficulte_score =  questionnaire.difficulte.nom %}
+{% elseif questionnaireMath is defined %}
+  {% set difficulte_score = questionnaireMath.difficulte  %}
+{% endif %}
+
+{# ON DEFINIT LA VALEUR DE LA QUESTION #}
+{% if questionnaire is defined %}
+  {% set question =  listeQuestions[numero_question] %}
+{% elseif questionObj is defined %}
+  {% set question = questionObj %}
+{% endif %}
+
 
 <div class= " bg-transparent">
     
@@ -14,39 +39,36 @@
      <div class=" white-text ">
 
             <div class="d-flex justify-content-around bd-highlight">
-            <div id='titre' class="display-4 mb-2 mt-3 p-2 lg-5 bd-highlight"> <b>{{ questionnaire.titre }}</b> </div>
+            <div id='titre' class="display-4 mb-2 mt-3 p-2 lg-5 bd-highlight"> <b>{{ titre }}</b> </div>
             <div class="display-4 mb-2 mt-3 p-2 bd-highlight"><u>Question N° <a id="numero_question" >{{ numero_question + 1 }}&nbsp;</u></a></div>
+            <div id="countdown">
+                <div id="countdown-number"></div>
+                <svg>
+                <circle id="cercle" cx="90" cy="90" r="60" ></circle>
+                </svg>
+            </div>
         </div>
         <!-- Section heading -->
         
                 
-        <h2 class="display-4 mb-5 mt-4" ><b>{{ listeQuestions[numero_question].intitule }}</b></h2>
-           <div id="countdown">
-              <div id="countdown-number"></div>
-            <svg>
-              <circle id="cercle" cx="90" cy="90" r="60" ></circle>
-            </svg>
-          </div>
+      <h2 class="display-4 mb-5 mt-4" ><b>{{ question.intitule }}</b></h2>
+          
         <!-- Grid row -->
         <div class="row justify-content-center">
             <div class="col-sm">
-                <button name ="rep" id="rep0"   value="{{ listeQuestions[numero_question].reponseunjuste }}" 
-                class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b><i class="fas fa-question"></i>{{ listeQuestions[numero_question].reponseunjuste }}</b></button>
-                <button name ="rep" id="rep1"  value="{{ listeQuestions[numero_question].reponsedeuxfausse }}" 
-                class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ listeQuestions[numero_question].reponsedeuxfausse }}</b></button>
+                <button name ="rep" id="rep0"   value="{{ question.reponseunjuste }}" 
+                class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b><i class="fas fa-question"></i>{{ question.reponseunjuste }}</b></button>
+                <button name ="rep" id="rep1"  value="{{ question.reponsedeuxfausse }}" 
+                class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></button>
             </div>
             <div class="col-sm">
-                <button  name ="rep" id="rep2" value=" {{ listeQuestions[numero_question].reponsetroisfausse }}" 
-                class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ listeQuestions[numero_question].reponsetroisfausse }}</b></button>
-                <button  name ="rep" id="rep3" value=" {{ listeQuestions[numero_question].reponsequatrefausse }}" 
-                class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ listeQuestions[numero_question].reponsequatrefausse }}</b></button>
+                <button  name ="rep" id="rep2" value=" {{ question.reponsetroisfausse }}" 
+                class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ question.reponsetroisfausse }}</b></button>
+                <button  name ="rep" id="rep3" value=" {{ question.reponsequatrefausse }}" 
+                class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ question.reponsequatrefausse }}</b></button>
             </div>            
         </div>
         <!-- Grid row -->
-
-        {% if numero_question >= 10 %}
-            <a href="{{ path('score', {'nom_questionnaire' : questionnaire.titre  , 'score' : score })}}" id="page_score"> FINIR LE QUESTIONNAIRE </a>
-        {% endif %}
 
         <div class="progress mt-4 mb-6" style="height:40px">
            
@@ -57,6 +79,40 @@
          
       </div>
     
+</div>
+
+{# MODAL DERNIERE QUESTION ATTEINT  #}
+<div class="modal fade" id="centralModalScore" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-warning" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">&nbsp;FELICITATIONS&nbsp;<i class="fas fa-trophy fa-lg" style="color: white;"></i></p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fas fa-trophy fa-4x mb-3 animated rotateIn"></i>
+          <p><i class="fas fa-star fa-spin fa-lg"></i>&nbsp;Tout nos félicitations !&nbsp;<i class="fas fa-star fa-spin fa-lg"></i></p><p> Tu viens de finir le questionnaire !</p>
+          <p>Tu peux des a present voir ton score ! </p>
+        </div>
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a  href="{{ path('score' ,{ 'nom_questionnaire' : titre , 'difficulte_questionnaire' : difficulte_score , 'score' : score }) }}"  class="btn btn-outline-warning waves-effect">&nbsp;Voir le score&nbsp;</i></a>
+       
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
 </div>
 {% endblock %}
 

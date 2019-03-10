@@ -75,45 +75,23 @@ $('button[name="rep"]').click(function(){
 });
 }
 
-function decompte(){
-    
-    
-    var countdownNumberEl = document.getElementById('countdown-number');
-            var countdown = 10; //choix du temps 
-            
-            countdownNumberEl.textContent = countdown;
-            
-            var x = setInterval(function() {
-              countdown = --countdown <= 0 ? 0 : countdown; //permet de pas recommencer a l'infini le chrono une fois arrivé à 0
-              countdownNumberEl.textContent = countdown;
 
-              if(countdown==6){
-                document.getElementById('countdown-number').style.color = "orange";
-                
-              } else if (countdown==3){
-                document.getElementById('countdown-number').style.color = "red";
-              }
-
-              // If the count down is finished, write some text
-      $('button[name="rep"]').click(function (e) { 
-        e.preventDefault();
-        clearInterval(x);
-        newQuestion(score);
-    });
-
-    if (countdown <= 0) {
-      clearInterval(x);
-      $('#centralModalTimer').modal('show');
-      newQuestion(score);
+/**
+ * ICI ON SELECTIONNE LE NUMERO DE QUESTION 
+ * AU BOUT DU QUEL ON AFFICHE LE MODAL POUR VOIR SON SCORE
+ */
+$(document).ready(function () {
+    if(numero_question >= 10 )
+    {
+        $('#centralModalScore').modal('show');
     }
-              
-            }, 1000);
-}
+});
+    
 
 
-decompte();
 randomQuestion();
 clickButton();
+
 
 $('#progress_bar').width( score * 2  +"%");
 
