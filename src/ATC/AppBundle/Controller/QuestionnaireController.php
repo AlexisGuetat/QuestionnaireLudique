@@ -66,8 +66,9 @@ class QuestionnaireController extends Controller
             // creation du questionnaire à la volé
             $questionnaireMath = new Questionnaire();
             $questionnaireMath->setTitre("Calcul");
-            //$questionnaireMath->setIdTheme(1);
-           // $questionnaireMath->setDifficulte($bdd->getRepository('ATCAppBundle:Difficulte')->find(array('nom'=>$difficulte))->getId());
+            $questionnaireMath->setIdTheme(1);
+            $difficulteO = $bdd->getRepository('ATCAppBundle:Difficulte')->findByNom($difficulte);
+            $questionnaireMath->setDifficulte($difficulteO[0]);
 
             //on crée nos variables pour faire les calculs
             $valeur1 = 0;
@@ -84,7 +85,6 @@ class QuestionnaireController extends Controller
                     $valeur2 = rand(0,3);
                     $tableau_de_operateur = ['+','-'];
                     
-
                     break;
                 
                 case 'MOYEN':
@@ -129,9 +129,7 @@ class QuestionnaireController extends Controller
 
             // comme ce sont des enfants 4 - 7 = 0
             $reponse = $reponse < 0 ? 0 : $reponse;
-
-            
-          
+ 
 
             // on crée un nouvel question avec les données crées
             $question = new Question();
@@ -141,15 +139,13 @@ class QuestionnaireController extends Controller
             $question->setReponseTroisFausse($reponse + 2);
             $question->setReponseQuatreFausse($reponse + 3);
 
-            var_dump($questionnaireMath);
+           
              return $this->render('ATCAppBundle:Questionnaire:index.html.twig', array(
                         'questionObj'   => $question,
                         'questionnaireMath' => $questionnaireMath
                   ));
 
         }else{
-
-       
 
         $theme_id       = $bdd->getRepository('ATCAppBundle:Themes')->findOneBy(array('nom'=> $theme))->getId();
         $difficulte     = $bdd->getRepository('ATCAppBundle:Difficulte')->findOneBy(array('nom'=>$difficulte));
@@ -162,8 +158,6 @@ class QuestionnaireController extends Controller
         // ON SELECTIONNE DE MANIERE ALEATOIRE UN QUESTIONNAIRE PARMI CEUX RECUPERER
         $questionnaire = $questionnaires[array_rand($questionnaires,1)];
         
-    
-
         if ($questionnaire === null) {
             throw new NotFoundHttpException("Aucun questionnaire récupéré.");
                 }
@@ -176,9 +170,9 @@ class QuestionnaireController extends Controller
         
          $listeQuestions = array();
          $listeQuestions = $this->getDoctrine()
-                               ->getEntityManager()
-                               ->getRepository('ATCAppBundle:Question')
-                               ->findAllQuestionByQuestionnaire($id,$theme_id,$difficulte->getId());
+                                ->getEntityManager()
+                                ->getRepository('ATCAppBundle:Question')
+                                ->findAllQuestionByQuestionnaire($id,$theme_id,$difficulte->getId());
 
         
         if(!isset($listeQuestions[0]))

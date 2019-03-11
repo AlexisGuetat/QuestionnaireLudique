@@ -20,7 +20,7 @@
 {% if questionnaire is defined %}
   {% set difficulte_score =  questionnaire.difficulte.nom %}
 {% elseif questionnaireMath is defined %}
-  {% set difficulte_score = questionnaireMath.difficulte  %}
+  {% set difficulte_score = questionnaireMath.difficulte.nom  %}
 {% endif %}
 
 {# ON DEFINIT LA VALEUR DE LA QUESTION #}
@@ -37,7 +37,7 @@
 
      <!-- Content -->
      <div class=" white-text ">
-
+            <h1>{{ difficulte_score }}</h1>
             <div class="d-flex justify-content-around bd-highlight">
             <div id='titre' class="display-4 mb-2 mt-3 p-2 lg-5 bd-highlight"> <b>{{ titre }}</b> </div>
             <div class="display-4 mb-2 mt-3 p-2 bd-highlight"><u>Question N° <a id="numero_question" >{{ numero_question + 1 }}&nbsp;</u></a></div>
@@ -104,7 +104,7 @@
           <p>Tu peux des a present voir ton score ! </p>
         </div>
       </div>
-      <p>{{ difficulte_score }}</p>
+    
       <!--Footer-->
       <div class="modal-footer justify-content-center">
         <a  href="{{ path('score' ,{ 'nom_questionnaire' : titre , 'difficulte_questionnaire' : difficulte_score , 'score' : score }) }}"  class="btn btn-outline-warning waves-effect">&nbsp;Voir le score&nbsp;</i></a>
