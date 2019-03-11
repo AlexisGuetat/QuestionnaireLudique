@@ -28,6 +28,7 @@ class QuestionnaireController extends Controller
         $theme          =  $bdd->getRepository('ATCAppBundle:Themes')->findByNom($themeName);
         $difficulte     =  $bdd->getRepository('ATCAppBundle:Difficulte')->findByNom($difficulteName);
 
+        var_dump($difficulte);
         $themeID        = $theme[0]->getId();
         $difficulteID   = $difficulte[0]->getId();
            
