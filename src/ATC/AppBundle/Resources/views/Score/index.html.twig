@@ -3,13 +3,13 @@
 {% block fond_anime %}
 
 <img src="{{ asset('images/diplome.png')}}" class="fond"  style="padding-top :5%; padding-bottom :5%; padding-right :10%; padding-left :10%;">
-<button id="cmd">Télécharge ton précieux diplome!</button>
+
 
 {% endblock %}
 
 {% block body %}
 
-<table class="table">
+{# <table class="table">
   <thead>
     <tr>
       <th scope="col">NOM</th>
@@ -18,11 +18,15 @@
       <th scope="col">{{ difficulte.nom }}</th>
     </tr>
   </thead>
-</table>
-<div class="d-inline-flex p-2 bd-highlight" style="" >{{score}}</h3>
+</table> #}
+<div>
+    <div class="" style="font-size: 100px;" >{{theme.nom}}</div>
+    <div class="" style="font-size: 100px; margin-left: 500px;" >{{score}}</div>
+    <div class="" style="font-size: 100px;" >{{difficulte.nom}}</div>
+    <div class="" style="font-size: 100px;" >{{theme.nom}}</div>
+</div>
 
-
-
+<button id="cmd" style="margin-left: 1000px; margin-top: 100px; font-size: 30px;">Télécharge ton précieux diplome!</button>
 
 {% endblock %}
 
