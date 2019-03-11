@@ -100,11 +100,11 @@
       <div class="modal-body">
         <div class="text-center">
           <i class="fas fa-trophy fa-4x mb-3 animated rotateIn"></i>
-          <p><i class="fas fa-star fa-spin fa-lg"></i>&nbsp;Toute nos félicitations !&nbsp;<i class="fas fa-star fa-spin fa-lg"></i></p><p> Tu viens de finir le questionnaire !</p>
-          <p>Tu peux dès à present voir ton score ! </p>
+          <p><i class="fas fa-star fa-spin fa-lg"></i>&nbsp;Tout nos félicitations !&nbsp;<i class="fas fa-star fa-spin fa-lg"></i></p><p> Tu viens de finir le questionnaire !</p>
+          <p>Tu peux des a present voir ton score ! </p>
         </div>
       </div>
-     
+      <p>{{ difficulte_score }}</p>
       <!--Footer-->
       <div class="modal-footer justify-content-center">
         <a  href="{{ path('score' ,{ 'nom_questionnaire' : titre , 'difficulte_questionnaire' : difficulte_score , 'score' : score }) }}"  class="btn btn-outline-warning waves-effect">&nbsp;Voir le score&nbsp;</i></a>
