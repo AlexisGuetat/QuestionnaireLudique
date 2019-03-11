@@ -3,7 +3,6 @@
 namespace ATC\AppBundle\Controller;
 
 
-use  ATC\AppBundle\Entity\Joueur;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ClassementController extends Controller
