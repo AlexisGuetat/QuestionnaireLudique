@@ -2,7 +2,6 @@
 
 {% block fond_anime %}
 
-<img src="{{ asset('images/diplome.png')}}" class="fond"  style="padding-top :5%; padding-bottom :5%; padding-right :10%; padding-left :10%;">
 
 
 {% endblock %}
@@ -19,11 +18,19 @@
     </tr>
   </thead>
 </table> #}
-<div>
-    <div class="" style="font-size: 100px;" >{{joueur.pseudo}}</div>
-    <div class="" style="font-size: 100px; margin-left: 500px;" >{{joueur.score}}</div>
-    <div class="" style="font-size: 100px;" >{{joueur.questionnaire.difficulte.nom}}</div>
-    <div class="" style="font-size: 100px;" >{{joueur.questionnaire.theme.nom}}</div>
+<div class="card bg-dark text-dark">
+  <img class="card-img" src="{{ asset('images/jungle.png')}}"  alt="Card image" width="50px;" height="550px;">
+  <div class="card-img-overlay">
+     <h1 class="card-title">Félicitation</h1>
+    <div class="row">
+      <div class="col-sm-6" style="font-size: 50px;" >Bravo {{joueur.pseudo}}</div>
+      <div class="col-sm-6" style="font-size: 50px;" > tu as eu {{joueur.score}}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6" style="font-size: 50px;" >au questionnaire {{joueur.questionnaire.difficulte.nom}}</div>
+      <div class="col-sm-6" style="font-size: 50px;" >{{joueur.questionnaire.theme.nom}}</div>
+    </div>
+  </div>
 </div>
 
 <button id="cmd" style="margin-left: 1000px; margin-top: 100px; font-size: 30px;">Télécharge ton précieux diplome!</button>

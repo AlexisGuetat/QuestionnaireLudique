@@ -28,22 +28,24 @@
 {% endif %}
 
 
-<div class= " bg-transparent">
+<div class= "card-box bg-transparent" style="min-width:70%;">
     
      <!-- Mask & flexbox options-->
-
+  
      <!-- Content -->
-      <div class=" white-text " style="max-height:350px;">
+      <div class="row white-text " style="max-height:350px;" width="100%">
             <!--<div class="d-flex justify-content-start bd-highlight">-->
-            <div id='titre' class="display-4 mb-2 mt-3 p-2 lg-5 bd-highlight"> <b>{{ titre }}</b> </div>
-            <div class="display-4 mb-2 mt-3 p-2 bd-highlight"><u>Question N° <a id="numero_question" >{{ numero_question + 1 }}&nbsp;</u></a></div>
-            <div id="countdown" style="margin-top:50px;">
+            <div id='titre' class="display-4 mb-2 mt-3 p-2 lg-5 bd-highlight d-flex justify-content-start"> <b>{{ titre }}</b> </div>
+            <div id="countdown" style="margin-top:50px;" class="d-flex justify-content-center">
                 <div id="countdown-number"></div>
                 <svg >
                 <circle id="cercle" cx="90" cy="90" r="60"></circle>
                 </svg>
             </div>
+            <div class="display-4 mb-2 mt-3 p-2 bd-highlight d-flex justify-content-end"><u>Question N° <a id="numero_question" >{{ numero_question + 1 }}&nbsp;</u></a></div>
+            
       </div>
+  
         <!-- Section heading -->
         
                 
