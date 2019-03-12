@@ -3,17 +3,17 @@ homepage:
     path:     /
     defaults: { _controller: ATCAppBundle:Default:index }
 
-#ROUTE POUR LE QUESTIONNAIRE 
-questionnaire_difficulte:
-    path: /questionnaire
-    defaults: { _controller: ATCAppBundle:Questionnaire:indexDifficulte }
-
+#ROUTE POUR LE QUESTIONNAIRE
 questionnaire_theme:
-    path: /questionnaire/{difficulte}
+    path: /questionnaire
     defaults: { _controller: ATCAppBundle:Theme:index}
 
+questionnaire_difficulte:
+    path: /questionnaire/{theme}
+    defaults: { _controller: ATCAppBundle:Difficulte:index}
+
 questionnaire:
-    path: /questionnaire/{difficulte}/{theme}/{numero_question}.{score}
+    path: /questionnaire/{theme}/{difficulte}/{numero_question}.{score}
     defaults: { _controller: ATCAppBundle:Questionnaire:view }
 
 score:
