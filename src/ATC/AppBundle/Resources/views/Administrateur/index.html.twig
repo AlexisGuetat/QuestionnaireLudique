@@ -20,8 +20,11 @@
         <select name="theme" class="browser-default custom-select mb-4" required="" id="theme">
             <option value="" selected>Clique pour sélectionner</option>
             {% for theme in themes %}
-            <option value="{{ theme.nom }}">{{ theme.nom }}</option>
-            {% endfor %}
+                {% if theme.nom == "Mathematique" %}
+                {% else %}
+                    <option value="{{ theme.nom }}">{{ theme.nom }}</option>
+                {% endif %}
+            {% endfor %}    
             <option value="autres">Autres</option>
         </select>
         

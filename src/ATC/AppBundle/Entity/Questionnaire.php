@@ -31,10 +31,11 @@ class Questionnaire
 
     /**
      * @var int
-     *
-     * @ORM\Column(name="id_theme", type="integer")
+     * 
+     * @ORM\ManyToOne(targetEntity="ATC\AppBundle\Entity\Themes", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $id_theme;
+    private $theme;
 
     /**
      *
@@ -86,9 +87,9 @@ class Questionnaire
      *
      * @return Questionnaire
      */
-    public function setIdTheme($id_theme)
+    public function setTheme(Themes $theme)
     {
-        $this->id_theme = $id_theme;
+        $this->theme = $theme;
 
         return $this;
     }
@@ -98,9 +99,9 @@ class Questionnaire
      *
      * @return integer
      */
-    public function getIdTheme()
+    public function getTheme()
     {
-        return $this->id_theme;
+        return $this->theme;
     }
 
     /**

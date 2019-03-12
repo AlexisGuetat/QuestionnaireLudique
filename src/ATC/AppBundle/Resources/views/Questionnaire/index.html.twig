@@ -10,11 +10,8 @@
 
 
 {# ON DEFINIT LA VALEUR DU TITRE #}
-{% if questionnaire is defined %}
-  {% set titre =  questionnaire.titre %}
-{% elseif questionObj is defined %}
-  {% set titre = "Calcul" %}
-{% endif %}
+{% set titre =  questionnaire.titre %}
+
 
 {# ON DEFINIT LA VALEUR DE LA DIFFICULTE POUR LE PASSER EN PARAMENTRE POUR LA PAGE SCORE #}
 {% if questionnaire is defined %}
@@ -24,7 +21,7 @@
 {% endif %}
 
 {# ON DEFINIT LA VALEUR DE LA QUESTION #}
-{% if questionnaire is defined %}
+{% if listeQuestions is defined %}
   {% set question =  listeQuestions[numero_question] %}
 {% elseif questionObj is defined %}
   {% set question = questionObj %}
@@ -36,22 +33,21 @@
      <!-- Mask & flexbox options-->
 
      <!-- Content -->
-     <div class=" white-text ">
-            <h1>{{ difficulte_score }}</h1>
-            <div class="d-flex justify-content-around bd-highlight">
+      <div class=" white-text " style="max-height:350px;">
+            <!--<div class="d-flex justify-content-start bd-highlight">-->
             <div id='titre' class="display-4 mb-2 mt-3 p-2 lg-5 bd-highlight"> <b>{{ titre }}</b> </div>
             <div class="display-4 mb-2 mt-3 p-2 bd-highlight"><u>Question N° <a id="numero_question" >{{ numero_question + 1 }}&nbsp;</u></a></div>
-            <div id="countdown">
+            <div id="countdown" style="margin-top:50px;">
                 <div id="countdown-number"></div>
-                <svg>
-                <circle id="cercle" cx="90" cy="90" r="60" ></circle>
+                <svg >
+                <circle id="cercle" cx="90" cy="90" r="60"></circle>
                 </svg>
             </div>
-        </div>
+      </div>
         <!-- Section heading -->
         
                 
-      <h2 class="display-4 mb-5 mt-4" ><b>{{ question.intitule }}</b></h2>
+      <h2 class="display-4 mb-5 mt-4" style="margin-bottom:10px;" ><b>{{ question.intitule }}</b></h2>
           
         <!-- Grid row -->
         <div class="row justify-content-center">
@@ -70,7 +66,7 @@
         </div>
         <!-- Grid row -->
 
-        <div class="progress mt-4 mb-6" style="height:40px">
+        <div class="progress mt-4 mb-6" style="height:40px; margin-bottom:15px;">
            
             <div  id="progress_bar" class="progress-bar progress-bar-striped progress-bar-animated bg-success"  role="progressbar" style="width:0%">
                 <b><a id="score" >{{ score }}</a> points</b>
@@ -187,7 +183,7 @@
           stroke-width: 15px;
           stroke: greenyellow;
           fill: none;
-          animation: countdown 10s linear forwards; /* changer la valeur en s pour rentre proportionnel le décompte du timer a la disparition du cercle*/
+          animation: countdown 20s linear forwards; /* changer la valeur en s pour rentre proportionnel le décompte du timer a la disparition du cercle*/
     
           
         }
@@ -203,7 +199,7 @@
 
         <script>
             var countdownNumberEl = document.getElementById('countdown-number');
-            var countdown = 10;
+            var countdown = 20;
             
             countdownNumberEl.textContent = countdown;
             
@@ -211,12 +207,13 @@
               countdown = --countdown <= 0 ? 0 : countdown;
               
               countdownNumberEl.textContent = countdown;
-              if(countdown==6){
+              if(countdown==10){
                 document.getElementById('countdown-number').style.color = "orange";
 
-              } else if (countdown==3){
+              } else if (countdown==5){
                 document.getElementById('countdown-number').style.color = "red";
               }
+
             }, 1000);
         </script>
 

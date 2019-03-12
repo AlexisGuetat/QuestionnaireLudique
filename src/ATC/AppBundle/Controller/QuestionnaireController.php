@@ -28,15 +28,12 @@ class QuestionnaireController extends Controller
         $theme          =  $bdd->getRepository('ATCAppBundle:Themes')->findByNom($themeName);
         $difficulte     =  $bdd->getRepository('ATCAppBundle:Difficulte')->findByNom($difficulteName);
 
-        var_dump($difficulte);
-        $themeID        = $theme[0]->getId();
-        $difficulteID   = $difficulte[0]->getId();
-           
+     
         #Remplit l'objet questionnaire et les valeures recupéré ci-dessus
         $questionnaire = new Questionnaire();
         $questionnaire->setTitre($titre);
-        $questionnaire->setIdTheme($themeID);
-        $questionnaire->setIdDifficulte($difficulteID);
+        $questionnaire->setTheme($theme);
+        $questionnaire->setDifficulte($difficulte);
 
 
         #On envois l'objet questionnaire dans la base de donnée 
@@ -44,8 +41,7 @@ class QuestionnaireController extends Controller
         $manager->persist($questionnaire);
         $manager->flush();
         
-                
-            return $this->render('ATCAppBundle:Question:add.html.twig' ,array(
+        return $this->render('ATCAppBundle:Question:add.html.twig' ,array(
                 'titre' => $questionnaire->getTitre()
             ));
     }
@@ -61,14 +57,17 @@ class QuestionnaireController extends Controller
         $bdd = $this->getDoctrine()->getManager();
 
     // si le theme est math alors on genere le questionnaire automatiquement 
-    if($theme == 'Mathematique'){
+    if($theme == 'Mathematiques'){
+
+            // recuperation des Objet theme et difficulte en fonction de leur nom
+            $themeO = $bdd->getRepository('ATCAppBundle:Themes')->findOneByNom($theme);
+            $difficulteO = $bdd->getRepository('ATCAppBundle:Difficulte')->findOneByNom($difficulte);
 
             // creation du questionnaire à la volé
-            $questionnaireMath = new Questionnaire();
-            $questionnaireMath->setTitre("Calcul");
-            $questionnaireMath->setIdTheme(1);
-            $difficulteO = $bdd->getRepository('ATCAppBundle:Difficulte')->findByNom($difficulte);
-            $questionnaireMath->setDifficulte($difficulteO[0]);
+            $questionnaire = new Questionnaire();
+            $questionnaire->setTitre("Calcul " . $difficulte);
+            $questionnaire->setTheme($themeO);
+            $questionnaire->setDifficulte($difficulteO);
 
             //on crée nos variables pour faire les calculs
             $valeur1 = 0;
@@ -112,7 +111,7 @@ class QuestionnaireController extends Controller
             $operateur = $tableau_de_operateur[$index] ;
 
             // on le met sous forme de chaine de caractere pour afficher la question
-            $intitule = $valeur1 . " " . $operateur . " ". $valeur2 ;
+            $intitule = $valeur1 . " " . $operateur . " ". $valeur2 . " = ";
 
             // on fait le culcul pour avoir la reponse
             $reponse =  0; 
@@ -142,7 +141,7 @@ class QuestionnaireController extends Controller
            
              return $this->render('ATCAppBundle:Questionnaire:index.html.twig', array(
                         'questionObj'   => $question,
-                        'questionnaireMath' => $questionnaireMath
+                        'questionnaire' => $questionnaire
                   ));
 
         }else{
@@ -230,21 +229,12 @@ class QuestionnaireController extends Controller
 
         $bdd =  $this->getDoctrine()->getManager();
 
-        if( ($request->get('nom_questionnaire') !=  "Calcul" )){
-            
-            $questionnaire = $bdd->getRepository('ATCAppBundle:Questionnaire')->findOneBy(array('titre'=> $titre));
-            $theme = $bdd->getRepository('ATCAppBundle:Themes')->find($questionnaire->getIdTheme());
-            $difficulte =$bdd->getRepository('ATCAppBundle:Difficulte')->find($questionnaire->getDifficulte()); 
-            $titre = $questionnaire->getTitre();
+        
+        $questionnaire = $bdd->getRepository('ATCAppBundle:Questionnaire')->findOneBy(array('titre'=> $titre));
+        $theme = $bdd->getRepository('ATCAppBundle:Themes')->find($questionnaire->getTheme());
+        $difficulte =$bdd->getRepository('ATCAppBundle:Difficulte')->find($questionnaire->getDifficulte()); 
+        $titre = $questionnaire->getTitre();
     
-
-        }else{
-
-            $difficulte = $request->get('difficulte_questionnaire');
-            $theme = "Mathematiques";
-            $titre = "Calcul";
-
-        }
         
     
         return $this->render("ATCAppBundle:Score:index.html.twig",array(

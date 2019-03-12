@@ -11,15 +11,17 @@ function decompte(){
     
     var countdownNumberEl = document.getElementById('countdown-number');
 
-           var countdown = 10; //choix du temps            
+           var countdown = 20 ; //choix du temps            
            countdownNumberEl.textContent = countdown;            
            var x = setInterval(function() {
 
              countdown = --countdown <= 0 ? 0 : countdown; //permet de pas recommencer a l'infini le chrono une fois arrivé à 0
 
-             countdownNumberEl.textContent = countdown;              if(countdown==6){
+             countdownNumberEl.textContent = countdown;             
+              if(countdown==10){
 
-               document.getElementById('countdown-number').style.color = "orange";              } else if (countdown==3){
+               document.getElementById('countdown-number').style.color = "orange";              } 
+               else if (countdown==5){
 
                document.getElementById('countdown-number').style.color = "red";
 
@@ -29,17 +31,13 @@ function decompte(){
 
        e.preventDefault();
 
-       clearInterval(x);
-
        newQuestion(score);
 
    });    if (countdown <= 0) {
 
      clearInterval(x);
 
-     $('#centralModalTimer').modal('show');
-
-     newQuestion(score);
+   
 
    }            }, 1000);
 

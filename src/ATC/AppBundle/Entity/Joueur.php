@@ -42,26 +42,15 @@ class Joueur
      */
     private $date;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="temps_rep", type="integer")
-     */
-    private $tempsRep;
 
     /**
-     * @var string
+     * @var Questionnaire
      *
-     * @ORM\Column(name="theme_form", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="ATC\AppBundle\Entity\Questionnaire", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $themeForm;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="difficult_theme", type="string", length=255)
-     */
-    private $difficultTheme;
+    private $questionnaire;
+    
 
 
     /**
@@ -171,51 +160,25 @@ class Joueur
     }
 
     /**
-     * Set themeForm
+     * Get Questionnaire
      *
-     * @param string $themeForm
-     *
-     * @return Joueur
+     * @return Questionnaire
      */
-    public function setThemeForm($themeForm)
+    public function getQuestionnaire()
     {
-        $this->themeForm = $themeForm;
-
-        return $this;
+        return $this->questionnaire;
     }
 
     /**
-     * Get themeForm
+     * Set Questionnaire
      *
-     * @return string
+     * @return Questionnaire
      */
-    public function getThemeForm()
+    public function setQuestionnaire(Questionnaire $questionnaire)
     {
-        return $this->themeForm;
-    }
+         $this->questionnaire = $questionnaire;
 
-    /**
-     * Set difficultTheme
-     *
-     * @param string $difficultTheme
-     *
-     * @return Joueur
-     */
-    public function setDifficultTheme($difficultTheme)
-    {
-        $this->difficultTheme = $difficultTheme;
-
-        return $this;
-    }
-
-    /**
-     * Get difficultTheme
-     *
-     * @return string
-     */
-    public function getDifficultTheme()
-    {
-        return $this->difficultTheme;
+         return $this;
     }
 }
 
