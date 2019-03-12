@@ -12,17 +12,17 @@ use Symfony\Component\Console\Question\Question;
  */
 class QuestionRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findAllQuestionByQuestionnaire($id,$theme,$difficulte)
+    public function findAllQuestionByQuestionnaire($id,$themeId,$difficulteId)
     {       
             $query = $this->_em->createQuery('SELECT q
             FROM ATCAppBundle:Question q
             JOIN ATCAppBundle:Contenu c WHERE q.id = c.idQuestion
             JOIN ATCAppBundle:Questionnaire qs WHERE qs.id = c.idQuestionnaire
-            WHERE qs.id = :id AND qs.id_theme = :theme AND qs.difficulte = :difficulte');
+            WHERE qs.id = :id AND qs.theme = :theme AND qs.difficulte = :difficulte');
             
             $query->setParameter('id', $id);
-            $query->setParameter('theme', $theme);
-            $query->setParameter('difficulte', $difficulte);
+            $query->setParameter('theme', $themeId);
+            $query->setParameter('difficulte', $difficulteId);
         
             $questions =   $query->getResult();
 

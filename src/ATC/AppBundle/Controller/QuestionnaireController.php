@@ -146,12 +146,12 @@ class QuestionnaireController extends Controller
 
         }else{
 
-        $theme_id       = $bdd->getRepository('ATCAppBundle:Themes')->findOneBy(array('nom'=> $theme))->getId();
-        $difficulte     = $bdd->getRepository('ATCAppBundle:Difficulte')->findOneBy(array('nom'=>$difficulte));
+        $theme       = $bdd->getRepository('ATCAppBundle:Themes')->findOneByNom($theme);
+        $difficulte  = $bdd->getRepository('ATCAppBundle:Difficulte')->findOneByNom($difficulte);
             
       
         // ON RECUPERE TOUS LES QUESTIONNAIRES AYANT L'ID ET LA DIFFICULTE PASSEE EN PARAMETRE
-        $questionnaires = $bdd->getRepository('ATCAppBundle:Questionnaire')->findBy(array('id_theme' => $theme_id,
+        $questionnaires = $bdd->getRepository('ATCAppBundle:Questionnaire')->findBy(array('theme' => $theme,
                                                                                          'difficulte' => $difficulte));
         
         // ON SELECTIONNE DE MANIERE ALEATOIRE UN QUESTIONNAIRE PARMI CEUX RECUPERER
@@ -171,7 +171,7 @@ class QuestionnaireController extends Controller
          $listeQuestions = $this->getDoctrine()
                                 ->getEntityManager()
                                 ->getRepository('ATCAppBundle:Question')
-                                ->findAllQuestionByQuestionnaire($id,$theme_id,$difficulte->getId());
+                                ->findAllQuestionByQuestionnaire($id,$theme->getId(),$difficulte->getId());
 
         
         if(!isset($listeQuestions[0]))
