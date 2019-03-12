@@ -8,6 +8,7 @@ use ATC\AppBundle\Entity\Question;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Proxies\__CG__\ATC\AppBundle\Entity\Joueur;
 
 class QuestionnaireController extends Controller
 {   
@@ -171,7 +172,7 @@ class QuestionnaireController extends Controller
          $listeQuestions = $this->getDoctrine()
                                 ->getEntityManager()
                                 ->getRepository('ATCAppBundle:Question')
-                                ->findAllQuestionByQuestionnaire($id,$theme->getId(),$difficulte->getId());
+                                ->findAllQuestionByQuestionnaire($questionnaire);
 
         
         if(!isset($listeQuestions[0]))
@@ -225,23 +226,26 @@ class QuestionnaireController extends Controller
 
         $score = $request->get('score');
         $titre = $request->get('nom_questionnaire');
-        
+        $theme = $request->get('theme_questionnaire');
+        $difficulte = $request->get('difficulte_questionnaire');
 
         $bdd =  $this->getDoctrine()->getManager();
 
+        $questionnaire = $bdd->getRepository('ATCAppBundle:Questionnaire')->findOneByTitre($titre);
         
-        $questionnaire = $bdd->getRepository('ATCAppBundle:Questionnaire')->findOneBy(array('titre'=> $titre));
-        $theme = $bdd->getRepository('ATCAppBundle:Themes')->find($questionnaire->getTheme());
-        $difficulte =$bdd->getRepository('ATCAppBundle:Difficulte')->find($questionnaire->getDifficulte()); 
-        $titre = $questionnaire->getTitre();
-    
-        
+        $questionnaire = new Questionnaire();
+        $questionnaire->setTheme( $bdd->getRepository('ATCAppBundle:Themes')->findOneByNom($theme));
+        $questionnaire->setDifficulte( $bdd->getRepository('ATCAppBundle:Difficulte')->findOneByNom($difficulte));
+
+        $joueur = new Joueur();
+        $joueur->setQuestionnaire($questionnaire);
+        $joueur->setDate(date("Y-m-d H:i:s"));
+        $joueur->setScore($score);
+        $joueur->setPseudo("test");
+
     
         return $this->render("ATCAppBundle:Score:index.html.twig",array(
-            'score' => $score,
-            'questionnaire' => $questionnaire,
-            'difficulte' => $difficulte,
-            'theme' => $theme
+            'joueur' => $joueur
         ));
     }
 

@@ -12,7 +12,7 @@ use Symfony\Component\Console\Question\Question;
  */
 class QuestionRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findAllQuestionByQuestionnaire($id,$themeId,$difficulteId)
+    public function findAllQuestionByQuestionnaire($questionnaire)
     {       
             $query = $this->_em->createQuery('SELECT q
             FROM ATCAppBundle:Question q
@@ -20,9 +20,9 @@ class QuestionRepository extends \Doctrine\ORM\EntityRepository
             JOIN ATCAppBundle:Questionnaire qs WHERE qs.id = c.idQuestionnaire
             WHERE qs.id = :id AND qs.theme = :theme AND qs.difficulte = :difficulte');
             
-            $query->setParameter('id', $id);
-            $query->setParameter('theme', $themeId);
-            $query->setParameter('difficulte', $difficulteId);
+            $query->setParameter('id', $questionnaire->getId());
+            $query->setParameter('theme',$questionnaire->getTheme()->getId());
+            $query->setParameter('difficulte', $questionnaire->getDifficulte()->getId());
         
             $questions =   $query->getResult();
 

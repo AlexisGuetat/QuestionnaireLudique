@@ -15,9 +15,9 @@
 
 {# ON DEFINIT LA VALEUR DE LA DIFFICULTE POUR LE PASSER EN PARAMENTRE POUR LA PAGE SCORE #}
 {% if questionnaire is defined %}
-  {% set difficulte_score =  questionnaire.difficulte.nom %}
+  {% set difficulte =  questionnaire.difficulte.nom %}
 {% elseif questionnaireMath is defined %}
-  {% set difficulte_score = questionnaireMath.difficulte.nom  %}
+  {% set difficulte = questionnaire.difficulte.nom  %}
 {% endif %}
 
 {# ON DEFINIT LA VALEUR DE LA QUESTION #}
@@ -103,7 +103,10 @@
     
       <!--Footer-->
       <div class="modal-footer justify-content-center">
-        <a  href="{{ path('score' ,{ 'nom_questionnaire' : titre , 'difficulte_questionnaire' : difficulte_score , 'score' : score }) }}"  class="btn btn-outline-warning waves-effect">&nbsp;Voir le score&nbsp;</i></a>
+        <a  href="{{ path('score' ,{  'nom_questionnaire'  : questionnaire.titre,
+                                      'theme_questionnaire' : questionnaire.theme.nom,
+                                      'difficulte_questionnaire' : questionnaire.difficulte.nom,
+                                      'score' : score }) }}"  class="btn btn-outline-warning waves-effect">&nbsp;Voir le score&nbsp;</i></a>
        
       </div>
     </div>
