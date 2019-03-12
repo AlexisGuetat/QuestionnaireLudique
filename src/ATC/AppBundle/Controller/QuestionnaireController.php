@@ -9,13 +9,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Proxies\__CG__\ATC\AppBundle\Entity\Joueur;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class QuestionnaireController extends Controller
 {   
-    public function indexDifficulteAction(Request $request){
-        $pseudo = $request->query->get('pseudo'); 
-        return $this->render('ATCAppBundle:Questionnaire:Difficulte/index.html.twig',array('pseudo'=>$pseudo));
-    }
 
     public function addAction(Request $request){   
        
@@ -57,138 +54,139 @@ class QuestionnaireController extends Controller
 
         $bdd = $this->getDoctrine()->getManager();
 
-    // si le theme est math alors on genere le questionnaire automatiquement 
-    if($theme == 'Mathematiques'){
+        // si le theme est math alors on genere le questionnaire automatiquement 
+        if($theme == 'Mathematiques'){
 
-            // recuperation des Objet theme et difficulte en fonction de leur nom
-            $themeO = $bdd->getRepository('ATCAppBundle:Themes')->findOneByNom($theme);
-            $difficulteO = $bdd->getRepository('ATCAppBundle:Difficulte')->findOneByNom($difficulte);
+                // recuperation des Objet theme et difficulte en fonction de leur nom
+                $themeO = $bdd->getRepository('ATCAppBundle:Themes')->findOneByNom($theme);
+                $difficulteO = $bdd->getRepository('ATCAppBundle:Difficulte')->findOneByNom($difficulte);
 
-            // creation du questionnaire à la volé
-            $questionnaire = new Questionnaire();
-            $questionnaire->setTitre("Calcul " . $difficulte);
-            $questionnaire->setTheme($themeO);
-            $questionnaire->setDifficulte($difficulteO);
+                // creation du questionnaire à la volé
+                $questionnaire = new Questionnaire();
+                $questionnaire->setTitre("Calcul " . $difficulte);
+                $questionnaire->setTheme($themeO);
+                $questionnaire->setDifficulte($difficulteO);
 
-            //on crée nos variables pour faire les calculs
-            $valeur1 = 0;
-            $valeur2 = 0;
-            $tableau_de_operateur = [];
+                //on crée nos variables pour faire les calculs
+                $valeur1 = 0;
+                $valeur2 = 0;
+                $tableau_de_operateur = [];
 
-            // on recupere le niveau de difficultée
-            $niveau_de_difficulte = $difficulte;
+                // on recupere le niveau de difficultée
+                $niveau_de_difficulte = $difficulte;
 
-            switch ($niveau_de_difficulte) {
-                case 'FACILE':
+                switch ($niveau_de_difficulte) {
+                    case 'facile':
+                        
+                        $valeur1 = rand(0,3);
+                        $valeur2 = rand(0,3);
+                        $tableau_de_operateur = ['+','-'];
+                        
+                        break;
                     
-                    $valeur1 = rand(0,3);
-                    $valeur2 = rand(0,3);
-                    $tableau_de_operateur = ['+','-'];
+                    case 'moyen':
+
+                        $valeur1 = rand(0,6);
+                        $valeur2 = rand(0,6);
+                        $tableau_de_operateur = ['+','-','*'];
+
+                        break;
+                    case 'difficile':
+
+                        $valeur1 = rand(0,9);
+                        $valeur2 = rand(0,9);
+                        $tableau_de_operateur = ['+','-','*','/'];
+
+                        break;
                     
-                    break;
+                    default:
+                        # code...
+                        break;
+                }
+
+                // on recupere l'index d'une valeur aleatoire du tableau
+                $index = array_rand($tableau_de_operateur,1);
+                $operateur = $tableau_de_operateur[$index] ;
+
+                // on le met sous forme de chaine de caractere pour afficher la question
+                $intitule = $valeur1 . " " . $operateur . " ". $valeur2 . " = ";
+
+                // on fait le culcul pour avoir la reponse
+                $reponse =  0; 
+                switch ($operateur) {
+                    case '+':   $reponse = $valeur1 +  $valeur2;
+                        break;
+                    case '-':   $reponse = $valeur1 -  $valeur2; 
+                        break;
+                    case '*':   $reponse = $valeur1 *  $valeur2;
+                        break;
+                    case '/':   $reponse = $valeur1 /  $valeur2;
+                        break;
+                }
+
+                // comme ce sont des enfants 4 - 7 = 0
+                $reponse = $reponse < 0 ? 0 : $reponse;
+    
+
+                // on crée un nouvel question avec les données crées
+                $question = new Question();
+                $question->setIntitule($intitule);
+                $question->setReponseUnJuste($reponse);
+                $question->setReponseDeuxFausse($reponse + 1);
+                $question->setReponseTroisFausse($reponse + 2);
+                $question->setReponseQuatreFausse($reponse + 3);
+
+            
+                return $this->render('ATCAppBundle:Questionnaire:index.html.twig', array(
+                            'questionObj'   => $question,
+                            'questionnaire' => $questionnaire
+                    ));
+
+            }else{
+
+            $theme       = $bdd->getRepository('ATCAppBundle:Themes')->findOneByNom($theme);
+            $difficulte  = $bdd->getRepository('ATCAppBundle:Difficulte')->findOneByNom($difficulte);
                 
-                case 'MOYEN':
-
-                    $valeur1 = rand(0,6);
-                    $valeur2 = rand(0,6);
-                    $tableau_de_operateur = ['+','-','*'];
-
-                    break;
-                case 'DIFFICILE':
-
-                    $valeur1 = rand(0,9);
-                    $valeur2 = rand(0,9);
-                    $tableau_de_operateur = ['+','-','*','/'];
-
-                    break;
+        
+            // ON RECUPERE TOUS LES QUESTIONNAIRES AYANT L'ID ET LA DIFFICULTE PASSEE EN PARAMETRE
+            $questionnaires = $bdd->getRepository('ATCAppBundle:Questionnaire')->findBy(array('theme' => $theme,
+                                                                                            'difficulte' => $difficulte));
+            
+            // ON SELECTIONNE DE MANIERE ALEATOIRE UN QUESTIONNAIRE PARMI CEUX RECUPERER
+            $questionnaire = $questionnaires[array_rand($questionnaires,1)];
+            
+            if ($questionnaire === null) {
+                throw new NotFoundHttpException("Aucun questionnaire récupéré.");
+                    }
+        
+            $id  =  $questionnaire->getId();
                 
-                default:
-                    # code...
-                    break;
+            if ($id === null) {
+                throw new NotFoundHttpException("Aucun id de questionnaire récupéré.");
+                    }
+            
+            $listeQuestions = array();
+            $listeQuestions = $this->getDoctrine()
+                                    ->getEntityManager()
+                                    ->getRepository('ATCAppBundle:Question')
+                                    ->findAllQuestionByQuestionnaire($questionnaire);
+
+            
+            if(!isset($listeQuestions[0]))
+            {
+                throw new NotFoundHttpException("Pas de question pour le questionnaire n° " . $id . " qui se nomme " . $questionnaire->getTitre() ." ... Va vite le completer !");
             }
 
-            // on recupere l'index d'une valeur aleatoire du tableau
-            $index = array_rand($tableau_de_operateur,1);
-            $operateur = $tableau_de_operateur[$index] ;
-
-            // on le met sous forme de chaine de caractere pour afficher la question
-            $intitule = $valeur1 . " " . $operateur . " ". $valeur2 . " = ";
-
-            // on fait le culcul pour avoir la reponse
-            $reponse =  0; 
-            switch ($operateur) {
-                case '+':   $reponse = $valeur1 +  $valeur2;
-                    break;
-                case '-':   $reponse = $valeur1 -  $valeur2; 
-                    break;
-                case '*':   $reponse = $valeur1 *  $valeur2;
-                    break;
-                case '/':   $reponse = $valeur1 /  $valeur2;
-                    break;
+        
+            return $this->render('ATCAppBundle:Questionnaire:index.html.twig', array(
+            'questionnaire'      => $questionnaire, 
+            'listeQuestions'     => $listeQuestions
+            
+            ));
             }
-
-            // comme ce sont des enfants 4 - 7 = 0
-            $reponse = $reponse < 0 ? 0 : $reponse;
- 
-
-            // on crée un nouvel question avec les données crées
-            $question = new Question();
-            $question->setIntitule($intitule);
-            $question->setReponseUnJuste($reponse);
-            $question->setReponseDeuxFausse($reponse + 1);
-            $question->setReponseTroisFausse($reponse + 2);
-            $question->setReponseQuatreFausse($reponse + 3);
-
-           
-             return $this->render('ATCAppBundle:Questionnaire:index.html.twig', array(
-                        'questionObj'   => $question,
-                        'questionnaire' => $questionnaire
-                  ));
-
-        }else{
-
-        $theme       = $bdd->getRepository('ATCAppBundle:Themes')->findOneByNom($theme);
-        $difficulte  = $bdd->getRepository('ATCAppBundle:Difficulte')->findOneByNom($difficulte);
-            
-      
-        // ON RECUPERE TOUS LES QUESTIONNAIRES AYANT L'ID ET LA DIFFICULTE PASSEE EN PARAMETRE
-        $questionnaires = $bdd->getRepository('ATCAppBundle:Questionnaire')->findBy(array('theme' => $theme,
-                                                                                         'difficulte' => $difficulte));
-        
-        // ON SELECTIONNE DE MANIERE ALEATOIRE UN QUESTIONNAIRE PARMI CEUX RECUPERER
-        $questionnaire = $questionnaires[array_rand($questionnaires,1)];
-        
-        if ($questionnaire === null) {
-            throw new NotFoundHttpException("Aucun questionnaire récupéré.");
-                }
-      
-        $id  =  $questionnaire->getId();
-            
-        if ($id === null) {
-            throw new NotFoundHttpException("Aucun id de questionnaire récupéré.");
-                }
-        
-         $listeQuestions = array();
-         $listeQuestions = $this->getDoctrine()
-                                ->getEntityManager()
-                                ->getRepository('ATCAppBundle:Question')
-                                ->findAllQuestionByQuestionnaire($questionnaire);
-
-        
-        if(!isset($listeQuestions[0]))
-        {
-            throw new NotFoundHttpException("Pas de question pour le questionnaire n° " . $id . " qui se nomme " . $questionnaire->getTitre() ." ... Va vite le completer !");
-        }
-
-      
-        return $this->render('ATCAppBundle:Questionnaire:index.html.twig', array(
-        'questionnaire'      => $questionnaire, 
-        'listeQuestions'     => $listeQuestions
-        
-          ));
-        }
 
           
+    
     }
 
     public function completeViewAction(Request $request){
@@ -222,8 +220,9 @@ class QuestionnaireController extends Controller
         }
     }
 
-    public function scoreAction(Request $request){
+    public function scoreAction(SessionInterface $session, Request $request){
 
+        // recuperation des valeurs passé en parametre
         $score = $request->get('score');
         $titre = $request->get('nom_questionnaire');
         $theme = $request->get('theme_questionnaire');
@@ -233,15 +232,17 @@ class QuestionnaireController extends Controller
 
         $questionnaire = $bdd->getRepository('ATCAppBundle:Questionnaire')->findOneByTitre($titre);
         
+        //recuperation du questionnaire
         $questionnaire = new Questionnaire();
         $questionnaire->setTheme( $bdd->getRepository('ATCAppBundle:Themes')->findOneByNom($theme));
         $questionnaire->setDifficulte( $bdd->getRepository('ATCAppBundle:Difficulte')->findOneByNom($difficulte));
 
+        //creation du joueur
         $joueur = new Joueur();
         $joueur->setQuestionnaire($questionnaire);
         $joueur->setDate(date("Y-m-d H:i:s"));
         $joueur->setScore($score);
-        $joueur->setPseudo("test");
+        $joueur->setPseudo($session->get('pseudo'));
 
     
         return $this->render("ATCAppBundle:Score:index.html.twig",array(
