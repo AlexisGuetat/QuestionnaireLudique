@@ -14,8 +14,7 @@ class DifficulteController extends Controller
 
         return $this->render('ATCAppBundle:Questionnaire:Difficulte/index.html.twig', array('themeName' => $themeName));
     }
-
-    
+ 
 }
 
 
