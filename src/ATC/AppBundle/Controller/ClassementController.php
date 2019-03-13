@@ -11,7 +11,10 @@ class ClassementController extends Controller
     {   
         $bdd = $this->getDoctrine()->getManager();
 
-        $joueurs =  $bdd->getRepository('ATCAppBundle:Joueur')->findAll();
+        $joueurs =  $this->getDoctrine()
+                         ->getEntityManager()
+                         ->getRepository('ATCAppBundle:Joueur')
+                         ->findBy(array(), array('score' => 'desc'));
 
         return $this->render('ATCAppBundle:Classement:index.html.twig', array(
             'joueurs' => $joueurs

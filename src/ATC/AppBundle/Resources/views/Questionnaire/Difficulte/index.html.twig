@@ -2,10 +2,10 @@
 {% extends "ATCAppBundle::index.html.twig" %}
 
   {% block body %}
+
   <div class="container">
     <!-- Section heading -->
-    <h2 class=" mt-5 mb-6">  Il faut avoir du courage pour affronter l'ile... Bravo <u>{{ pseudo }}</u> ! </h1>
-    <h2 class="mb-5"> Choisis ton niveau de difficulté.</h2>     
+   <h2 class="mb-5"> Choisis ton niveau de difficulté pour le theme {{ themeName }}.  </h2>     
     <!-- Grid row -->
           <div class="row black-text ">
 
@@ -30,7 +30,11 @@
                   <hr>
                   <!--Quotation-->
                   <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>Ici que des questions faciles pour s'échauffer.</p>
-                     <a href="{{ path('questionnaire_theme' , {'difficulte' : 'facile'}) }}" class="btn peach-gradient">JOUER </a>
+                     <a href="{{ path('questionnaire' ,{
+                                                            'theme' : themeName , 
+                                                            'difficulte' : 'facile' ,
+                                                            'numero_question' : '0' ,
+                                                            'score' : '0' }) }}" class="btn peach-gradient">JOUER</a>
                 </div>
               </div>
               <!--Card-->
@@ -60,7 +64,10 @@
                   <hr>
                   <!--Quotation-->
                   <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>On met la barre un peu plus haute dans cette difficulté</p>
-                     <a href="{{ path('questionnaire_theme' ,{'difficulte' : 'moyen'}) }}" class="btn peach-gradient">JOUER </a>
+                     <a href="{{ path('questionnaire' , {'theme' : themeName , 
+                                                          'difficulte' : 'moyen',
+                                                          'numero_question' : '0',
+                                                          'score' : '0' }) }}" class="btn peach-gradient">JOUER </a>
                 </div>
                 
               </div>
@@ -89,7 +96,10 @@
                   <hr>
                   <!--Quotation-->
                   <p class="dark-grey-text mb-2"><i class="fas fa-quote-left pr-2"></i>Es-tu prêt à relever les plus durs défis de l'ile ?</p>
-                   <a href="{{ path('questionnaire_theme' ,{'difficulte' : 'difficile'}) }}" class="btn peach-gradient">JOUER </a>
+                   <a href="{{ path('questionnaire' ,{  'theme' : themeName , 
+                                                        'difficulte' : 'difficile',
+                                                        'numero_question' : '0',
+                                                        'score' : '0' }) }}" class="btn peach-gradient">JOUER </a>
                 </div>
                   
               </div>

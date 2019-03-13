@@ -40,9 +40,11 @@
 
           <div class="px-4">
 
-            <div class="table-wrapper">
+            <div class="table-wrapper" style="overflow: auto;
+                                              height : 100%;
+                                              width: 100%;">
               <!--Table-->
-              <table id="tab" class="table table-hover" >
+              <table id="tab"  class="table table-responsive-md scroll" >
 
                 <!--Table head-->
                 <thead>
@@ -79,14 +81,26 @@
                 <!--Table body-->
                 <tbody>
 
+              {% set i = 0 %}
               {% for joueur in joueurs %}
-                  <tr>
-                    <td>{{ joueur.pseudo }}</td>
-                    <td>{{ joueur.score }} points</td>
-                    <td>{{ joueur.date|date("m/d/Y") }}</td>
-                    <td>{{ joueur.questionnaire.theme.nom}}</td>
-                    <td>{{ joueur.questionnaire.difficulte.nom }}</td>
-                  </tr>
+                {% if i <= 2 %}
+                    <tr>
+                      <td class="bg-warning" ><i class="fas fa-crown"></i>&nbsp;{{ joueur.pseudo }}</td>
+                      <td class="bg-warning">{{ joueur.score }} points</td>
+                      <td class="bg-warning">{{ joueur.date|date("m/d/Y") }}</td>
+                      <td class="bg-warning">{{ joueur.questionnaire.theme.nom}}</td>
+                      <td class="bg-warning" >{{ joueur.questionnaire.difficulte.nom }}</td>
+                    </tr>
+                  {% set i = i + 1 %}
+                  {% else %}
+                    <tr>
+                      <td>{{ joueur.pseudo }}</td>
+                      <td>{{ joueur.score }} points</td>
+                      <td>{{ joueur.date|date("m/d/Y") }}</td>
+                      <td>{{ joueur.questionnaire.theme.nom}}</td>
+                      <td>{{ joueur.questionnaire.difficulte.nom }}</td>
+                    </tr>
+                  {% endif %}
                 {% endfor %}
 
                 </tbody>

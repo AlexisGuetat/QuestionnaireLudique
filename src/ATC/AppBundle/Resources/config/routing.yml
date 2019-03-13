@@ -3,22 +3,27 @@ homepage:
     path:     /
     defaults: { _controller: ATCAppBundle:Default:index }
 
-#ROUTE POUR LE QUESTIONNAIRE 
-questionnaire_difficulte:
-    path: /questionnaire
-    defaults: { _controller: ATCAppBundle:Questionnaire:indexDifficulte }
-
+#ROUTE POUR LE QUESTIONNAIRE
 questionnaire_theme:
-    path: /questionnaire/{difficulte}
+    path: /questionnaire
     defaults: { _controller: ATCAppBundle:Theme:index}
 
+questionnaire_difficulte:
+    path: /questionnaire/{theme}
+    defaults: { _controller: ATCAppBundle:Difficulte:index}
+
 questionnaire:
-    path: /questionnaire/{difficulte}/{theme}/{numero_question}.{score}
+    path: /questionnaire/{theme}/{difficulte}/{numero_question}.{score}
     defaults: { _controller: ATCAppBundle:Questionnaire:view }
 
 score:
     path: /score/{nom_questionnaire}.{theme_questionnaire}.{difficulte_questionnaire}.{score}
     defaults: { _controller: ATCAppBundle:Questionnaire:score}
+
+joueur_add:
+    path: /score_add
+    defaults: { _controller: ATCAppBundle:Joueur:add}
+
 
 #ROUTE ADMINISTRATEUR
 administrateur:
