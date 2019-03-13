@@ -46,7 +46,7 @@
     
       <!--Footer-->
       <div class="modal-footer justify-content-center">
-        <a id="ajouter_joueur" class="btn btn-outline-warning waves-effect">&nbsp;OUI&nbsp;<i class="fas fa-check"></i></i></a>
+        <a id="ajouter_joueur" class="btn btn-outline-warning waves-effect" data-dismiss="modal">&nbsp;OUI&nbsp;<i class="fas fa-check"></i></i></a>
         <a class="btn btn-outline-warning waves-effect" data-dismiss="modal">&nbsp;NON&nbsp;<i class="fas fa-times"></i></i></a>
       </div>
     </div>
@@ -75,7 +75,7 @@ if( $('#score').text() > 20)
             data: "score=" + score + "&theme=" + theme + "&difficulte=" + difficulte + "&titre=" + titre ,
             dataType: "html",
             success: function (response) {
-                alert("Tu as bien été enregistrer.");
+                 $('#centralModalScoreSave').modal('hide');
             }
         });
         
