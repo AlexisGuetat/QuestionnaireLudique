@@ -10,18 +10,78 @@
 {% block body %}
 
 <div>
-    <div class="" style="font-size: 100px;" >{{joueur.pseudo}}</div>
-    <div class="" style="font-size: 100px; margin-left: 500px;" >{{joueur.score}}</div>
-    <div class="" style="font-size: 100px;" >{{joueur.questionnaire.difficulte.nom}}</div>
-    <div class="" style="font-size: 100px;" >{{joueur.questionnaire.theme.nom}}</div>
+    <div id="pseudo"  >{{joueur.pseudo}}</div>
+    <div id="score" >{{joueur.score}}</div>
+    <div id="difficulte"   >{{joueur.questionnaire.difficulte.nom}}</div>
+    <div id="theme"  >{{joueur.questionnaire.theme.nom}}</div>
 </div>
 
-<button id="cmd" style="margin-left: 1000px; margin-top: 100px; font-size: 30px;">Télécharge ton précieux diplome!</button>
+<a id="cmd" style="margin-left: 1000px; margin-top: 100px; font-size: 30px;">Télécharge ton  diplome!</a>   
 
+{# MODAL AJOUT JOUEUR #}
+<div class="modal fade" id="centralModalScoreSave" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-notify modal-warning" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <p class="heading lead">&nbsp;FELICITATIONS TU AS PLUS DE 20 POINTS&nbsp;</p>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+        <div class="text-center">
+          <i class="fas fa-crown fa-4x mb-3 animated rotateIn"></i>
+          <p><i class="fas fa-star fa-spin fa-lg"></i>&nbsp;Toutes nos félicitations !&nbsp;
+          <i class="fas fa-star fa-spin fa-lg"></i></p><p> Tu viens de finir le questionnaire.</br>   
+          <strong><u>Tu as eu un super score !</u></strong></p>
+          <p><strong>Veux tu enregistrer ton score ? </strong>  </p>
+        </div>
+      </div>
+    
+      <!--Footer-->
+      <div class="modal-footer justify-content-center">
+        <a id="ajouter_joueur" class="btn btn-outline-warning waves-effect">&nbsp;OUI&nbsp;<i class="fas fa-check"></i></i></a>
+        <a class="btn btn-outline-warning waves-effect" data-dismiss="modal">&nbsp;NON&nbsp;<i class="fas fa-times"></i></i></a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
 {% endblock %}
 
 {% block footer %}
 {{ parent() }}
-<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+<script>
+if( $('#score').text() > 20)
+{
+    $('#centralModalScoreSave').modal('show');
+    $('#ajouter_joueur').click(function (e) { 
+        e.preventDefault();
+
+        var score       = $('#score').text();
+        var titre       = $('#titre').text();
+        var theme       = $('#theme').text();
+        var difficulte  = $('#difficulte').text();
+
+        $.ajax({
+            type: "post",
+            url: "{{ path('joueur_add') }}",
+            data: "score=" + score + "&theme=" + theme + "&difficulte=" + difficulte + "&titre=" + titre ,
+            dataType: "html",
+            success: function (response) {
+                alert("Tu as bien été enregistrer.");
+            }
+        });
+        
+    });
+}</script>
+{#
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+#}
 {% endblock %}  

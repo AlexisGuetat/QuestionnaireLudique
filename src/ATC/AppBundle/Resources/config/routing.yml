@@ -20,6 +20,11 @@ score:
     path: /score/{nom_questionnaire}.{theme_questionnaire}.{difficulte_questionnaire}.{score}
     defaults: { _controller: ATCAppBundle:Questionnaire:score}
 
+joueur_add:
+    path: /score_add
+    defaults: { _controller: ATCAppBundle:Joueur:add}
+
+
 #ROUTE ADMINISTRATEUR
 administrateur:
     path: /administrateur

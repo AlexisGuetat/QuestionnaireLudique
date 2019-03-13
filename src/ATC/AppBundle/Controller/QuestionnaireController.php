@@ -8,7 +8,7 @@ use ATC\AppBundle\Entity\Question;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Proxies\__CG__\ATC\AppBundle\Entity\Joueur;
+use ATC\AppBundle\Entity\Joueur;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class QuestionnaireController extends Controller

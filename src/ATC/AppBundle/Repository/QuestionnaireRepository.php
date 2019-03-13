@@ -17,7 +17,7 @@ class QuestionnaireRepository extends \Doctrine\ORM\EntityRepository
         $sql = "SELECT COUNT(q), q.id, q.titre, t.nom as theme , d.nom as difficulte
         FROM ATCAppBundle:Contenu c
         JOIN ATCAppBundle:Questionnaire q WHERE q.id = c.idQuestionnaire
-        JOIN ATCAppBundle:Themes t WHERE q.id_theme = t.id
+        JOIN ATCAppBundle:Themes t WHERE q.theme = t.id
         JOIN ATCAppBundle:Difficulte d WHERE q.difficulte = d
         GROUP BY c.idQuestionnaire";
 
