@@ -13,7 +13,7 @@ class ThemeController extends Controller
         // on stocke dans la session le pseudo
         $pseudo = $request->get('pseudo');
         $session->set('pseudo', $pseudo);
-     
+
         $bdd = $this->getDoctrine()->getManager();
         $themes = $bdd->getRepository('ATCAppBundle:Themes')->findAll();
 

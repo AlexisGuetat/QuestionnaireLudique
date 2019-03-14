@@ -1,17 +1,9 @@
-$(".supprimer").click(function (e) { 
+
+$(".btn-voir").click(function (e) { 
     e.preventDefault();
+    
+    console.log($(this).attr("id").text());
+    
 
-    var titre = $('#titre').text();
 
-    $.ajax({
-        type: "post",
-        url: "{{ path('administrateur_delete') }}",
-        data: "titre=" + titre,
-        dataType: "html",
-        success : function(code_html, statut){ // code_html contient le HTML renvoyé
-            $(document).html(code_html);
-        }
-    });
-
-    //$reponseAjax = $ajax
 });

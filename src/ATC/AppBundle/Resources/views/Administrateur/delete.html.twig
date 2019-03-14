@@ -70,8 +70,8 @@
                       <td >{{ questionnaire.theme.nom }}</td>
                       <td >{{ questionnaire.difficulte.nom }}</td>
                       <td class="text-center">
-                      <a name="voir" class="btn btn-primary"><i class="fas fa-eye"></i></a>&nbsp;
-                      <a name="supprimer" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+                      <div  id="voir"class="btn btn-primary btn-voir"><i class="fas fa-eye"></i></div>&nbsp;
+                      <div  class="btn btn-danger btn-supprimer"><i class="fas fa-trash-alt"></i></div></td>
                     </tr>
                  
                 {% endfor %}
@@ -125,7 +125,7 @@ $(".supprimer").click(function (e) {
 
     $.ajax({
         type: "post",
-        url: "{{ path('administrateur_delete') }}",
+        url:  "{{ path('administrateur_delete') }}",
         data: "titre=" + titre,
         dataType: "html"
     });
@@ -133,4 +133,5 @@ $(".supprimer").click(function (e) {
     //$reponseAjax = $ajax
 });
 </script>
+<script src=" {{ asset('js/delete.js') }}"></script>
 {% endblock %}

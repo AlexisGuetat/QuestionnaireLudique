@@ -6,6 +6,10 @@ use Symfony\Component\HttpFoundation\Request;
 
 class AdministrateurController extends Controller
 {
+    /**
+     * affiche la page de la création du questionnaire
+     * 
+     */
     public function indexAction()
     {   
         $bdd        = $this->getDoctrine()->getManager();

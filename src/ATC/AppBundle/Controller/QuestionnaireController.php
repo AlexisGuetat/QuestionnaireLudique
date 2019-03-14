@@ -50,7 +50,7 @@ class QuestionnaireController extends Controller
      * @param String $difficulte nom de la difficulte
      * @return View
      */
-    public function viewAction($theme,$difficulte) {  
+    public function viewAction(SessionInterface $session,$theme,$difficulte) {  
 
         $bdd = $this->getDoctrine()->getManager();
 
@@ -63,7 +63,10 @@ class QuestionnaireController extends Controller
 
                 // creation du questionnaire à la volé
                 $questionnaire = new Questionnaire();
-                $questionnaire->setTitre("Calcul " . $difficulte);
+                $titre = "Calcul " . $difficulte ;
+                $session->set('titre', $titre);
+
+                $questionnaire->setTitre( $titre );
                 $questionnaire->setTheme($themeO);
                 $questionnaire->setDifficulte($difficulteO);
 
@@ -72,11 +75,9 @@ class QuestionnaireController extends Controller
                 $valeur2 = 0;
                 $tableau_de_operateur = [];
 
-                // on recupere le niveau de difficultée
-                $niveau_de_difficulte = $difficulte;
 
-                switch ($niveau_de_difficulte) {
-                    case 'facile':
+                switch ($difficulte) {
+                    case 'facile' || 'FACILE':
                         
                         $valeur1 = rand(0,3);
                         $valeur2 = rand(0,3);
@@ -84,14 +85,14 @@ class QuestionnaireController extends Controller
                         
                         break;
                     
-                    case 'moyen':
+                    case 'moyen' || 'MOYEN':
 
                         $valeur1 = rand(0,6);
                         $valeur2 = rand(0,6);
                         $tableau_de_operateur = ['+','-','*'];
 
                         break;
-                    case 'difficile':
+                    case 'difficile' || 'DIFFICILE':
 
                         $valeur1 = rand(0,9);
                         $valeur2 = rand(0,9);
@@ -104,6 +105,7 @@ class QuestionnaireController extends Controller
                         break;
                 }
 
+              
                 // on recupere l'index d'une valeur aleatoire du tableau
                 $index = array_rand($tableau_de_operateur,1);
                 $operateur = $tableau_de_operateur[$index] ;
@@ -176,6 +178,8 @@ class QuestionnaireController extends Controller
             {
                 throw new NotFoundHttpException("Pas de question pour le questionnaire n° " . $id . " qui se nomme " . $questionnaire->getTitre() ." ... Va vite le completer !");
             }
+
+            $session->set('titre', $questionnaire->getTitre());
 
         
             return $this->render('ATCAppBundle:Questionnaire:index.html.twig', array(

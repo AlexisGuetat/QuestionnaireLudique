@@ -11,9 +11,10 @@
 
 <div id="pdf">
     <div id="pseudo"  >{{joueur.pseudo}}</div>
-    <div id="score" >{{joueur.score}}</div>
-    <div id="difficulte"   >{{joueur.questionnaire.difficulte.nom}}</div>
-    <div id="theme"  >{{joueur.questionnaire.theme.nom}}</div>
+    <div id="score"   >{{joueur.score}}</div>
+    <div id="titre"   > {{app.session.get('titre')}}</div>
+    <div id="difficulte">{{joueur.questionnaire.difficulte.nom}}</div>
+    <div id="theme"   >{{joueur.questionnaire.theme.nom}}</div>
 </div>
 
 <a  href="javascript:demoFromHTML()"  style="margin-left: 1000px; margin-top: 100px; font-size: 30px;">Télécharge ton  diplome!</a>   
@@ -70,7 +71,7 @@
           var titre       = $('#titre').text();
           var theme       = $('#theme').text();
           var difficulte  = $('#difficulte').text();
-
+          console.log(titre);
           $.ajax({
               type: "post",
               url: "{{ path('joueur_add') }}",

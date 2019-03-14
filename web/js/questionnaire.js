@@ -27,19 +27,14 @@ function decompte(){
 
              }              // If the count down is finished, write some text
 
-     $('button[name="rep"]').click(function (e) {
 
-       e.preventDefault();
+             if (countdown <= 0) {
 
-       newQuestion(score);
-
-   });    if (countdown <= 0) {
-
-     clearInterval(x);
-
-   
-
-   }            }, 1000);
+                clearInterval(x);
+                $('#centralModalTimer').modal('show');
+                newQuestion();
+            }            
+    }, 1000);
 
 }
 
@@ -68,9 +63,8 @@ function randomQuestion(){
 }
 
 //CHARGE LA QUESTION SUIVANTE
-function newQuestion(score_register){
-    $('a[name="click_modal"]').click(function(){
-       
+function newQuestion(){
+   
         var pathArray = window.location.pathname.split('/');
         
         var newPathname="";
@@ -81,33 +75,32 @@ function newQuestion(score_register){
         
         $.ajax({
             type: "POST",
-            data: "&score=" + score_register, 
+            data: "&score=" + score, 
             dataType : 'html',
             success: function (response) {
-               window.location =  numero_question + "." + score_register;
+               window.location =  numero_question + "." + score;
             
             }
         });
-        
-    });
+    
     }
 
-    
+
 //AU CLIQUE D'UN BOUTON DIRE SI LA REPONSE CLIQUER EST JUSTE OU NON ET AFFICHER UNE POP UP 
 function clickButton(){
-$('button[name="rep"]').click(function(){
-    
+$('button[name="rep"]').click(function(e){
+    e.preventDefault();
+
     if( $(this).val() ==  reponse_juste)
-    {
-        $('#centralModalSuccess').modal('show');
-        score = score + 1;
-        $('#score').text(score);
+    {   
+        $('#centralModalSuccess').modal('show');         
     }
     else
     {
         $('#centralModalError').modal('show');
     }
-    newQuestion(score);
+
+    newQuestion()
 });
 }
 
