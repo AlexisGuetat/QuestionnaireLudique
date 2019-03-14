@@ -23,8 +23,8 @@ class QuestionnaireController extends Controller
         $themeName      = !empty($request->get('theme'))         ? $request->get('theme')     : "";
         $difficulteName = !empty($request->get('difficulte'))    ? $request->get('difficulte'): "";
         
-        $theme          =  $bdd->getRepository('ATCAppBundle:Themes')->findByNom($themeName);
-        $difficulte     =  $bdd->getRepository('ATCAppBundle:Difficulte')->findByNom($difficulteName);
+        $theme          =  $bdd->getRepository('ATCAppBundle:Themes')->findOneByNom($themeName);
+        $difficulte     =  $bdd->getRepository('ATCAppBundle:Difficulte')->findOneByNom($difficulteName);
 
      
         #Remplit l'objet questionnaire et les valeures recupéré ci-dessus

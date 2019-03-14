@@ -38,6 +38,10 @@ administrateur_complete_questionnaire:
     path: /administrateur/complete_questionnaire
     defaults: {_controller: ATCAppBundle:Questionnaire:completeView}
 
+administrateur_delete:
+    path: /administrateur/verif_questionnaire
+    defaults: {_controller: ATCAppBundle:Administrateur:delete}
+
 #ROUTE QUESTION
 question_ajout:
     path: /administrateur/ajout_questionnaire/ajout_question/{titre}
