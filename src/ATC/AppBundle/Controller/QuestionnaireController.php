@@ -25,7 +25,12 @@ class QuestionnaireController extends Controller
         
         $theme          =  $bdd->getRepository('ATCAppBundle:Themes')->findOneByNom($themeName);
         $difficulte     =  $bdd->getRepository('ATCAppBundle:Difficulte')->findOneByNom($difficulteName);
-
+        
+        $questionnaire = $bdd->getRepository("ATCAppBundle:Questionnaire")->findOneByTitre($titre);
+        
+        if($questionnaire != null) {
+            throw new NotFoundHttpException("Ce titre de questionnaire existe déja. Veuillez un trouver un autre");
+        }
      
         #Remplit l'objet questionnaire et les valeures recupéré ci-dessus
         $questionnaire = new Questionnaire();
