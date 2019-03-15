@@ -52,7 +52,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ path('classement') }}" ><i class="fas fa-award"></i></i>&nbsp;Classement</a>
+            <a class="nav-link" href="{{ path('classement') }}" ><i class="fas fa-list-ol"></i></i>&nbsp;Classement</a>
           </li>
           <li class="nav-item">
             <a id="questionnaire" class="nav-link" data-toggle="modal" href="#QuestionnaireModal"><i class="fas fa-gamepad"></i></i>&nbsp;Lancer le LudiQuiz</a>
@@ -63,6 +63,7 @@
             <div class="dropdown-menu">
               <a class="dropdown-item" href="{{ path('administrateur') }}"><i class="far fa-edit"></i>&nbsp;Créer un questionnaire</a>
               <a class="dropdown-item" href="{{ path('administrateur_complete_questionnaire') }}"><i class="fas fa-clipboard-list"></i>&nbsp;Compléter un questionnaire</a>
+              <a class="dropdown-item" href="{{ path('administrateur_delete') }}"><i class="fas fa-tasks"></i></i>&nbsp;Vérifier les questionnaires</a>
             </div>
           </li>
           

@@ -9,14 +9,16 @@
 
 {% block body %}
 
-<div>
+<div id="pdf">
     <div id="pseudo"  >{{joueur.pseudo}}</div>
-    <div id="score" >{{joueur.score}}</div>
-    <div id="difficulte"   >{{joueur.questionnaire.difficulte.nom}}</div>
-    <div id="theme"  >{{joueur.questionnaire.theme.nom}}</div>
+    <div id="score"   >{{joueur.score}}</div>
+    <div id="titre"   > {{app.session.get('titre')}}</div>
+    <div id="difficulte">{{joueur.questionnaire.difficulte.nom}}</div>
+    <div id="theme"   >{{joueur.questionnaire.theme.nom}}</div>
 </div>
 
-<a id="cmd" style="margin-left: 1000px; margin-top: 100px; font-size: 30px;">Télécharge ton  diplome!</a>   
+<a  href="javascript:demoFromHTML()"  style="margin-left: 1000px; margin-top: 100px; font-size: 30px;">Télécharge ton  diplome!</a>   
+
 
 {# MODAL AJOUT JOUEUR #}
 <div class="modal fade" id="centralModalScoreSave" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -57,31 +59,43 @@
 
 {% block footer %}
 {{ parent() }}
+
 <script>
-if( $('#score').text() > 20)
-{
-    $('#centralModalScoreSave').modal('show');
-    $('#ajouter_joueur').click(function (e) { 
-        e.preventDefault();
+  if( $('#score').text() > 20)
+  {
+      $('#centralModalScoreSave').modal('show');
+      $('#ajouter_joueur').click(function (e) { 
+          e.preventDefault();
 
-        var score       = $('#score').text();
-        var titre       = $('#titre').text();
-        var theme       = $('#theme').text();
-        var difficulte  = $('#difficulte').text();
+          var score       = $('#score').text();
+          var titre       = $('#titre').text();
+          var theme       = $('#theme').text();
+          var difficulte  = $('#difficulte').text();
+          console.log(titre);
+          $.ajax({
+              type: "post",
+              url: "{{ path('joueur_add') }}",
+              data: "score=" + score + "&theme=" + theme + "&difficulte=" + difficulte + "&titre=" + titre ,
+              dataType: "html",
+              success: function (response) {
+                  $('#centralModalScoreSave').modal('hide');
+              }
+          });
+          
+      });
+  }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script> 
+<script>
+function demoFromHTML() {
 
-        $.ajax({
-            type: "post",
-            url: "{{ path('joueur_add') }}",
-            data: "score=" + score + "&theme=" + theme + "&difficulte=" + difficulte + "&titre=" + titre ,
-            dataType: "html",
-            success: function (response) {
-                 $('#centralModalScoreSave').modal('hide');
-            }
-        });
-        
-    });
-}</script>
-{#
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
-#}
+var doc = new jsPDF();
+var imgData = "D:\wamp64\www\QuestionnaireLudique\web\images\images_theme\theme1.png";
+doc.setFontSize(40)
+doc.text(35, 25, 'Paranyan loves jsPDF')
+doc.addImage(imgData, 'PNG', 15, 40, 180, 160)
+
+doc.output('dataurl');
+}
+</script>
 {% endblock %}  

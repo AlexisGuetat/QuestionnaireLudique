@@ -52,16 +52,21 @@
         <!-- Grid row -->
         <div class="row justify-content-center">
             <div class="col-sm">
-                <button name ="rep" id="rep0"   value="{{ question.reponseunjuste }}" 
-                class="btn btn-lg  btn-primary col-xs-12 col-md-8"><b><i class="fas fa-question"></i>{{ question.reponseunjuste }}</b></button>
+                <button href="" name ="rep" id="rep0"   value="{{ question.reponseunjuste }}" 
+                class="btn btn-lg  btn-primary col-xs-12 col-md-8" 
+                 ><b><i class="fas fa-question"></i>{{ question.reponseunjuste }}</b></button>
                 <button name ="rep" id="rep1"  value="{{ question.reponsedeuxfausse }}" 
-                class="btn btn-lg  btn-danger  col-xs-12 col-md-8"><b>{{ question.reponsedeuxfausse }}</b></button>
+                class="btn btn-lg  btn-danger  col-xs-12 col-md-8"
+                ><b>{{ question.reponsedeuxfausse }}</b></button>
             </div>
+  
             <div class="col-sm">
                 <button  name ="rep" id="rep2" value=" {{ question.reponsetroisfausse }}" 
-                class="btn btn-lg  btn-warning col-xs-12 col-md-8"><b>{{ question.reponsetroisfausse }}</b></button>
+                class="btn btn-lg  btn-warning col-xs-12 col-md-8"
+               ><b>{{ question.reponsetroisfausse }}</b></button>
                 <button  name ="rep" id="rep3" value=" {{ question.reponsequatrefausse }}" 
-                class="btn btn-lg  btn-success col-xs-12 col-md-8"><b>{{ question.reponsequatrefausse }}</b></button>
+                class="btn btn-lg  btn-success col-xs-12 col-md-8"
+                data-toggle="popover" title="Mince..." data-content="Ce n'étais pas la bonne réponse" data-placement="right"><b>{{ question.reponsequatrefausse }}</b></button>
             </div>            
         </div>
         <!-- Grid row -->
@@ -120,6 +125,7 @@
     <!--/.Content-->
   </div>
 </div>
+
 {% endblock %}
 
 {% block modaux %}
