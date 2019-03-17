@@ -65,13 +65,13 @@
             
               {% for questionnaire in questionnaires %}
                
-                    <tr>
-                      <td id='titre' >{{ questionnaire.titre }}</td>
+                    <tr class="text-center">
+                      <td >{{ questionnaire.titre }}</td>
                       <td >{{ questionnaire.theme.nom }}</td>
                       <td >{{ questionnaire.difficulte.nom }}</td>
-                      <td class="text-center">
-                      <div  id="voir"class="btn btn-primary btn-voir"><i class="fas fa-eye"></i></div>&nbsp;
-                      <div  class="btn btn-danger btn-supprimer"><i class="fas fa-trash-alt"></i></div></td>
+                      <td>
+                      <div  id="{{ questionnaire.titre }}" class="btn btn-primary btn-voir"><i class="fas fa-eye"></i></div>&nbsp;
+                      <div  id="{{ questionnaire.titre }}" class="btn btn-danger btn-supprimer"><i class="fas fa-trash-alt"></i></div></td>
                     </tr>
                  
                 {% endfor %}
@@ -86,6 +86,55 @@
 
         </div>
         <!-- Table with panel -->
+
+        {# MODAL POUR AFFICHER LES QUESTION #}
+        <!-- Central Modal Medium Info -->
+          <div class="modal fade left" id="modal_questions" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-fluid modal-notify modal-info " role="document">
+              <!--Content-->
+              <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header aligne-align-content-center">
+                  <p class="heading lead ">Questions du questionnaire : <a id="question_titre" ></z></p>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>
+
+                <!--Body-->
+                <div class="modal-body">
+
+                          <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+                            <table id="tableau_question" class="table table-bordered table-striped mb-0">
+                              <thead>
+                                <tr class="grey lighten-1 text-center">
+                                  <th scope="col">Intitule</th>
+                                  <th scope="col">Question Juste</th>
+                                  <th scope="col">Question Fausse ( N °1 )</th>
+                                  <th scope="col">Question Fausse ( N °2 )</th>
+                                  <th scope="col">Question Fausse ( N °3 )</th>
+                                  <th scope="col">Corriger la question</th>
+                                </tr>
+                              </thead>
+                              <tbody class="text-center">
+                                <tr></tr>
+                              </tbody>
+                            </table>
+
+                          </div>
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                  <a type="button" class="btn btn-info" data-dismiss="modal">Quitter</i></a>
+                </div>
+              </div>
+            <!--/.Content-->
+          </div>
+        </div>
+        <!-- Central Modal Medium Info-->
         {% endblock %}
  
  {% block footer %}
@@ -118,10 +167,10 @@
 
 {############ SUPPRIME LE QUESTIONNAIRE SELECTIONNE ############}
 
-$(".supprimer").click(function (e) { 
+$(".btn-supprimer").click(function (e) { 
     e.preventDefault();
 
-    var titre = $('#titre').text();
+    var titre = $(this).attr('id');
 
     $.ajax({
         type: "post",
@@ -129,9 +178,41 @@ $(".supprimer").click(function (e) {
         data: "titre=" + titre,
         dataType: "html"
     });
-
-    //$reponseAjax = $ajax
 });
+
+$(".btn-voir").click(function (e) { 
+    e.preventDefault();
+
+    var titre = $(this).attr('id');
+  
+    
+        $ajaxReponse = $.ajax({
+        url:  "{{ path('administrateur_delete') }}",
+        data: "titre=" + titre,
+        dataType: "json",
+        async : false
+    });
+
+      var reponse = JSON.parse($ajaxReponse.responseText);
+
+      reponse.forEach(function(element) {
+
+        $('#tableau_question tr:last').after( '<tr>'+
+                                              '<td>'+ element.intitule +'</td>'+
+                                              '<td>'+ element.reponseUne +'</td>'+
+                                              '<td>'+ element.reponseDeux +'</td>'+
+                                              '<td>'+ element.reponseTrois +'</td>'+
+                                              '<td>'+ element.reponseQuatre +'</td>'+
+                                              '<td class="text-center"><a href="#" class="btn btn-success"><i class="far fa-edit"></i></td>'+
+                                              '</tr>' );
+
+      });
+
+      $('#modal_questions').modal("show");
+      $('#question_titre').text(titre);
+      
+    
+});
+
 </script>
-<script src=" {{ asset('js/delete.js') }}"></script>
 {% endblock %}

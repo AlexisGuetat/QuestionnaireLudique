@@ -32,7 +32,7 @@ class QuestionController extends Controller
         $question = $bdd->getRepository("ATCAppBundle:Question")->findOneByIntitule($intitule);
     
         if(in_array($question, $questions) || $question != null) {
-            throw new NotFoundHttpException("Cette intitule de question existe déja. Veuillez un trouver un autre",null);
+            throw new NotFoundHttpException("Cette intitule de question existe déja. Veuillez un trouver un autre");
         }
 
             $question = new Question();
