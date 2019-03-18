@@ -2,7 +2,7 @@
 
 {% block fond_anime %}
 
-<img src="{{ asset('images/diplome.png')}}" class="fond"  style="padding-top :5%; padding-bottom :5%; padding-right :10%; padding-left :10%;">
+<img src="{{ asset('images/diplome.png')}}" class="fond reponsive" >
 
 
 {% endblock %}
@@ -10,14 +10,12 @@
 {% block body %}
 
 <div id="pdf">
-    <div id="pseudo"  >{{joueur.pseudo}}</div>
-    <div id="score"   >{{joueur.score}}</div>
-    <div id="titre"   > {{app.session.get('titre')}}</div>
-    <div id="difficulte">{{joueur.questionnaire.difficulte.nom}}</div>
-    <div id="theme"   >{{joueur.questionnaire.theme.nom}}</div>
+    <h1>Bravo&nbsp;<a id="pseudo">{{joueur.pseudo}}</a> !!</h1>
+    <h1>Tu as eu :&nbsp;<a id="score">{{joueur.score}}</a> points </h1>
+    <h1>Au questionnaire :&nbsp;<a id="titre">{{app.session.get('titre')}}</a></h1>
+    <h1>avec le la difficulte :&nbsp;<a id="difficulte">{{joueur.questionnaire.difficulte.nom}}</a></h1>
+    <h1>et le theme :&nbsp;<a id="theme">{{joueur.questionnaire.theme.nom}}</a></h1>
 </div>
-
-<a  href="javascript:demoFromHTML()"  style="margin-left: 1000px; margin-top: 100px; font-size: 30px;">Télécharge ton  diplome!</a>   
 
 
 {# MODAL AJOUT JOUEUR #}
