@@ -47,6 +47,14 @@ question_ajout:
     path: /administrateur/ajout_questionnaire/ajout_question/{titre}
     defaults: {_controller: ATCAppBundle:Question:add}
 
+question_show:
+     path: /show
+     defaults: {_controller: ATCAppBundle:Question:show}
+
+question_update:
+    path: /update
+    defaults: {_controller: ATCAppBundle:Question:update}
+
 #ROUTE CLASSEMENT
 classement:
     path: /classement   

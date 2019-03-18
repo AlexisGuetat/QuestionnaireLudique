@@ -157,9 +157,13 @@ class QuestionnaireController extends Controller
         
             // ON RECUPERE TOUS LES QUESTIONNAIRES AYANT L'ID ET LA DIFFICULTE PASSEE EN PARAMETRE
             $questionnaires = $bdd->getRepository('ATCAppBundle:Questionnaire')->findBy(array('theme' => $theme,
-                                                                                            'difficulte' => $difficulte));
+                                                                                                'difficulte' => $difficulte));
             
             // ON SELECTIONNE DE MANIERE ALEATOIRE UN QUESTIONNAIRE PARMI CEUX RECUPERER
+            if ($questionnaires == null) {
+                throw new NotFoundHttpException("Pas de questionnaire pour cette difficulte et ce theme.");
+                    }
+
             $questionnaire = $questionnaires[array_rand($questionnaires,1)];
             
             if ($questionnaire === null) {
