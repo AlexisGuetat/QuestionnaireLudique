@@ -5,20 +5,24 @@
   <title>Questionnaire Ludique</title>
   
   <!-- Font Awesome -->
-  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet"> 
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" 
+  integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <!-- Bootstrap core CSS -->
+  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+ 
   <!-- Material Design Bootstrap -->
   <link href="{{ asset('css/mdb.min.css')}}"        rel="stylesheet">
   
   <!-- Your custom styles (optional) -->
   <link href="{{ asset('css/style.min.css')}}"      rel="stylesheet"> 
-  
    <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
- 
-
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+ integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+ integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+ <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet"> 
   </head>
 
   <!-- Navbar -->
@@ -26,7 +30,7 @@
     <div class="container">
 
       <!-- Brand -->
-      <a class="navbar-brand"  href="{{ path('homepage') }}"  >
+      <a class="navbar-brand" href="#" target="_blank">
         <img src="{{ asset('images/jungle.png')}}" width="35">
       </a>
 
@@ -41,35 +45,32 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
         <!-- Left -->
-        <ul class="navbar-nav mr-auto"> 
-            <li class="nav-item">
-              <a class="nav-link" href="{{ path('classement') }}" ><i class="fas fa-list-ol"></i></i>&nbsp;Classement</a>
-            </li>
-            <li class="nav-item">
-              <a id="questionnaire" class="nav-link" data-toggle="modal" href="#QuestionnaireModal"><i class="fas fa-gamepad"></i></i>&nbsp;Lancer le LudiQuiz</a>
-            </li>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ path('homepage') }}"><i class="fas fa-igloo"></i>&nbsp;Acceuil
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('classement') }}" ><i class="fas fa-list-ol"></i></i>&nbsp;Classement</a>
+          </li>
+          <li class="nav-item">
+            <a id="questionnaire" class="nav-link" data-toggle="modal" href="#QuestionnaireModal"><i class="fas fa-gamepad"></i></i>&nbsp;Lancer le LudiQuiz</a>
+          </li>
+           <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+             aria-haspopup="true" aria-expanded="false"><i class="fas fa-cogs"></i>&nbsp;Administrateur</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{{ path('administrateur') }}"><i class="far fa-edit"></i>&nbsp;Créer un questionnaire</a>
+              <a class="dropdown-item" href="{{ path('administrateur_complete_questionnaire') }}"><i class="fas fa-clipboard-list"></i>&nbsp;Compléter un questionnaire</a>
+              <a class="dropdown-item" href="{{ path('administrateur_delete') }}"><i class="fas fa-tasks"></i></i>&nbsp;Vérifier les questionnaires</a>
+            </div>
+          </li>
           
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('administrateur') }}"><i class="far fa-edit"></i>&nbsp;Créer un questionnaire</a>
-                </li>
-            <li class="nav-item">
-            <a  class="nav-link" href="{{ path('administrateur_complete_questionnaire') }}"><i class="fas fa-clipboard-list"></i>&nbsp;Compléter un questionnaire</a>
-            </li>
-          </ul>
+        </ul>
 
-            <ul class="navbar-nav ml-auto nav-flex-icons">
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
-                  <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                    <a class="dropdown-item" data-toggle="modal" href="#modalLoginForm"><i class="far fa-edit"></i>&nbsp;Se connecter</a>
-                    <a class="dropdown-item" href="{{ path('administrateur_delete') }}"><i class="fas fa-tasks"></i></i>&nbsp;Vérifier les questionnaires</a>
-                    <a class="dropdown-item" href="#">Parametre de l'application</a>
-                  </div>
-              </li>
-            </ul>
-            
       </div>
-  
+
     </div>
   </nav>
   <!-- Navbar -->
