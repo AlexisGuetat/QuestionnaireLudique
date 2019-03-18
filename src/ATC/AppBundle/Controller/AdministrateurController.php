@@ -25,13 +25,14 @@ class AdministrateurController extends Controller
     }
 
     /**
-     * supprime un questionnaire 
+     * page qui supprime ou affiche un questionnaire 
      * @var request 
      */
     public function deleteAction(Request $request)
     {
         $bdd = $this->getDoctrine()->getEntityManager();
-
+        
+        //SUPRIME LE QUESTIONNAIRE 
         if($request->isMethod("POST")){
             
             $titreQuestionnaire = $request->get('titre');
@@ -44,6 +45,7 @@ class AdministrateurController extends Controller
             $questionnaires = $bdd->getRepository("ATCAppBundle:Questionnaire")->findAll();
             return $this->render("ATCAppBundle:Administrateur:delete.html.twig",array("questionnaires" => $questionnaires));
         }
+        //AFFICHE LES QUESTIONS DU QUESTIONNAIRE
         else if($request->isXmlHttpRequest())
         {
             $titreQuestionnaire = $request->get('titre');
@@ -68,6 +70,7 @@ class AdministrateurController extends Controller
           
             return new JsonResponse($data);
         }
+        // AFFICHE LA PAGE DE BASE 
         else
         {
             $questionnaires = $bdd->getRepository("ATCAppBundle:Questionnaire")->findAll();

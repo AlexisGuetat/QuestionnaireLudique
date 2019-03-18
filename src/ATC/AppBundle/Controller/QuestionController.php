@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Doctrine\ORM\EntityNotFoundException;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class QuestionController extends Controller
 {
@@ -92,7 +93,59 @@ class QuestionController extends Controller
             return $this->render('ATCAppBundle:Question:add.html.twig', array(
                 'nombre_question' => $nombreDeQuestion
             ));
-        }
+    }
+
+    /**
+     * affiche les valeurs d'une question
+     */
+    public function showAction(Request $request){
+
+        $bdd = $this->getDoctrine()->getManager();
+
+        $ntituleQuestion = $request->get('intitule_question');
+        $question     = $bdd->getRepository("ATCAppBundle:Question")->findOneByIntitule($ntituleQuestion);
+        
+        $data = array();
+
+       
+           $data['intitule']      = $question->getIntitule();
+           $data['reponseUne']    = $question->getReponseUnJuste();
+           $data['reponseDeux']   = $question->getReponseDeuxFausse();
+           $data['reponseTrois']  = $question->getReponseTroisFausse();
+           $data['reponseQuatre'] = $question->getReponseQuatreFausse();
+            
+           return new JsonResponse($data);
+    }
+
+    /**
+     * affiche les valeurs d'une question
+     */
+    public function updateAction(Request $request){
+        
+        $intitule_before_update =  $request->get('intitule_before_update');
+        $intitule = $request->get('intitule');
+        $repJuste = $request->get('question_juste');
+        $repFaux1 = $request->get('question_fausse');
+        $repFaux2 = $request->get('question_fausse2');
+        $repFaux3 = $request->get('question_fausse3');
+
+
+        $bdd = $this->getDoctrine()->getManager();
+        $em = $this->container->get('doctrine')->getEntityManager();
+
+        $question  = $bdd->getRepository("ATCAppBundle:Question")->findOneByIntitule($intitule_before_update);
+
+        $question->setIntitule($intitule);
+        $question->setQuestionUnJuste($repJuste);
+        $question->setQuestionDeuxFausse($repFaux1);
+        $question->setQuestionTroisFausse($repFaux2);
+        $question->setQuestionQuatresFausse($repFaux3);
+        
+        $em->persist($question);
+        $em->flush();
+
+        return ;
+    }
     
    
 }

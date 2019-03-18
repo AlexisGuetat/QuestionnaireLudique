@@ -88,7 +88,6 @@
         <!-- Table with panel -->
 
         {# MODAL POUR AFFICHER LES QUESTION #}
-        <!-- Central Modal Medium Info -->
           <div class="modal fade left" id="modal_questions" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
             aria-hidden="true">
             <div class="modal-dialog modal-fluid modal-notify modal-info " role="document">
@@ -111,11 +110,11 @@
                               <thead>
                                 <tr class="grey lighten-1 text-center">
                                   <th scope="col">Intitule</th>
-                                  <th scope="col">Question Juste</th>
-                                  <th scope="col">Question Fausse ( N °1 )</th>
-                                  <th scope="col">Question Fausse ( N °2 )</th>
-                                  <th scope="col">Question Fausse ( N °3 )</th>
-                                  <th scope="col">Corriger la question</th>
+                                  <th scope="col">Réponse Juste</th>
+                                  <th scope="col">Réponse Fausse</th>
+                                  <th scope="col">Réponse Fausse</th>
+                                  <th scope="col">Réponse Fausse</th>
+                                  <th scope="col">&nbsp;Corriger la question</th>
                                 </tr>
                               </thead>
                               <tbody class="text-center">
@@ -134,7 +133,51 @@
             <!--/.Content-->
           </div>
         </div>
-        <!-- Central Modal Medium Info-->
+
+        {# MODAL POUR AFFICHER LES VALEURS DE LA QUESTION #}
+        <div class="modal fade" id="modalCorrectionQuestion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header text-center">
+              <form action="{{ path('question_update') }}">
+                <h4 class="modal-title w-100 font-weight-bold black-text">Element de la question <a id="intitule_before_update" name="intitule_before_update"> </a> à corriger </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              <form action="{{ path('question_update') }}">
+                <div class="form-group mb-4">
+                  <input type="text" name="intitule-update" id="intitule-update" class="form-control validate" required placeholder="Intitule">
+                  </div>
+
+                <div class="form-group mb-4">
+                  <input type="texte" id="question_juste-update" class="form-control validate" required placeholder="Réponse Juste">
+                </div>
+
+                <div class="form-group mb-4">
+                  <input type="texte" id="question_fausse-update" class="form-control validate" required placeholder="Réponse Fause">
+                </div>
+
+                <div class="form-group mb-4">
+                  <input type="texte" id="question_fausse2-update" class="form-control validate" required placeholder="Réponse Fause">
+                </div>
+
+                <div class="form-group mb-4">
+                   <input type="texte" id="question_fausse3-update" class="form-control validate" required placeholder="Réponse Fause">
+                </div>
+
+              </form>
+              </div>
+              <div class="modal-footer d-flex justify-content-center">
+                <button type="submit" class="btn btn-indigo">Corriger <i class="fas fa-paper-plane-o ml-1"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         {% endblock %}
  
  {% block footer %}
@@ -166,7 +209,6 @@
 
 
 {############ SUPPRIME LE QUESTIONNAIRE SELECTIONNE ############}
-
 $(".btn-supprimer").click(function (e) { 
     e.preventDefault();
 
@@ -178,8 +220,10 @@ $(".btn-supprimer").click(function (e) {
         data: "titre=" + titre,
         dataType: "html"
     });
+    
 });
 
+{############ AFFICHE LES QUESTION DU QUESTIONNAIRE SELECTIONNE ############}
 $(".btn-voir").click(function (e) { 
     e.preventDefault();
 
@@ -203,16 +247,43 @@ $(".btn-voir").click(function (e) {
                                               '<td>'+ element.reponseDeux +'</td>'+
                                               '<td>'+ element.reponseTrois +'</td>'+
                                               '<td>'+ element.reponseQuatre +'</td>'+
-                                              '<td class="text-center"><a href="#" class="btn btn-success"><i class="far fa-edit"></i></td>'+
+                                              '<td id="'+ element.intitule +'"class="text-center"><a class="btn btn-success btn-correction" onClick=\'showCorrection("'+ element.intitule +'");\'><i class="far fa-edit"></i></td>'+
                                               '</tr>' );
 
       });
 
       $('#modal_questions').modal("show");
       $('#question_titre').text(titre);
+
+          
       
     
 });
 
+{############ AFFICHE LE MODAL POUR CORRIGER LA QUESTION SELECTIONNEE ############}
+function showCorrection(intitule_question){
+
+             
+                
+                $ajaxReponse = $.ajax({
+                url:  "{{ path('question_show') }}",
+                data: "intitule_question=" + intitule_question,
+                dataType: "json",
+                async : false
+            });
+
+            var reponse = JSON.parse($ajaxReponse.responseText);
+
+            console.log(reponse.reponseUne);
+            $('#intitule_before_update').text(intitule_question); 
+            $('#intitule-update').val(intitule_question);
+            $('#question_juste-update').val(reponse.reponseUne);
+            $('#question_fausse-update').val(reponse.reponseDeux);
+            $('#question_fausse2-update').val(reponse.reponseTrois);
+            $('#question_fausse3-update').val(reponse.reponseQuatre);
+
+            $('#modalCorrectionQuestion').modal('show');
+           
+}
 </script>
 {% endblock %}
