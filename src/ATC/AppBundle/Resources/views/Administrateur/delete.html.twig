@@ -147,7 +147,7 @@
                 </button>
               </div>
               <div class="modal-body">
-              <form action="{{ path('question_update') }}">
+            
                 <div class="form-group mb-4">
                   <input type="text" name="intitule-update" id="intitule-update" class="form-control validate" required placeholder="Intitule">
                   </div>
@@ -168,10 +168,10 @@
                    <input type="texte" id="question_fausse3-update" class="form-control validate" required placeholder="Réponse Fause">
                 </div>
 
-              </form>
+          
               </div>
               <div class="modal-footer d-flex justify-content-center">
-                <button type="submit" class="btn btn-indigo">Corriger <i class="fas fa-paper-plane-o ml-1"></i></button>
+                <button id="update" type="submit" class="btn btn-indigo">Corriger <i class="fas fa-paper-plane-o ml-1"></i></button>
               </div>
             </div>
           </div>
@@ -212,15 +212,21 @@
 $(".btn-supprimer").click(function (e) { 
     e.preventDefault();
 
-    var titre = $(this).attr('id');
+    var alert = confirm("Vous allez supprimer un questionnaire. \nVoulez vous continuer ?");
+    if(alert == true) {
+      var titre = $(this).attr('id');
 
-    $.ajax({
-        type: "post",
-        url:  "{{ path('administrateur_delete') }}",
-        data: "titre=" + titre,
-        dataType: "html"
-    });
-    
+      $.ajax({
+          type: "post",
+          url:  "{{ path('administrateur_delete') }}",
+          data: "titre=" + titre,
+          dataType: "html",
+          success: function (response) {
+            window.location.reload();
+          }
+      });
+    }
+
 });
 
 {############ AFFICHE LES QUESTION DU QUESTIONNAIRE SELECTIONNE ############}
@@ -262,9 +268,7 @@ $(".btn-voir").click(function (e) {
 
 {############ AFFICHE LE MODAL POUR CORRIGER LA QUESTION SELECTIONNEE ############}
 function showCorrection(intitule_question){
-
-             
-                
+      
                 $ajaxReponse = $.ajax({
                 url:  "{{ path('question_show') }}",
                 data: "intitule_question=" + intitule_question,
@@ -283,7 +287,39 @@ function showCorrection(intitule_question){
             $('#question_fausse3-update').val(reponse.reponseQuatre);
 
             $('#modalCorrectionQuestion').modal('show');
-           
+
+            update();
+}
+
+{############# UPDATE LES DONNEES DE LA QUESTION ############}
+function update()
+{
+  $("#update").click(function (e) { 
+    e.preventDefault();
+
+      var intitule_before = $('#intitule_before_update').text();
+      var intitule  = $('#intitule-update').val();
+      var rep1      = $('#question_juste-update').val();
+      var rep2      = $('#question_fausse-update').val();
+      var rep3      = $('#question_fausse2-update').val();
+      var rep4      = $('#question_fausse3-update').val();
+
+       $ajaxReponse = $.ajax({
+                type: "post",
+                url:  "{{ path('question_update') }}",
+                data: "intitule_before=" + intitule_before + "&intitule=" + intitule + "&question_juste=" + rep1 + 
+                "&question_fausse=" + rep2 + "&question_fausse2=" + rep3 + "&question_fausse3=" + rep4,
+                dataType: "html",
+                success: function (response) {
+                    alert("Mise à jour réussit.");
+                    window.location.reload();
+                    
+                },
+                error: function (err,response) {
+                     alert("Mise à jour à échoué.");
+                }
+        });
+  });
 }
 </script>
 {% endblock %}

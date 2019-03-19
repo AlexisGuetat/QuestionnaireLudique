@@ -83,7 +83,7 @@ class Question
     public function setIntitule($intitule)
     {
         $this->intitule = $intitule;
-
+ 
         return $this;
     }
 

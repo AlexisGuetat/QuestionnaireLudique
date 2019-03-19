@@ -16,6 +16,7 @@ class QuestionController extends Controller
 {
     /**
      * ajout d'une question
+     * @param request
      */
     public function addAction(Request $request){  
 
@@ -97,6 +98,7 @@ class QuestionController extends Controller
 
     /**
      * affiche les valeurs d'une question
+     * @param request
      */
     public function showAction(Request $request){
 
@@ -118,11 +120,12 @@ class QuestionController extends Controller
     }
 
     /**
-     * affiche les valeurs d'une question
+     * met à jour les valeurs d'une question
+     * @param request
      */
     public function updateAction(Request $request){
         
-        $intitule_before_update =  $request->get('intitule_before_update');
+        $intitule_before_update =  $request->get('intitule_before');
         $intitule = $request->get('intitule');
         $repJuste = $request->get('question_juste');
         $repFaux1 = $request->get('question_fausse');
@@ -135,17 +138,25 @@ class QuestionController extends Controller
 
         $question  = $bdd->getRepository("ATCAppBundle:Question")->findOneByIntitule($intitule_before_update);
 
+        if($question == null)
+        {
+            throw new NotFoundHttpException("Mise à jour impossible aucune question trouvée.");
+        }
+
         $question->setIntitule($intitule);
-        $question->setQuestionUnJuste($repJuste);
-        $question->setQuestionDeuxFausse($repFaux1);
-        $question->setQuestionTroisFausse($repFaux2);
-        $question->setQuestionQuatresFausse($repFaux3);
+        $question->setReponseUnJuste($repJuste);
+        $question->setReponseDeuxFausse($repFaux1);
+        $question->setReponseTroisFausse($repFaux2);
+        $question->setReponseQuatreFausse($repFaux3);
         
         $em->persist($question);
         $em->flush();
 
-        return ;
+        $questionnaires = $bdd->getRepository("ATCAppBundle:Questionnaire")->findAll();
+        return $this->render("ATCAppBundle:Administrateur:delete.html.twig",array("questionnaires" => $questionnaires));
     }
+
+
     
    
 }
