@@ -77,11 +77,12 @@ $("#login").click(function (e) {
         data: "email=" + email + "&mdp=" + mdp,
         dataType: "html",
         success: function (response) {
-            alert(response);
+            alert("Connection réussit.");
+            $('#modalLoginForm').modal('hide');
+            window.location.reload();
         },
         error: function (err,response) {
-            console.log(err);
-            console.log(response);
+             alert("Connection échec.");
         }
     });
 });

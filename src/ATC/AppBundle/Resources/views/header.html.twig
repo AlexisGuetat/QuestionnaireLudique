@@ -59,12 +59,16 @@
 
             <ul class="navbar-nav ml-auto nav-flex-icons">
               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user"></i></a>
+              
                   <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
                     <a class="dropdown-item" data-toggle="modal" href="#modalLoginForm"><i class="far fa-edit"></i>&nbsp;Se connecter</a>
+                    {% if app.session.get('user') == "Admin" %}
                     <a class="dropdown-item" href="{{ path('administrateur_delete') }}"><i class="fas fa-tasks"></i></i>&nbsp;Vérifier les questionnaires</a>
-                    <a class="dropdown-item" href="#">Parametre de l'application</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i>&nbsp;Parametre de l'application</a>
+                    {% endif %}
                   </div>
+                  
               </li>
             </ul>
             
