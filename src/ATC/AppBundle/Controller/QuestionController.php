@@ -3,14 +3,13 @@
 namespace ATC\AppBundle\Controller;
 
 
-use ATC\AppBundle\Entity\Question;
+use Proxies\__CG__\ATC\AppBundle\Entity\Question;
 use ATC\AppBundle\Entity\Questionnaire;
 use ATC\AppBundle\Entity\Contenu;
+
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\HttpKernel\Exception\HttpException;
-use Doctrine\ORM\EntityNotFoundException;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class QuestionController extends Controller
@@ -30,48 +29,47 @@ class QuestionController extends Controller
         $reponseTroisFausse     = !empty($request->query->get('reponseTroisFausse'))    ? $request->query->get('reponseTroisFausse')    : "";
         $reponseQuatreFausse    = !empty($request->query->get('reponseQuatreFausse'))   ? $request->query->get('reponseQuatreFausse')   : "";
 
-        $question = $bdd->getRepository("ATCAppBundle:Question")->findOneByIntitule($intitule);
+        $questionTest = $bdd->getRepository("ATCAppBundle:Question")->findOneByIntitule($intitule);
     
-        if(in_array($question, $questions) || $question != null) {
+        if(in_array($questionTest, $questions) || $questionTest != null) {
             throw new NotFoundHttpException("Cette intitule de question existe déja. Veuillez un trouver un autre");
         }
 
-            $question = new Question();
-            $question->setIntitule($intitule);
-            $question->setReponseUnJuste($reponseUnJuste);
-            $question->setReponseDeuxFausse($reponseDeuxFausse);
-            $question->setReponseTroisFausse($reponseTroisFausse);
-            $question->setReponseQuatreFausse($reponseQuatreFausse);
-            $question->setReponseExplication(" - ");
+            $questionO = new Question();
+            $questionO->setIntitule($intitule);
+            $questionO->setReponseUnJuste($reponseUnJuste);
+            $questionO->setReponseDeuxFausse($reponseDeuxFausse);
+            $questionO->setReponseTroisFausse($reponseTroisFausse);
+            $questionO->setReponseQuatreFausse($reponseQuatreFausse);
+            $questionO->setReponseExplication(" - ");
 
             $manager = $this->getDoctrine()->getManager();
-            $manager->persist($question);
+            $manager->persist($questionO);
             $manager->flush();
             
             //AJOUT DANS LA TABLE CONTENU LE LIEN ENTRE LA QUESTION ET LE QUESTIONNAIRE
             
-            $titreQuestionnaire     = !empty($request->attributes->get('titre'))              ? $request->attributes->get('titre')             : "";
+            $titreQuestionnaire     = !empty($request->attributes->get('titre'))     ? $request->attributes->get('titre')     : "";
 
             $questionnaire = new Questionnaire();
 
-            if ( empty($titreQuestionnaire))
-            {
+            if ( empty($titreQuestionnaire)){
                 throw new NotFoundHttpException("Aucun titre de questionnaire récupéré.");
             }
-                $questionnaire = $bdd->getRepository('ATCAppBundle:Questionnaire')->findOneBy(array('titre' => $titreQuestionnaire));
+                $questionnaire = $bdd->getRepository('ATCAppBundle:Questionnaire')->findOneByTitre($titreQuestionnaire);
             
-
-            if( null === $questionnaire)
-            {
+            if( null === $questionnaire){
                 throw new NotFoundHttpException("Aucun id pour le questionnaire avec le titre " . $titreQuestionnaire);
             }
 
             $idquestionnaire = $questionnaire->getId();
 
-            $contenu        = new Contenu();
-            $contenu->setIdQuestion($question->getId());
-            $contenu->setIdQuestionnaire($idquestionnaire);
+           
+            $contenu = new Contenu();
+            $contenu->setQuestion($questionO);
+            $contenu->setQuestionnaire($questionnaire);
 
+           
             $manager = $this->getDoctrine()->getManager();
             $manager->persist($contenu);
             $manager->flush();
@@ -79,11 +77,13 @@ class QuestionController extends Controller
             //AJOUT DU COMPTEUR DE QUESTION
             $bdd = $this->getDoctrine()->getManager();
 
-            
+
             $nombreDeQuestion = $this->getDoctrine()
                 ->getEntityManager()
                 ->getRepository('ATCAppBundle:Question')
-                ->countQuestionByQuestionnaire($idquestionnaire);
+                ->countQuestionByQuestionnaire($questionnaire);
+
+
 
             if(empty($nombreDeQuestion))
             {

@@ -3,6 +3,7 @@
 namespace ATC\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Proxies\__CG__\ATC\AppBundle\Entity\Question;
 
 /**
  * Contenu
@@ -16,62 +17,63 @@ class Contenu
     /**
      * @var int
      *
-     * @ORM\Column(name="idQuestionnaire", type="integer")
+     * @ORM\ManyToOne(targetEntity="ATC\AppBundle\Entity\Questionnaire", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
      * @ORM\Id
      */
-    private $idQuestionnaire;
+    private $questionnaire;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="idQuestion", type="integer")
+     * @ORM\ManyToOne(targetEntity="ATC\AppBundle\Entity\Question", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=false)
      * @ORM\Id
      */
-    private $idQuestion;
+    private $question;
 
 
     
     /**
-     * Get idQuestion
+     * Get Question
      *
-     * @return int
+     * @return Question
      */
-    public function getIdQuestion()
+    public function getQuestion()
     {
-        return $this->idQuestion;
+        return $this->question;
     }
 
    /**
-     * Get idQuestionnaire
+     * Get Questionnaire
      *
      * @return int
      */
-    public function getIdQuestionnaire()
+    public function getQuestionnaire()
     {
-        return $this->idQuestionnaire;
+        return $this->questionnaire;
     }
 
      /**
-     * Set idQuestion
-     * @param int $idQuestion
+     * set question
      *
      * @return Contenu
      */
-    public function setIdQuestion(int $idQuestion)
+    public function setQuestion(Question $question)
     {
-         $this->idQuestion = $idQuestion;
+         $this->question = $question;
          return $this;
     }
 
    /**
-     * set idQuestionnaire
-     *@param int $idQuestionnaire
+     * set questionnaire
+     *@param Questionnaire $questionnaire
      *
      * @return Contenu
      */
-    public function setIdQuestionnaire(int $idQuestionnaire)
+    public function setQuestionnaire(Questionnaire $questionnaire)
     {
-         $this->idQuestionnaire = $idQuestionnaire;
+         $this->questionnaire = $questionnaire;
          return $this;
     }
 }

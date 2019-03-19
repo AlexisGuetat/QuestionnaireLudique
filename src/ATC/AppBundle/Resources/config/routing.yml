@@ -65,11 +65,7 @@ chrono:
     path: /chrono
     defaults: {_controller: ATCAppBundle:Questionnaire:chrono}
 
-#LOGIN
-login_show:
-    path: /login_show
-    defaults: {_controller: ATCAppBundle:Security:show}
-    
+#LOGIN    
 login:
     path: /login
     defaults: {_controller: ATCAppBundle:Security:login}

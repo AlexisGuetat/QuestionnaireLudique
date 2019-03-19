@@ -16,8 +16,8 @@ class QuestionRepository extends \Doctrine\ORM\EntityRepository
     {       
             $query = $this->_em->createQuery('SELECT q
             FROM ATCAppBundle:Question q
-            JOIN ATCAppBundle:Contenu c WHERE q.id = c.idQuestion
-            JOIN ATCAppBundle:Questionnaire qs WHERE qs.id = c.idQuestionnaire
+            JOIN ATCAppBundle:Contenu c WHERE q.id = c.question
+            JOIN ATCAppBundle:Questionnaire qs WHERE qs.id = c.questionnaire
             WHERE qs.id = :id AND qs.theme = :theme AND qs.difficulte = :difficulte');
             
             $query->setParameter('id', $questionnaire->getId());
@@ -36,16 +36,16 @@ class QuestionRepository extends \Doctrine\ORM\EntityRepository
      * return le nombre de question du questionnaire
      * @return int 
      */
-    public function countQuestionByQuestionnaire($id)
+    public function countQuestionByQuestionnaire($questionnaire)
     {
-            $query = $this->_em->createQuery('SELECT COUNT(c) 
+            $query = $this->_em->createQuery('SELECT COUNT( c.questionnaire ) 
             FROM ATCAppBundle:Contenu c
-            WHERE c.idQuestionnaire = :id');
+            WHERE c.questionnaire = :id');
             
-            $query->setParameter('id', $id);
-            
-            return  (int) $query->getSingleScalarResult();
-        
+            $query->setParameter('id', $questionnaire->getId());
+
+            return  $query->getSingleScalarResult();
+          
     }
 
 }
